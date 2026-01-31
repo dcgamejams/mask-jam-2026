@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://l43asw5c75x0"]
+
+[ext_resource type="Texture2D" uid="uid://bpne43qmnlgie" path="res://assets/img/sample/Red/texture_08.png" id="1_db084"]
+[ext_resource type="Script" uid="uid://cogyhy7i6r5bb" path="res://scenes/enemies/enemy_1.gd" id="1_lsxte"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r7voi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lsxte"]
+albedo_texture = ExtResource("1_db084")
+uv1_triplanar = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_db084"]
+material = SubResource("StandardMaterial3D_lsxte")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_db084"]
+top_radius = 0.4
+bottom_radius = 0.4
+height = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lsxte"]
+size = Vector3(20, 1, 20)
+
+[node name="Enemy1" type="CharacterBody3D" unique_id=1821244378]
+script = ExtResource("1_lsxte")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=916683150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93904245, 0)
+shape = SubResource("CapsuleShape3D_r7voi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=818766768]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93904245, 0)
+mesh = SubResource("CapsuleMesh_db084")
+
+[node name="BadMask" type="MeshInstance3D" parent="." unique_id=1851587318]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.4480739, 0.4672277)
+mesh = SubResource("CylinderMesh_db084")
+
+[node name="Goodmask" type="MeshInstance3D" parent="." unique_id=502176657]
+transform = Transform3D(1, 0, 0, 0, -0.6762462, -0.73667574, 0, 0.73667574, -0.6762462, 0, 0.87569165, 0.8637985)
+mesh = SubResource("CylinderMesh_db084")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2080870869]
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="." unique_id=1753038704]
+unique_name_in_owner = true
+transform = Transform3D(0.6671178, 0, 0.74495226, 0, 1, 0, -0.74495226, 0, 0.6671178, 0, 2.0954723, 13.14624)
+shape = SubResource("BoxShape3D_lsxte")
