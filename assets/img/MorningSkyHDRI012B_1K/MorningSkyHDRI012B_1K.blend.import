@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkhmiqpqhv6fe"
-path="res://.godot/imported/NightSkyHDRI008_1K.blend-7f1dd24aed3fc68686e67ee433e269c7.scn"
+uid="uid://pok4jgi4hrya"
+path="res://.godot/imported/MorningSkyHDRI012B_1K.blend-3e8495674de6d34f20a76a51d55a0ad5.scn"
 
 [deps]
 
-source_file="res://assets/img/NightSkyHDRI008_1K/NightSkyHDRI008_1K.blend"
-dest_files=["res://.godot/imported/NightSkyHDRI008_1K.blend-7f1dd24aed3fc68686e67ee433e269c7.scn"]
+source_file="res://assets/img/MorningSkyHDRI012B_1K/MorningSkyHDRI012B_1K.blend"
+dest_files=["res://.godot/imported/MorningSkyHDRI012B_1K.blend-3e8495674de6d34f20a76a51d55a0ad5.scn"]
 
 [params]
 

@@ -1,0 +1,14 @@
+[gd_resource type="Environment" format=3 uid="uid://c2hlpwfld7bbi"]
+
+[ext_resource type="Texture2D" uid="uid://b7rmo56rtd8p0" path="res://assets/img/MorningSkyHDRI012B_1K/MorningSkyHDRI012B_1K_TONEMAPPED.jpg" id="1_5uum5"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xwxlb"]
+panorama = ExtResource("1_5uum5")
+
+[sub_resource type="Sky" id="Sky_8t5d4"]
+sky_material = SubResource("PanoramaSkyMaterial_xwxlb")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_8t5d4")
+tonemap_mode = 4
