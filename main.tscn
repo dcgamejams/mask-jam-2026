@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6dfmct6e0d5j"]
 
-[ext_resource type="PackedScene" uid="uid://baj8m7u6tlib5" path="res://scenes/demo_level.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://baj8m7u6tlib5" path="res://scenes/environment/demo_level.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://l43asw5c75x0" path="res://scenes/enemies/enemy_1.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://scenes/players/player_character_scene.tscn" id="4_1bvp3"]
 
 [node name="Node3D" type="Node3D" unique_id=60408776]
@@ -9,3 +10,12 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6401496, 0)
 
 [node name="DemoLevel" parent="." unique_id=1123410095 instance=ExtResource("2_0xm2m")]
+
+[node name="Enemy1" parent="." unique_id=1821244378 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.117975, 8.267403, 0.007162094)
+
+[node name="Enemy2" parent="." unique_id=849889425 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.792715, 8.267403, 5.450897)
+
+[node name="Enemy3" parent="." unique_id=393706542 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.792715, 8.267403, -14.837881)
