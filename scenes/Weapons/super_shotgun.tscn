@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d05w7k8wtngv2"]
+
+[ext_resource type="PackedScene" uid="uid://t00vxc3scm2n" path="res://assets/Models/SuperShotgun.glb" id="1_06rot"]
+[ext_resource type="Script" uid="uid://csma0fwxuue15" path="res://scenes/Weapons/scripts/WeaponModelAnimation.gd" id="2_4fik0"]
+
+[node name="SuperShotgun" unique_id=505632400 instance=ExtResource("1_06rot")]
+script = ExtResource("2_4fik0")
+
+[node name="Skeleton3D" parent="Root" parent_id_path=PackedInt32Array(1538183265) index="0" unique_id=1688237491]
+bones/0/position = Vector3(-0.08563218, -0.054073323, -1.39512535e-08)
+bones/0/rotation = Quaternion(1.2325218e-08, -7.740446e-08, -0.44886053, 0.89360183)
+bones/2/rotation = Quaternion(-3.5948824e-07, 2.5664738e-07, 0.23203838, 0.97270674)
+bones/3/position = Vector3(-0.04939873, -0.076192096, 0.025068147)
+bones/3/rotation = Quaternion(2.5993067e-08, -7.3125335e-07, -0.08295806, 0.99655306)
+bones/4/position = Vector3(-0.051873084, -0.076200776, -0.030798934)
+bones/4/rotation = Quaternion(2.599306e-08, -7.312534e-07, -0.082958035, 0.99655306)
+
+[node name="Shell1" parent="Root/Skeleton3D" index="0" unique_id=181901735]
+transform = Transform3D(-1.6391277e-07, 0.9999999, -1.697941e-07, -0.99999964, -1.04308356e-07, 1.477299e-07, 1.4773036e-07, 1.697942e-07, 1, 0.2544276, 0.05853969, 0.025068313)
+
+[node name="Shell2" parent="Root/Skeleton3D" index="1" unique_id=1685077500]
+transform = Transform3D(-1.1920928e-07, 0.9999999, -1.6979416e-07, -0.99999964, -5.960487e-08, 1.4773002e-07, 1.4773047e-07, 1.6979423e-07, 1, 0.25400993, 0.060978625, -0.030798765)
+
+[node name="Barrel" parent="Root/Skeleton3D" index="2" unique_id=279497199]
+transform = Transform3D(0.16534406, 0.986236, 3.3393235e-09, -0.9862357, 0.16534406, -1.3054225e-06, -1.2880066e-06, 2.1255056e-07, 1, 0.33773878, 0.022418842, 1.1955574e-07)
+
+[node name="Trigger" parent="Root/Skeleton3D" index="3" unique_id=1740065237]
+transform = Transform3D(-0.9742651, 0.22540519, -3.6770584e-07, -0.22540522, -0.97426486, 6.7933115e-08, -3.4293043e-07, 1.4906777e-07, 1, 0.15569907, -0.010385424, 4.4602146e-08)
+
+[node name="Main" parent="Root/Skeleton3D" index="4" unique_id=273751847]
+transform = Transform3D(-0.29765803, 0.9546726, -6.790614e-07, -0.95467246, -0.29765797, -7.444165e-07, -9.128021e-07, 4.2669973e-07, 1, 0.07801423, 0.10339853, 3.4694532e-09)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

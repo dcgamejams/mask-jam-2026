@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://t00vxc3scm2n"
-path="res://.godot/imported/SuperShotgunNotSciFiVer.glb-30a2c07b350ae9fcf133cc8e0079a0d3.scn"
+uid="uid://cghaci0ntf50e"
+path="res://.godot/imported/SuperShotgun.glb-de2ac2782571b95cb226978bea47c3e4.scn"
 
 [deps]
 
-source_file="res://assets/Models/SuperShotgunNotSciFiVer.glb"
-dest_files=["res://.godot/imported/SuperShotgunNotSciFiVer.glb-30a2c07b350ae9fcf133cc8e0079a0d3.scn"]
+source_file="res://assets/Models/SuperShotgun.glb"
+dest_files=["res://.godot/imported/SuperShotgun.glb-de2ac2782571b95cb226978bea47c3e4.scn"]
 
 [params]
 

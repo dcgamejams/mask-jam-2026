@@ -7,9 +7,10 @@
 [ext_resource type="Script" uid="uid://c4skioddhqatw" path="res://scenes/players/StateMachine/dash_state_script.gd" id="11_khex2"]
 [ext_resource type="Script" uid="uid://bq1stj2mujnp2" path="res://scenes/players/StateMachine/wallrun_state_script.gd" id="12_5fuve"]
 [ext_resource type="LabelSettings" uid="uid://bs0stms0b56kp" path="res://addons/Arts/label_settings.tres" id="14_gfbru"]
-[ext_resource type="PackedScene" uid="uid://iuyxtc76xf2j" path="res://scenes/Weapons/Weapon_SuperShotgun.tscn" id="14_jtj0t"]
 [ext_resource type="Shader" uid="uid://b34228uop3gdf" path="res://scenes/players/Shaders/speed_lines_shader.gdshader" id="14_jv0i6"]
 [ext_resource type="PackedScene" uid="uid://ci0wuvhky4vnj" path="res://assets/Models/stoneMaskV2.glb" id="15_m644i"]
+[ext_resource type="Script" uid="uid://cq6ke8dw5t6nb" path="res://scenes/players/Shooting.gd" id="14_m644i"]
+[ext_resource type="PackedScene" uid="uid://d05w7k8wtngv2" path="res://scenes/Weapons/super_shotgun.tscn" id="15_m644i"]
 [ext_resource type="Script" uid="uid://dx02l6p6behb8" path="res://scenes/players/UI/hud_script.gd" id="16_5jm78"]
 [ext_resource type="Texture2D" uid="uid://dv747ov6fcrsg" path="res://addons/Arts/crosshair.png" id="16_gfbru"]
 [ext_resource type="Script" uid="uid://sca7ypsol83f" path="res://scenes/players/StateMachine/state_machine_script.gd" id="54_e0r17"]
@@ -158,6 +159,7 @@ current = true
 fov = 90.0
 near = 0.01
 far = 1000.0
+script = ExtResource("14_m644i")
 
 [node name="CameraBasedRaycasts" type="Node3D" parent="CameraHolder/Camera" unique_id=1892316695]
 
@@ -177,8 +179,8 @@ target_position = Vector3(-1, 0, 0)
 collision_mask = 4
 debug_shape_custom_color = Color(0.91764706, 0.79607844, 0.18039216, 1)
 
-[node name="WeaponSuperShotgun" parent="CameraHolder/Camera" unique_id=1994702494 instance=ExtResource("14_jtj0t")]
-transform = Transform3D(-4.3711392e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711392e-08, 0.3026918, -0.27693874, -0.39751196)
+[node name="SuperShotgun" parent="CameraHolder/Camera" unique_id=505632400 instance=ExtResource("15_m644i")]
+transform = Transform3D(-4.371138e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.371138e-08, 0.36448643, -0.22091031, -0.36316282)
 
 [node name="stoneMask" parent="CameraHolder/Camera" unique_id=191783486 instance=ExtResource("15_m644i")]
 transform = Transform3D(0.22475435, 0, -0.05117438, 0, 0.65714353, 0, 0.02261966, 0, 0.50848025, 1.0132291, -1.1237633, -0.19064136)
@@ -618,3 +620,4 @@ grow_vertical = 2
 texture = ExtResource("16_gfbru")
 
 [connection signal="change_fov" from="StateMachine" to="CameraHolder" method="change_fov"]
+[connection signal="ShootingAnimationFinished" from="CameraHolder/Camera/SuperShotgun" to="CameraHolder/Camera" method="_on_super_shotgun_shooting_animation_finished"]
