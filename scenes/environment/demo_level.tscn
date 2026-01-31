@@ -1,20 +1,16 @@
 [gd_scene format=3 uid="uid://bjumh2hbls3un"]
 
-[ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_2vmhc"]
-[ext_resource type="Texture2D" uid="uid://qr2skr1h0ddi" path="res://assets/img/Ground003_1K-JPG_Color.jpg" id="2_dvvca"]
-[ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="2_fxo6y"]
-[ext_resource type="Texture2D" uid="uid://cxpumfbehkpgh" path="res://assets/img/Ground003_1K-JPG_NormalGL.jpg" id="3_0id7f"]
-[ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/Models/House/House.glb" id="4_gta14"]
-[ext_resource type="Texture2D" uid="uid://c4mvird5y1dc" path="res://assets/img/Ground003_1K-JPG_Roughness.jpg" id="4_ojrxk"]
-[ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="5_ud7u2"]
-[ext_resource type="PackedScene" path="res://scenes/environment/walls.tscn" id="6_ud7u2"]
-[ext_resource type="Texture2D" uid="uid://bsibwek86jhec" path="res://assets/img/forest-dist.png" id="7_dvvca"]
 [ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_0id7f"]
-[ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="2_ojrxk"]
+[ext_resource type="Texture2D" uid="uid://qr2skr1h0ddi" path="res://assets/img/Ground003_1K-JPG_Color.jpg" id="2_dvvca"]
+[ext_resource type="Texture2D" uid="uid://cxpumfbehkpgh" path="res://assets/img/Ground003_1K-JPG_NormalGL.jpg" id="3_0id7f"]
 [ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="3_ykhrp"]
 [ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/Models/House/House.glb" id="4_hwvuq"]
+[ext_resource type="Texture2D" uid="uid://c4mvird5y1dc" path="res://assets/img/Ground003_1K-JPG_Roughness.jpg" id="4_ojrxk"]
 [ext_resource type="PackedScene" uid="uid://hryrrhwq3bpx" path="res://scenes/Director.tscn" id="5_206cy"]
+[ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="5_ud7u2"]
 [ext_resource type="Script" uid="uid://hep76rg80iwt" path="res://Wave.gd" id="6_n2qhd"]
+[ext_resource type="PackedScene" uid="uid://cfwi4twmewpkt" path="res://scenes/environment/walls.tscn" id="6_ud7u2"]
+[ext_resource type="Texture2D" uid="uid://bsibwek86jhec" path="res://assets/img/forest-dist.png" id="7_dvvca"]
 [ext_resource type="Script" uid="uid://ca6hc1lxuykiv" path="res://EnemySequence.gd" id="7_p3xl3"]
 [ext_resource type="PackedScene" uid="uid://vydo5ihqeu0v" path="res://scenes/enemies/ghost_1/enemy_ghost_1.tscn" id="8_kyuqp"]
 
@@ -62,10 +58,11 @@ material = SubResource("StandardMaterial3D_0id7f")
 flip_faces = true
 size = Vector2(200, 50)
 orientation = 0
+
 [sub_resource type="Resource" id="Resource_0id7f"]
 script = ExtResource("7_p3xl3")
 Enemy = ExtResource("8_kyuqp")
-EnemyAmount = 10
+EnemyAmount = 7
 EnemySpawnInterval = 2.0
 metadata/_custom_type_script = "uid://ca6hc1lxuykiv"
 
@@ -78,7 +75,7 @@ metadata/_custom_type_script = "uid://hep76rg80iwt"
 [sub_resource type="Resource" id="Resource_ykhrp"]
 script = ExtResource("7_p3xl3")
 Enemy = ExtResource("8_kyuqp")
-EnemyAmount = 20
+EnemyAmount = 10
 EnemySpawnInterval = 1.0
 metadata/_custom_type_script = "uid://ca6hc1lxuykiv"
 
@@ -223,7 +220,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.967636, 0, 0)
 [node name="Wall4" parent="Walls" index="3" unique_id=1250776667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100.457825)
 
-[editable path="Walls"]
 [node name="Director" parent="." unique_id=1691822802 instance=ExtResource("5_206cy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.6440344)
 enemy_data = Array[ExtResource("6_n2qhd")]([SubResource("Resource_ojrxk"), SubResource("Resource_hwvuq")])
@@ -238,3 +234,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.773903, 0, -76.02341)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.40656, 0, -13.931022)
 
 [connection signal="_ready_for_next_wave" from="Director" to="Director" method="_on__ready_for_next_wave"]
+
+[editable path="Walls"]

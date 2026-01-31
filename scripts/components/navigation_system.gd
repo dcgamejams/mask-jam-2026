@@ -69,13 +69,13 @@ func update_navigation_path():
 
 # TODO: Setting & forgetting target might need to be signal emits?
 func on_search_box_body_entered(body: Node3D):
-	if body && body.is_in_group('PlayerCharacter'):
+	if body && body.is_in_group('PlayerCharacter') and timer_give_up: 
 		timer_give_up.stop()
 		parent.target = body
 		parent.set_state(parent.States.CHASING)
 
 func on_search_box_body_exited(body: Node3D):
-	if parent.target == body: 
+	if parent.target == body and timer_give_up: 
 		timer_give_up.start()
 
 func give_up():

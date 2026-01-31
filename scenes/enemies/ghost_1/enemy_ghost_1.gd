@@ -235,6 +235,8 @@ func on_hurt():
 	set_state(States.HURTING)
 	
 func on_death():
+	# TODO: #CRITICAL " DEATH PROPER
+	queue_free()
 	set_state(States.DYING)
 
 func can_attack() -> bool:
