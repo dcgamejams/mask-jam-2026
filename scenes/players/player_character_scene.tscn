@@ -402,6 +402,7 @@ cam_fov_per_state = Dictionary[String, Vector2]({
 "Walk": Vector2(90, 0.2)
 })
 forward_move_max_tilt_val = 100.0
+cam_max_v_offset = 0.05
 zoom_action = &"play_char_zoom"
 mouse_mode_action = &"play_char_mouse_mode"
 check_on_ready_if_inputs_registered = true
