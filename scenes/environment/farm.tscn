@@ -1,27 +1,26 @@
-[gd_scene format=3 uid="uid://b7camf57idnfp"]
+[gd_scene format=3 uid="uid://cow3kiecu6e17"]
 
-[ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_0id7f"]
-[ext_resource type="Texture2D" uid="uid://qr2skr1h0ddi" path="res://assets/img/Ground003_1K-JPG_Color.jpg" id="2_dvvca"]
-[ext_resource type="Texture2D" uid="uid://cxpumfbehkpgh" path="res://assets/img/Ground003_1K-JPG_NormalGL.jpg" id="3_0id7f"]
-[ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="3_ykhrp"]
-[ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/Models/House/House.glb" id="4_hwvuq"]
-[ext_resource type="Texture2D" uid="uid://c4mvird5y1dc" path="res://assets/img/Ground003_1K-JPG_Roughness.jpg" id="4_ojrxk"]
-[ext_resource type="PackedScene" uid="uid://hryrrhwq3bpx" path="res://scenes/Director.tscn" id="5_206cy"]
-[ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="5_ud7u2"]
-[ext_resource type="Script" uid="uid://hep76rg80iwt" path="res://Wave.gd" id="6_n2qhd"]
-[ext_resource type="PackedScene" uid="uid://cfwi4twmewpkt" path="res://scenes/environment/walls.tscn" id="6_ud7u2"]
-[ext_resource type="Texture2D" uid="uid://bsibwek86jhec" path="res://assets/img/forest-dist.png" id="7_dvvca"]
-[ext_resource type="Script" uid="uid://ca6hc1lxuykiv" path="res://EnemySequence.gd" id="7_p3xl3"]
-[ext_resource type="PackedScene" uid="uid://vydo5ihqeu0v" path="res://scenes/enemies/ghost_1/enemy_ghost_1.tscn" id="8_kyuqp"]
-[ext_resource type="PackedScene" uid="uid://cow3kiecu6e17" path="res://scenes/environment/farm.tscn" id="14_p3xl3"]
+[ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_0v5j5"]
+[ext_resource type="Texture2D" uid="uid://qr2skr1h0ddi" path="res://assets/img/Ground003_1K-JPG_Color.jpg" id="2_vpt6u"]
+[ext_resource type="Texture2D" uid="uid://cxpumfbehkpgh" path="res://assets/img/Ground003_1K-JPG_NormalGL.jpg" id="3_p7ptl"]
+[ext_resource type="Texture2D" uid="uid://c4mvird5y1dc" path="res://assets/img/Ground003_1K-JPG_Roughness.jpg" id="4_aj54g"]
+[ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="5_sdmqi"]
+[ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/Models/House/House.glb" id="6_6tkbu"]
+[ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="7_1l027"]
+[ext_resource type="PackedScene" uid="uid://cfwi4twmewpkt" path="res://scenes/environment/walls.tscn" id="8_wtekp"]
+[ext_resource type="Texture2D" uid="uid://bsibwek86jhec" path="res://assets/img/forest-dist.png" id="9_gm8pk"]
+[ext_resource type="PackedScene" uid="uid://hryrrhwq3bpx" path="res://scenes/Director.tscn" id="10_sycuu"]
+[ext_resource type="Script" uid="uid://hep76rg80iwt" path="res://Wave.gd" id="11_ydv3b"]
+[ext_resource type="Script" uid="uid://ca6hc1lxuykiv" path="res://EnemySequence.gd" id="12_mft7r"]
+[ext_resource type="PackedScene" uid="uid://vydo5ihqeu0v" path="res://scenes/enemies/ghost_1/enemy_ghost_1.tscn" id="13_1m5qu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
 albedo_color = Color(0.7898419, 0.7258606, 0.6907761, 1)
-albedo_texture = ExtResource("2_dvvca")
+albedo_texture = ExtResource("2_vpt6u")
 metallic_specular = 0.03
-roughness_texture = ExtResource("4_ojrxk")
+roughness_texture = ExtResource("4_aj54g")
 normal_enabled = true
-normal_texture = ExtResource("3_0id7f")
+normal_texture = ExtResource("3_p7ptl")
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gta14"]
@@ -39,7 +38,7 @@ size = Vector2(200, 200)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1bvp3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
-albedo_texture = ExtResource("3_ykhrp")
+albedo_texture = ExtResource("5_sdmqi")
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
@@ -52,7 +51,7 @@ size = Vector3(1, 7, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0id7f"]
 transparency = 1
 shading_mode = 0
-albedo_texture = ExtResource("7_dvvca")
+albedo_texture = ExtResource("9_gm8pk")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ojrxk"]
 material = SubResource("StandardMaterial3D_0id7f")
@@ -61,37 +60,37 @@ size = Vector2(200, 50)
 orientation = 0
 
 [sub_resource type="Resource" id="Resource_0id7f"]
-script = ExtResource("7_p3xl3")
-Enemy = ExtResource("8_kyuqp")
+script = ExtResource("12_mft7r")
+Enemy = ExtResource("13_1m5qu")
 EnemyAmount = 7
 EnemySpawnInterval = 2.0
 metadata/_custom_type_script = "uid://ca6hc1lxuykiv"
 
 [sub_resource type="Resource" id="Resource_ojrxk"]
-script = ExtResource("6_n2qhd")
-enemy_sequences = Array[ExtResource("7_p3xl3")]([SubResource("Resource_0id7f")])
+script = ExtResource("11_ydv3b")
+enemy_sequences = Array[ExtResource("12_mft7r")]([SubResource("Resource_0id7f")])
 SecondsTillNextWave = 15.0
 metadata/_custom_type_script = "uid://hep76rg80iwt"
 
 [sub_resource type="Resource" id="Resource_ykhrp"]
-script = ExtResource("7_p3xl3")
-Enemy = ExtResource("8_kyuqp")
+script = ExtResource("12_mft7r")
+Enemy = ExtResource("13_1m5qu")
 EnemyAmount = 10
 EnemySpawnInterval = 1.0
 metadata/_custom_type_script = "uid://ca6hc1lxuykiv"
 
 [sub_resource type="Resource" id="Resource_hwvuq"]
-script = ExtResource("6_n2qhd")
-enemy_sequences = Array[ExtResource("7_p3xl3")]([SubResource("Resource_ykhrp")])
+script = ExtResource("11_ydv3b")
+enemy_sequences = Array[ExtResource("12_mft7r")]([SubResource("Resource_ykhrp")])
 metadata/_custom_type_script = "uid://hep76rg80iwt"
 
-[node name="DemoLevel" type="Node3D" unique_id=1123410095]
+[node name="FarmLevel" type="Node3D" unique_id=1123410095]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=499851286]
 transform = Transform3D(0.7982783, 0.39898634, -0.45117822, -5.5660045e-09, 0.74910605, 0.66245013, 0.6022889, -0.5288195, 0.59799504, 0, 9.463956, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=599480204]
-environment = ExtResource("1_0id7f")
+environment = ExtResource("1_0v5j5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=732522290]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038600445, 1.9073486e-06, 0.007162094)
@@ -188,13 +187,13 @@ mesh = SubResource("BoxMesh_ig7tw")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/EnvironmentObjects/Box4" unique_id=1055686231]
 shape = SubResource("BoxShape3D_0xm2m")
 
-[node name="House" parent="NavigationRegion3D" unique_id=485721794 instance=ExtResource("4_hwvuq")]
+[node name="House" parent="NavigationRegion3D" unique_id=485721794 instance=ExtResource("6_6tkbu")]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 4.0490246, 0)
 
-[node name="Goat" parent="." unique_id=600539230 instance=ExtResource("5_ud7u2")]
+[node name="Goat" parent="." unique_id=600539230 instance=ExtResource("7_1l027")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.357613, 0.5640688, 0)
 
-[node name="Walls" parent="." unique_id=814791399 instance=ExtResource("6_ud7u2")]
+[node name="Walls" parent="." unique_id=814791399 instance=ExtResource("8_wtekp")]
 
 [node name="Wall" parent="Walls" index="0" unique_id=620629193]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.89197, 0, -5.5908813)
@@ -221,9 +220,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.967636, 0, 0)
 [node name="Wall4" parent="Walls" index="3" unique_id=1250776667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100.457825)
 
-[node name="Director" parent="." unique_id=1691822802 instance=ExtResource("5_206cy")]
+[node name="Director" parent="." unique_id=1691822802 instance=ExtResource("10_sycuu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.6440344)
-enemy_data = Array[ExtResource("6_n2qhd")]([SubResource("Resource_ojrxk"), SubResource("Resource_hwvuq")])
+enemy_data = Array[ExtResource("11_ydv3b")]([SubResource("Resource_ojrxk"), SubResource("Resource_hwvuq")])
 
 [node name="Marker3D" type="Marker3D" parent="Director" unique_id=1807946553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 57.934685)
@@ -233,8 +232,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.773903, 0, -76.02341)
 
 [node name="Marker3D3" type="Marker3D" parent="Director" unique_id=2056715884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.40656, 0, -13.931022)
-
-[node name="DemoLevel" parent="." unique_id=1685270002 instance=ExtResource("14_p3xl3")]
 
 [connection signal="_ready_for_next_wave" from="Director" to="Director" method="_on__ready_for_next_wave"]
 

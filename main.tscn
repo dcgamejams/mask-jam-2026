@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6dfmct6e0d5j"]
 
 [ext_resource type="Script" uid="uid://cdj2iwi0ancxn" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bjumh2hbls3un" path="res://scenes/environment/demo_level.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cow3kiecu6e17" path="res://scenes/environment/farm.tscn" id="2_0xm2m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 128
@@ -69,4 +69,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.655115, 0, 0)
 transform = Transform3D(0.8186512, 0, 0.57429105, 0, 1, 0, -0.57429105, 0, 0.8186512, 6.6111803, 7.5512524, 27.324368)
 cull_mask = 1047553
 
-[node name="DemoLevel" parent="." unique_id=1123410095 instance=ExtResource("2_0xm2m")]
+[node name="Farm" parent="." unique_id=1123410095 instance=ExtResource("2_0xm2m")]

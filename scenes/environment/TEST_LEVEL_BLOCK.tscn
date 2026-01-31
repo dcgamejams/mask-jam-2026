@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://biwuim2tmwqud"]
+
+[ext_resource type="PackedScene" uid="uid://cfwi4twmewpkt" path="res://scenes/environment/walls.tscn" id="1_p5fs4"]
+[ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="2_vd5di"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://scenes/players/player_character_scene.tscn" id="3_qslaw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qslaw"]
+albedo_texture = ExtResource("2_vd5di")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_75c45"]
+material = SubResource("StandardMaterial3D_qslaw")
+size = Vector2(50, 50)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qslaw"]
+
+[sub_resource type="Environment" id="Environment_qslaw"]
+
+[node name="TestLevelBlock" type="Node3D" unique_id=1028373562]
+
+[node name="Walls" parent="." unique_id=814791399 instance=ExtResource("1_p5fs4")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1446013774]
+mesh = SubResource("PlaneMesh_75c45")
+
+[node name="PlayerCharacter" parent="." unique_id=1717030456 instance=ExtResource("3_qslaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0877447, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2127272308]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1664216322]
+shape = SubResource("WorldBoundaryShape3D_qslaw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=450495991]
+environment = SubResource("Environment_qslaw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1514010381]
+transform = Transform3D(0.88762254, -0.46057165, 0, 0.3647344, 0.7029232, 0.6106291, -0.28123844, -0.54200816, 0.7919168, -2.7370405, 0, 0)

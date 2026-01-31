@@ -1,12 +1,18 @@
-[gd_scene format=3 uid="uid://bdgnr5207cbht"]
+[gd_scene format=3 uid="uid://bjumh2hbls3un"]
 
 [ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_2vmhc"]
-[ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="1_etyyu"]
+[ext_resource type="Script" uid="uid://hep76rg80iwt" path="res://Wave.gd" id="1_4nk08"]
 [ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="2_fxo6y"]
+[ext_resource type="Texture2D" uid="uid://qr2skr1h0ddi" path="res://assets/img/Ground003_1K-JPG_Color.jpg" id="2_iugom"]
 [ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/Models/House/House.glb" id="4_gta14"]
+[ext_resource type="PackedScene" uid="uid://hryrrhwq3bpx" path="res://scenes/Director.tscn" id="6_ud7u2"]
+[ext_resource type="Script" uid="uid://ca6hc1lxuykiv" path="res://EnemySequence.gd" id="7_0id7f"]
+[ext_resource type="PackedScene" uid="uid://vydo5ihqeu0v" path="res://scenes/enemies/ghost_1/enemy_ghost_1.tscn" id="8_ojrxk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
-albedo_texture = ExtResource("1_etyyu")
+albedo_color = Color(0.6862745, 0.5372549, 0.52156866, 1)
+albedo_texture = ExtResource("2_iugom")
+uv1_scale = Vector3(0.05, 0.1, 0.1)
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gta14"]
@@ -33,6 +39,31 @@ size = Vector3(1, 7, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(1, 7, 1)
+
+[sub_resource type="Resource" id="Resource_0id7f"]
+script = ExtResource("7_0id7f")
+Enemy = ExtResource("8_ojrxk")
+EnemyAmount = 10
+EnemySpawnInterval = 2.0
+metadata/_custom_type_script = "uid://ca6hc1lxuykiv"
+
+[sub_resource type="Resource" id="Resource_ojrxk"]
+script = ExtResource("1_4nk08")
+enemy_sequences = Array[ExtResource("7_0id7f")]([SubResource("Resource_0id7f")])
+SecondsTillNextWave = 15.0
+metadata/_custom_type_script = "uid://hep76rg80iwt"
+
+[sub_resource type="Resource" id="Resource_ykhrp"]
+script = ExtResource("7_0id7f")
+Enemy = ExtResource("8_ojrxk")
+EnemyAmount = 20
+EnemySpawnInterval = 1.0
+metadata/_custom_type_script = "uid://ca6hc1lxuykiv"
+
+[sub_resource type="Resource" id="Resource_hwvuq"]
+script = ExtResource("1_4nk08")
+enemy_sequences = Array[ExtResource("7_0id7f")]([SubResource("Resource_ykhrp")])
+metadata/_custom_type_script = "uid://hep76rg80iwt"
 
 [node name="DemoLevel" type="Node3D" unique_id=1123410095]
 
@@ -139,3 +170,18 @@ shape = SubResource("BoxShape3D_0xm2m")
 
 [node name="House" parent="NavigationRegion3D" unique_id=485721794 instance=ExtResource("4_gta14")]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 4.0490246, 0)
+
+[node name="Director" parent="." unique_id=1691822802 instance=ExtResource("6_ud7u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.6440344)
+enemy_data = Array[ExtResource("1_4nk08")]([SubResource("Resource_ojrxk"), SubResource("Resource_hwvuq")])
+
+[node name="Marker3D" type="Marker3D" parent="Director" unique_id=1807946553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.170586)
+
+[node name="Marker3D2" type="Marker3D" parent="Director" unique_id=1426284269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.773903, 0, -124.4759)
+
+[node name="Marker3D3" type="Marker3D" parent="Director" unique_id=2056715884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.40656, 0, -13.931022)
+
+[connection signal="_ready_for_next_wave" from="Director" to="Director" method="_on__ready_for_next_wave"]
