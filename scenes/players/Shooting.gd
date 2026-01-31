@@ -52,7 +52,7 @@ func fire_manual_raycast():
 		if result.collider is Enemy:
 			var enemy: Enemy = result.collider
 			print("Hit: ", result.collider.name)
-			enemy.health_system.damage(20)
+			enemy.health_system.damage(100)
 
 
 
