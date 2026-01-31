@@ -7,16 +7,15 @@
 [ext_resource type="Script" uid="uid://c4skioddhqatw" path="res://scenes/players/StateMachine/dash_state_script.gd" id="11_khex2"]
 [ext_resource type="Script" uid="uid://bq1stj2mujnp2" path="res://scenes/players/StateMachine/wallrun_state_script.gd" id="12_5fuve"]
 [ext_resource type="Shader" uid="uid://b34228uop3gdf" path="res://scenes/players/Shaders/speed_lines_shader.gdshader" id="14_jv0i6"]
-[ext_resource type="Script" path="res://scenes/players/Shooting.gd" id="14_m644i"]
+[ext_resource type="Script" uid="uid://cq6ke8dw5t6nb" path="res://scenes/players/Shooting.gd" id="14_m644i"]
 [ext_resource type="PackedScene" uid="uid://d05w7k8wtngv2" path="res://scenes/Weapons/super_shotgun.tscn" id="15_m644i"]
 [ext_resource type="Script" uid="uid://dx02l6p6behb8" path="res://scenes/players/UI/hud_script.gd" id="16_5jm78"]
-[ext_resource type="Texture2D" uid="uid://dv747ov6fcrsg" path="res://addons/Arts/crosshair.png" id="16_gfbru"]
 [ext_resource type="PackedScene" uid="uid://ci0wuvhky4vnj" path="res://assets/Models/stoneMaskV2.glb" id="16_xq8ws"]
 [ext_resource type="Script" uid="uid://d5jl3b0hfehw" path="res://scripts/components/health_system.gd" id="17_427iv"]
 [ext_resource type="Theme" uid="uid://b3kq74llqlv3x" path="res://assets/theme/MinimalUI4/MinimalUI.tres" id="18_m644i"]
 [ext_resource type="PackedScene" uid="uid://lm4alclh6bt3" path="res://assets/theme/controls.tscn" id="19_xq8ws"]
 [ext_resource type="Script" uid="uid://didxq4aqwvnqm" path="res://scenes/players/player_ui.gd" id="19_y85m3"]
-[ext_resource type="PackedScene" path="res://assets/theme/hurt_texture.tscn" id="19_yrqow"]
+[ext_resource type="PackedScene" uid="uid://cmffu3ggwm1dr" path="res://assets/theme/hurt_texture.tscn" id="19_yrqow"]
 [ext_resource type="Script" uid="uid://sca7ypsol83f" path="res://scenes/players/StateMachine/state_machine_script.gd" id="54_e0r17"]
 [ext_resource type="Script" uid="uid://stil4xkf3tk0" path="res://scenes/players/StateMachine/idle_state_script.gd" id="55_dayh2"]
 [ext_resource type="Script" uid="uid://blt7dest23fk0" path="res://scenes/players/StateMachine/walk_state_script.gd" id="56_w3td4"]
@@ -877,6 +876,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CompressedTexture2D_m644i")
 
+[node name="AmmoCount" type="Label" parent="HUD" unique_id=83805021]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.9990001
+anchor_top = 1.0
+anchor_right = 0.9990001
+anchor_bottom = 1.0
+offset_left = -487.08008
+offset_top = -223.0
+offset_right = -0.080078125
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 182
+text = "10/10"
+
 [node name="PlayerUI" type="CanvasLayer" parent="." unique_id=2010144729 node_paths=PackedStringArray("health")]
 script = ExtResource("19_y85m3")
 health = NodePath("../HealthSystem")
@@ -917,19 +930,6 @@ offset_top = 20.0
 offset_right = 226.0
 offset_bottom = 404.0
 
-[node name="AmmoCount" type="Label" parent="HUD" unique_id=83805021]
-unique_name_in_owner = true
-anchors_preset = -1
-anchor_left = 0.9990001
-anchor_top = 1.0
-anchor_right = 0.9990001
-anchor_bottom = 1.0
-offset_left = -487.08008
-offset_top = -223.0
-offset_right = -0.080078125
-offset_bottom = 26.0
-theme_override_font_sizes/font_size = 182
-text = "10/10"
 [node name="BottomLeft" type="MarginContainer" parent="PlayerUI/Control" unique_id=1964443869]
 layout_mode = 1
 anchors_preset = 2
