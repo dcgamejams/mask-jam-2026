@@ -22,6 +22,9 @@ _data = {
 &"new_animation": SubResource("Animation_ca8pr")
 }
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_j1tbm"]
+height = 0.2
+
 [node name="EnemyGhost1" type="CharacterBody3D" unique_id=427302985 node_paths=PackedStringArray("animation_player", "health_system", "nav", "nav_agent", "search_box", "attack_box")]
 script = ExtResource("1_j1tbm")
 animation_player = NodePath("AnimationPlayer")
@@ -69,3 +72,19 @@ search_box = NodePath("../SearchBox")
 
 [node name="Sketchfab_Scene" parent="." unique_id=2083895909 instance=ExtResource("4_qp7ua")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041427255, 0)
+
+[node name="ghost_Material #19442_0" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" parent_id_path=PackedInt32Array(2083895909, 1755810353) index="0" unique_id=1622544883]
+layers = 512
+
+[node name="ghost_Material #19443_0" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" parent_id_path=PackedInt32Array(2083895909, 1755810353) index="1" unique_id=1464145499]
+layers = 512
+
+[node name="ghost_Material #19441_0" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" parent_id_path=PackedInt32Array(2083895909, 1755810353) index="2" unique_id=294736173]
+layers = 512
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=103209726]
+transform = Transform3D(1, 0, 0, 0, -0.017609445, 0.99984497, 0, -0.99984497, -0.017609445, 0, 2.2572672, -0.6309147)
+layers = 0
+mesh = SubResource("CylinderMesh_j1tbm")
+
+[editable path="Sketchfab_Scene"]
