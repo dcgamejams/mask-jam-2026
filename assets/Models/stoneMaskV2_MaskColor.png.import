@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://babfjhwebxbuw"
-path.s3tc="res://.godot/imported/House_red_brick_diff_1k.jpg-ffb5befb0525c6950f489dad654cee3a.s3tc.ctex"
+uid="uid://bdy7dwsmwws08"
+path.s3tc="res://.godot/imported/stoneMaskV2_MaskColor.png-9515be3c54540ce08e3dc23120acb106.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "bfe2ee49fae6bb7f1ef2200f34fd8813"
+"md5": "0fc4488a04c4e4509759dd937c18a3d9"
 }
 
 [deps]
 
-source_file="res://assets/Models/House/House_red_brick_diff_1k.jpg"
-dest_files=["res://.godot/imported/House_red_brick_diff_1k.jpg-ffb5befb0525c6950f489dad654cee3a.s3tc.ctex"]
+source_file="res://assets/Models/stoneMaskV2_MaskColor.png"
+dest_files=["res://.godot/imported/stoneMaskV2_MaskColor.png-9515be3c54540ce08e3dc23120acb106.s3tc.ctex"]
 
 [params]
 

@@ -76,6 +76,13 @@ var state : String
 @onready var camera : Camera3D = $Camera
 @onready var play_char : PlayerCharacter = $".."
 @onready var hud : CanvasLayer = $"../HUD"
+@onready var stone_mask: Node3D = $Camera/stoneMask
+@onready var mask_on_position: Node3D = $Camera/MaskOnPosition
+@onready var mask_off_position: Node3D = $Camera/MaskOffPosition
+
+@export var maskAnimationTime: float = 0.5
+
+var maskTween : Tween
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #set mouse mode as captured
@@ -83,6 +90,8 @@ func _ready() -> void:
 	camera.fov = fov
 	
 	input_actions_check()
+		
+		
 	
 func input_actions_check() -> void:	
 	if check_on_ready_if_inputs_registered:
@@ -98,6 +107,7 @@ func input_actions_check() -> void:
 			if not registered_input_actions.has(input_action):
 				assert(false, "%s missing in InputMap, or input action wrongly named in the editor" % input_action)
 				
+
 func _unhandled_input(event) -> void:
 	#manage camera rotation (360 on x axis, blocked at specified values on y axis, to not having the character do a complete head turn, which will be kinda weird)
 	if event is InputEventMouseMotion:
@@ -116,6 +126,26 @@ func _process(delta : float) -> void:
 	zoom()
 	
 	mouse_mode()
+	
+	handle_mask()
+	
+func handle_mask():
+	if Input.is_action_just_pressed("put_on_mask"):
+		if maskTween:
+			maskTween.kill()
+		maskTween = create_tween()
+		maskTween.tween_property(stone_mask,"transform", mask_on_position.transform, maskAnimationTime).set_ease(Tween.EASE_IN)
+		maskTween.tween_callback(
+			func(): 
+				camera.cull_mask = (1 << 0) | (1 << 9)
+		)
+		
+	elif Input.is_action_just_released("put_on_mask"):
+		if maskTween:
+			maskTween.kill()
+		maskTween = create_tween()
+		maskTween.tween_property(stone_mask,"transform", mask_off_position.transform, maskAnimationTime).set_ease(Tween.EASE_OUT)
+		camera.cull_mask = 1 << 0
 	
 func tilt(delta : float) -> void:
 	if state != "Fly" and state != "Slide" and state != "Wallrun":
