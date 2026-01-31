@@ -2,21 +2,34 @@
 
 [ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_2vmhc"]
 [ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="1_etyyu"]
+[ext_resource type="Texture2D" uid="uid://qr2skr1h0ddi" path="res://assets/img/Ground003_1K-JPG_Color.jpg" id="2_dvvca"]
 [ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="2_fxo6y"]
+[ext_resource type="Texture2D" uid="uid://cxpumfbehkpgh" path="res://assets/img/Ground003_1K-JPG_NormalGL.jpg" id="3_0id7f"]
 [ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/Models/House/House.glb" id="4_gta14"]
 [ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="5_ud7u2"]
+[ext_resource type="Texture2D" uid="uid://c4mvird5y1dc" path="res://assets/img/Ground003_1K-JPG_Roughness.jpg" id="4_ojrxk"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
-albedo_texture = ExtResource("1_etyyu")
-uv1_triplanar = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykhrp"]
+albedo_color = Color(0.8, 0.8039216, 0.7294118, 1)
+albedo_texture = ExtResource("2_dvvca")
+metallic_specular = 0.08
+roughness_texture = ExtResource("4_ojrxk")
+normal_enabled = true
+normal_texture = ExtResource("3_0id7f")
+uv1_scale = Vector3(2500, 2500, 2500)
+uv2_scale = Vector3(1000, 1000, 1000)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gta14"]
-material = SubResource("StandardMaterial3D_0xm2m")
+material = SubResource("StandardMaterial3D_ykhrp")
 size = Vector2(15000, 15000)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_etyyu"]
 vertices = PackedVector3Array(-18.75, 0.46140045, 3.25, -17.25, 0.46140045, 3.25, -10, 0.46140045, -10.25, -10, 0.46140045, -11.75, -74.5, 0.46140045, 4.25, -9, 0.46140045, -74.5, -74.5, 0.46140045, -74.5, -19, 0.46140045, 4.25, -9, 0.46140045, -12, -8, 0.46140045, -12, 1.75, 0.46140045, -13, 1.75, 0.46140045, -14.5, 3.25, 0.46140045, -74.5, 3.5, 0.46140045, -14.75, 4, 0.46140045, -14.25, 14.5, 0.46140045, -17.5, 14, 0.46140045, -17.75, 14, 0.46140045, -19.5, 15.25, 0.46140045, -74.5, 15.25, 0.46140045, -19.75, 16, 0.46140045, -19.75, 16.25, 0.46140045, -18.75, 74.5, 0.46140045, -18.75, 74.5, 0.46140045, -74.5, 7.25, 0.46140045, -2.5, 6.25, 0.46140045, -2.25, 6.25, 0.46140045, -1, 7.25, 0.46140045, -0.75, 20.5, 0.46140045, 5, 20.75, 0.46140045, 6.25, 74.5, 0.46140045, 6.25, 4, 0.46140045, -12.75, 3, 0.46140045, -12.5, 3, 0.46140045, -6.75, 7.25, 0.46140045, -6.5, 18.75, 0.46140045, 5, 16, 0.46140045, -17.5, 7, 0.46140045, 3.5, -7.75, 0.46140045, -10, -8.25, 0.46140045, -9.75, -4.75, 0.46140045, -6.25, -4.5, 0.46140045, -6.75, 2, 0.46140045, -12.5, -9.75, 0.46140045, -9.75, -4.75, 0.46140045, 3.5, -16.75, 0.46140045, 3.75, 5.25, 0.46140045, -2.5, 5.25, 0.46140045, -0.75, -2.75, 0.46140045, -4.25, -2.75, 0.46140045, 2, 5.25, 0.46140045, -4.5, 5.25, 0.46140045, 1.75, -5.75, 14.9614, -1, -5.75, 9.2114, 6, 8.25, 9.2114, 6, 8.25, 14.9614, -1, 8.5, 0.46140045, 12.75, 8.5, 0.46140045, 11.25, 6.5, 0.46140045, 4, -16.75, 0.46140045, 5.25, -4.5, 0.46140045, 4, -18, 0.46140045, 5.5, 9.75, 0.46140045, 74.5, 9.75, 0.46140045, 13, -18, 0.46140045, 74.5, 8.75, 0.46140045, 10.75, 10.5, 0.46140045, 10.75, 10.75, 0.46140045, 11.25, 19, 0.46140045, 7.25, 18.5, 0.46140045, 7, -19, 0.46140045, 5.25, -74.5, 0.46140045, 74.5, 10.75, 0.46140045, 12.75, 20.5, 0.46140045, 7.25, 74.5, 0.46140045, 74.5)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(0, 4, 3), PackedInt32Array(3, 4, 5), PackedInt32Array(5, 4, 6), PackedInt32Array(0, 7, 4), PackedInt32Array(5, 8, 3), PackedInt32Array(11, 10, 9), PackedInt32Array(9, 8, 11), PackedInt32Array(11, 8, 5), PackedInt32Array(11, 5, 12), PackedInt32Array(11, 12, 13), PackedInt32Array(16, 15, 14), PackedInt32Array(14, 13, 16), PackedInt32Array(16, 13, 17), PackedInt32Array(18, 17, 12), PackedInt32Array(12, 17, 13), PackedInt32Array(17, 18, 19), PackedInt32Array(20, 19, 18), PackedInt32Array(20, 18, 21), PackedInt32Array(21, 18, 22), PackedInt32Array(22, 18, 23), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 27), PackedInt32Array(28, 21, 29), PackedInt32Array(29, 21, 30), PackedInt32Array(30, 21, 22), PackedInt32Array(32, 31, 33), PackedInt32Array(33, 31, 34), PackedInt32Array(35, 24, 28), PackedInt32Array(28, 24, 34), PackedInt32Array(28, 34, 36), PackedInt32Array(31, 14, 34), PackedInt32Array(34, 14, 15), PackedInt32Array(34, 15, 36), PackedInt32Array(28, 36, 21), PackedInt32Array(35, 37, 27), PackedInt32Array(35, 27, 24), PackedInt32Array(41, 40, 38), PackedInt32Array(38, 40, 39), PackedInt32Array(42, 33, 10), PackedInt32Array(10, 33, 41), PackedInt32Array(10, 41, 38), PackedInt32Array(10, 38, 9), PackedInt32Array(42, 32, 33), PackedInt32Array(39, 40, 43), PackedInt32Array(43, 40, 44), PackedInt32Array(45, 1, 44), PackedInt32Array(44, 1, 43), PackedInt32Array(43, 1, 2), PackedInt32Array(26, 47, 25), PackedInt32Array(25, 47, 46), PackedInt32Array(46, 47, 48), PackedInt32Array(48, 47, 49), PackedInt32Array(48, 50, 46), PackedInt32Array(47, 51, 49), PackedInt32Array(55, 54, 52), PackedInt32Array(52, 54, 53), PackedInt32Array(58, 57, 56), PackedInt32Array(59, 45, 44), PackedInt32Array(44, 60, 59), PackedInt32Array(59, 60, 61), PackedInt32Array(56, 63, 62), PackedInt32Array(58, 56, 60), PackedInt32Array(60, 56, 61), PackedInt32Array(61, 56, 62), PackedInt32Array(61, 62, 64), PackedInt32Array(65, 57, 58), PackedInt32Array(58, 37, 65), PackedInt32Array(65, 37, 66), PackedInt32Array(69, 68, 67), PackedInt32Array(66, 37, 67), PackedInt32Array(67, 37, 69), PackedInt32Array(69, 37, 35), PackedInt32Array(4, 7, 70), PackedInt32Array(70, 61, 4), PackedInt32Array(4, 61, 64), PackedInt32Array(4, 64, 71), PackedInt32Array(67, 68, 72), PackedInt32Array(72, 68, 73), PackedInt32Array(73, 30, 72), PackedInt32Array(72, 30, 62), PackedInt32Array(62, 30, 74), PackedInt32Array(73, 29, 30), PackedInt32Array(62, 63, 72)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
+albedo_texture = ExtResource("1_etyyu")
+uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h2yge"]
 material = SubResource("StandardMaterial3D_0xm2m")
@@ -44,7 +57,7 @@ transform = Transform3D(0.7982783, 0.39898634, -0.45117822, -5.5660045e-09, 0.74
 environment = ExtResource("1_2vmhc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=732522290]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038600445, 1.9073486e-06, 0.007162094)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039, -0.345, 0.007)
 mesh = SubResource("PlaneMesh_gta14")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=689863502]
@@ -52,6 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038600445, 1.9073486e-06, 
 navigation_mesh = SubResource("NavigationMesh_etyyu")
 
 [node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1261701883]
+visible = false
 collision_layer = 255
 collision_mask = 255
 
