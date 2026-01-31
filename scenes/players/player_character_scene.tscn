@@ -343,9 +343,10 @@ slide_action = &"play_char_slide"
 dash_action = &"play_char_dash"
 fly_action = &"play_char_fly"
 
-[node name="StateMachine" type="Node" parent="." unique_id=1651316052 node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=1651316052 node_paths=PackedStringArray("initial_state", "play_char")]
 script = ExtResource("54_e0r17")
 initial_state = NodePath("IdleState")
+play_char = NodePath("..")
 
 [node name="IdleState" type="Node" parent="StateMachine" unique_id=1774723637]
 script = ExtResource("55_dayh2")
@@ -406,7 +407,7 @@ mouse_mode_action = &"play_char_mouse_mode"
 check_on_ready_if_inputs_registered = true
 maskAnimationTime = 0.15
 
-[node name="Camera" type="Camera3D" parent="CameraHolder" unique_id=414187517]
+[node name="Camera" type="Camera3D" parent="CameraHolder" unique_id=414187517 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 cull_mask = 1
 current = true
@@ -414,6 +415,7 @@ fov = 90.0
 near = 0.01
 far = 1000.0
 script = ExtResource("14_m644i")
+player = NodePath("../..")
 
 [node name="CameraBasedRaycasts" type="Node3D" parent="CameraHolder/Camera" unique_id=1892316695]
 
@@ -970,4 +972,5 @@ value = 50.0
 show_percentage = false
 
 [connection signal="change_fov" from="StateMachine" to="CameraHolder" method="change_fov"]
+[connection signal="ready" from="StateMachine" to="." method="_on_state_machine_ready"]
 [connection signal="ShootingAnimationFinished" from="CameraHolder/Camera/SuperShotgun" to="CameraHolder/Camera" method="_on_super_shotgun_shooting_animation_finished"]

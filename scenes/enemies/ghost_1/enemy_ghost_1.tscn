@@ -13,12 +13,50 @@ size = Vector3(30, 3, 30)
 [sub_resource type="SphereShape3D" id="SphereShape3D_8fdcm"]
 radius = 0.6
 
+[sub_resource type="Animation" id="Animation_uvqya"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sketchfab_Scene:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j1tbm"]
+resource_name = "dying"
+step = 0.0333333
+
+[sub_resource type="Animation" id="Animation_ip34o"]
+resource_name = "hurt"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sketchfab_Scene:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_ca8pr"]
 resource_name = "new_animation"
 step = 0.0333333
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3tcfh"]
 _data = {
+&"RESET": SubResource("Animation_uvqya"),
+&"dying": SubResource("Animation_j1tbm"),
+&"hurt": SubResource("Animation_ip34o"),
 &"new_animation": SubResource("Animation_ca8pr")
 }
 

@@ -7,7 +7,6 @@ class_name PlayerCharacter
 
 var immobile = false
 
-
 # WARNING: DO NOT UN-COLLAPSE. USE SIDEBAR on Character
 #region vars
 
@@ -194,6 +193,7 @@ func _ready() -> void:
 	init_game_logic()
 	
 func input_actions_check() -> void:
+
 	#check if the input actions written in the editor are the same as the ones registered in the Input map, and if they are written correctly
 	#if not, stop the program with an assert
 	if check_on_ready_if_inputs_registered:
@@ -211,15 +211,10 @@ func input_actions_check() -> void:
 				
 func _process(delta: float) -> void:
 	wallrun_timer(delta)
-	
 	slide_timer(delta)
-
 	dash_timer(delta)
 	
 func _physics_process(_delta: float) -> void:
-	if immobile:
-		return
-		
 	modify_physics_properties()
 
 	move_and_slide()
@@ -309,3 +304,7 @@ func on_player_die():
 	
 	await get_tree().create_timer(5).timeout
 	queue_free()
+
+
+func _on_state_machine_ready() -> void:
+	pass # Replace with function body.
