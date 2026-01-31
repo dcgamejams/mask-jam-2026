@@ -6,8 +6,6 @@
 [ext_resource type="Script" uid="uid://hc1xroood24q" path="res://scenes/players/StateMachine/slide_state_script.gd" id="10_poibi"]
 [ext_resource type="Script" uid="uid://c4skioddhqatw" path="res://scenes/players/StateMachine/dash_state_script.gd" id="11_khex2"]
 [ext_resource type="Script" uid="uid://bq1stj2mujnp2" path="res://scenes/players/StateMachine/wallrun_state_script.gd" id="12_5fuve"]
-[ext_resource type="LabelSettings" uid="uid://bs0stms0b56kp" path="res://addons/Arts/label_settings.tres" id="14_gfbru"]
-[ext_resource type="PackedScene" uid="uid://iuyxtc76xf2j" path="res://scenes/Weapons/Weapon_SuperShotgun.tscn" id="14_jtj0t"]
 [ext_resource type="Shader" uid="uid://b34228uop3gdf" path="res://scenes/players/Shaders/speed_lines_shader.gdshader" id="14_jv0i6"]
 [ext_resource type="Script" path="res://scenes/players/Shooting.gd" id="14_m644i"]
 [ext_resource type="PackedScene" uid="uid://d05w7k8wtngv2" path="res://scenes/Weapons/super_shotgun.tscn" id="15_m644i"]
