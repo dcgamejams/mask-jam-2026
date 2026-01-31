@@ -1,17 +1,21 @@
 [gd_scene format=3 uid="uid://baj8m7u6tlib5"]
 
+[ext_resource type="Texture2D" uid="uid://c0l50tpjanqh3" path="res://assets/img/NightSkyHDRI008_1K/NightSkyHDRI008_1K_TONEMAPPED.jpg" id="1_2vmhc"]
 [ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="1_etyyu"]
 [ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="2_fxo6y"]
 [ext_resource type="PackedScene" uid="uid://l43asw5c75x0" path="res://scenes/enemies/enemy_1.tscn" id="3_fxo6y"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1bvp3"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0bg5e"]
+panorama = ExtResource("1_2vmhc")
 
 [sub_resource type="Sky" id="Sky_lquwl"]
-sky_material = SubResource("ProceduralSkyMaterial_1bvp3")
+sky_material = SubResource("PanoramaSkyMaterial_0bg5e")
 
 [sub_resource type="Environment" id="Environment_7mycd"]
 background_mode = 2
 sky = SubResource("Sky_lquwl")
+fog_enabled = true
+fog_sky_affect = 0.235
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_etyyu"]
 vertices = PackedVector3Array(-5.25, 0.46037483, -2.75, -3.75, 0.46037483, -2.75, 1.75, 0.46037483, -13, 1.75, 0.46037483, -14.5, 2.75, 0.46037483, -49.5, -49.5, 0.46037483, -49.5, -49.5, 0.46037483, -2.25, 2.75, 0.46037483, -14.75, -5.5, 0.46037483, -2.25, 3.75, 0.46037483, -14.75, 4, 0.46037483, -13.75, 8, 0.46037483, -13.75, 8.25, 0.46037483, -14.75, 9.25, 0.46037483, -49.5, 9.25, 0.46037483, -14.75, 10, 0.46037483, -14.75, 10.25, 0.46037483, -13.75, 49.5, 0.46037483, -13.75, 49.5, 0.46037483, -49.5, 8.25, 0.46037483, -12.5, 3.75, 0.46037483, -12.5, 2, 0.46037483, -12.5, -3.25, 0.46037483, -2.5, -3.25, 0.46037483, -1, 12.25, 0.46037483, -0.75, 12.75, 0.46037483, -1, 10.25, 0.46037483, -13, 10, 0.46037483, -12.5, 14.25, 0.46037483, -1, 49.5, 0.46037483, 0, 14.5, 0.46037483, 0, -7, 0.46037483, 3.25, -5.5, 0.46037483, 3.25, -5.25, 0.46037483, -0.5, -49.5, 0.46037483, 4.5, -7.25, 0.46037483, 4.5, -5, 0.46037483, 3.5, -3.5, 0.46037483, -0.5, 12.5, 0.46037483, 5, 12.75, 0.46037483, 1.25, 12.25, 0.46037483, 1, 10.75, 0.46037483, 5, -5, 0.46037483, 5.25, 10.5, 0.46037483, 5.5, 14.25, 0.46037483, 1.25, 12.75, 0.46037483, 5.5, 49.5, 0.46037483, 5.75, -7.25, 0.46037483, 5.25, -6.25, 0.46037483, 5.5, -49.5, 0.46037483, 49.5, -6.25, 0.46037483, 49.5, 10.5, 0.46037483, 7, 11.75, 0.46037483, 49.5, 11.75, 0.46037483, 7.25, 12.75, 0.46037483, 7, 49.5, 0.46037483, 49.5)
@@ -45,6 +49,7 @@ environment = SubResource("Environment_7mycd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1059040196]
 transform = Transform3D(0.9987158, 0.050662667, 4.179207e-09, -0.04190509, 0.8260772, 0.56199676, 0.028472254, -0.56127506, 0.82713944, 0, 2.9998417, 3.019578)
+light_energy = 0.0
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=689863502]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038600445, 1.9073486e-06, 0.007162094)

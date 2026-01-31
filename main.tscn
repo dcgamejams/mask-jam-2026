@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6dfmct6e0d5j"]
 
 [ext_resource type="PackedScene" uid="uid://baj8m7u6tlib5" path="res://scenes/demo_level.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://scenes/players/player_character_scene.tscn" id="4_1bvp3"]
 
 [node name="Node3D" type="Node3D" unique_id=60408776]
 

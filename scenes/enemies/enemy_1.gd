@@ -19,9 +19,8 @@ func _physics_process(delta: float) -> void:
 
 	# As good practice, you should replace UI actions with custom gameplay actions.
 
-	velocity.x = Vector3.ONE.x * SPEED
-	velocity.z = Vector3.ONE.z * SPEED
-		#velocity.x = move_toward(velocity.x, 0, SPEED)
-		#velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	velocity.x = move_toward(Vector3.ZERO.x, 2.0, SPEED)
+	velocity.z = move_toward(Vector3.ZERO.z, 2.0, SPEED)
+	
+	look_at(Vector3.ZERO)
 	move_and_slide()
