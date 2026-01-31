@@ -1,20 +1,16 @@
-[gd_scene format=3 uid="uid://baj8m7u6tlib5"]
+[gd_scene format=3 uid="uid://bjumh2hbls3un"]
 
-[ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_2vmhc"]
-[ext_resource type="Script" uid="uid://hep76rg80iwt" path="res://Wave.gd" id="1_4nk08"]
-[ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="1_etyyu"]
-[ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="2_fxo6y"]
-[ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/Models/House/House.glb" id="4_gta14"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="5_ud7u2"]
-=======
-[ext_resource type="PackedScene" uid="uid://hryrrhwq3bpx" path="res://scenes/Director.tscn" id="6_ud7u2"]
-[ext_resource type="Script" uid="uid://ca6hc1lxuykiv" path="res://EnemySequence.gd" id="7_0id7f"]
-[ext_resource type="PackedScene" uid="uid://vydo5ihqeu0v" path="res://scenes/enemies/ghost_1/enemy_ghost_1.tscn" id="8_ojrxk"]
->>>>>>> Stashed changes
+[ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_0id7f"]
+[ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="2_ojrxk"]
+[ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="3_ykhrp"]
+[ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/Models/House/House.glb" id="4_hwvuq"]
+[ext_resource type="PackedScene" uid="uid://hryrrhwq3bpx" path="res://scenes/Director.tscn" id="5_206cy"]
+[ext_resource type="Script" uid="uid://hep76rg80iwt" path="res://Wave.gd" id="6_n2qhd"]
+[ext_resource type="Script" uid="uid://ca6hc1lxuykiv" path="res://EnemySequence.gd" id="7_p3xl3"]
+[ext_resource type="PackedScene" uid="uid://vydo5ihqeu0v" path="res://scenes/enemies/ghost_1/enemy_ghost_1.tscn" id="8_kyuqp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
-albedo_texture = ExtResource("1_etyyu")
+albedo_texture = ExtResource("2_ojrxk")
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gta14"]
@@ -32,7 +28,7 @@ size = Vector2(150, 150)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1bvp3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
-albedo_texture = ExtResource("2_fxo6y")
+albedo_texture = ExtResource("3_ykhrp")
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
@@ -43,28 +39,28 @@ size = Vector3(1, 7, 1)
 size = Vector3(1, 7, 1)
 
 [sub_resource type="Resource" id="Resource_0id7f"]
-script = ExtResource("7_0id7f")
-Enemy = ExtResource("8_ojrxk")
+script = ExtResource("7_p3xl3")
+Enemy = ExtResource("8_kyuqp")
 EnemyAmount = 10
 EnemySpawnInterval = 2.0
 metadata/_custom_type_script = "uid://ca6hc1lxuykiv"
 
 [sub_resource type="Resource" id="Resource_ojrxk"]
-script = ExtResource("1_4nk08")
-enemy_sequences = Array[ExtResource("7_0id7f")]([SubResource("Resource_0id7f")])
+script = ExtResource("6_n2qhd")
+enemy_sequences = Array[ExtResource("7_p3xl3")]([SubResource("Resource_0id7f")])
 SecondsTillNextWave = 15.0
 metadata/_custom_type_script = "uid://hep76rg80iwt"
 
 [sub_resource type="Resource" id="Resource_ykhrp"]
-script = ExtResource("7_0id7f")
-Enemy = ExtResource("8_ojrxk")
+script = ExtResource("7_p3xl3")
+Enemy = ExtResource("8_kyuqp")
 EnemyAmount = 20
 EnemySpawnInterval = 1.0
 metadata/_custom_type_script = "uid://ca6hc1lxuykiv"
 
 [sub_resource type="Resource" id="Resource_hwvuq"]
-script = ExtResource("1_4nk08")
-enemy_sequences = Array[ExtResource("7_0id7f")]([SubResource("Resource_ykhrp")])
+script = ExtResource("6_n2qhd")
+enemy_sequences = Array[ExtResource("7_p3xl3")]([SubResource("Resource_ykhrp")])
 metadata/_custom_type_script = "uid://hep76rg80iwt"
 
 [node name="DemoLevel" type="Node3D" unique_id=1123410095]
@@ -73,11 +69,12 @@ metadata/_custom_type_script = "uid://hep76rg80iwt"
 transform = Transform3D(0.7982783, 0.39898634, -0.45117822, -5.5660045e-09, 0.74910605, 0.66245013, 0.6022889, -0.5288195, 0.59799504, 0, 9.463956, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=599480204]
-environment = ExtResource("1_2vmhc")
+environment = ExtResource("1_0id7f")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=732522290]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038600445, 1.9073486e-06, 0.007162094)
 mesh = SubResource("PlaneMesh_gta14")
+metadata/_edit_lock_ = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=689863502]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038600445, 1.9073486e-06, 0.007162094)
@@ -169,25 +166,20 @@ mesh = SubResource("BoxMesh_ig7tw")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/EnvironmentObjects/Box4" unique_id=1055686231]
 shape = SubResource("BoxShape3D_0xm2m")
 
-[node name="House" parent="NavigationRegion3D" unique_id=485721794 instance=ExtResource("4_gta14")]
+[node name="House" parent="NavigationRegion3D" unique_id=485721794 instance=ExtResource("4_hwvuq")]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 4.0490246, 0)
 
-<<<<<<< Updated upstream
-[node name="Goat" parent="." unique_id=600539230 instance=ExtResource("5_ud7u2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.357613, 0.5640688, 0)
-=======
-[node name="Director" parent="." unique_id=1691822802 instance=ExtResource("6_ud7u2")]
+[node name="Director" parent="." unique_id=1691822802 instance=ExtResource("5_206cy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.6440344)
-enemy_data = Array[ExtResource("1_4nk08")]([SubResource("Resource_ojrxk"), SubResource("Resource_hwvuq")])
+enemy_data = Array[ExtResource("6_n2qhd")]([SubResource("Resource_ojrxk"), SubResource("Resource_hwvuq")])
 
 [node name="Marker3D" type="Marker3D" parent="Director" unique_id=1807946553]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.170586)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 57.934685)
 
 [node name="Marker3D2" type="Marker3D" parent="Director" unique_id=1426284269]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.773903, 0, -124.4759)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.773903, 0, -76.02341)
 
 [node name="Marker3D3" type="Marker3D" parent="Director" unique_id=2056715884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.40656, 0, -13.931022)
 
 [connection signal="_ready_for_next_wave" from="Director" to="Director" method="_on__ready_for_next_wave"]
->>>>>>> Stashed changes

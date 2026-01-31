@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://baj8m7u6tlib5"]
+[gd_scene format=3 uid="uid://cvar5grsknp3"]
 
 [ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_2vmhc"]
 [ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="1_etyyu"]
