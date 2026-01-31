@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://iuyxtc76xf2j"]
+
+[ext_resource type="PackedScene" uid="uid://t00vxc3scm2n" path="res://assets/Models/SuperShotgunNotSciFiVer.glb" id="1_cs0bs"]
+[ext_resource type="Script" uid="uid://csma0fwxuue15" path="res://scenes/Weapons/scripts/SuperShotgun.gd" id="2_1self"]
+
+[node name="WeaponSuperShotgun" type="Node3D" unique_id=1994702494]
+
+[node name="SuperShotgunNotSciFiVer" parent="." unique_id=1243753430 instance=ExtResource("1_cs0bs")]
+script = ExtResource("2_1self")
