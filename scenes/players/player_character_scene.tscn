@@ -8,11 +8,11 @@
 [ext_resource type="Script" uid="uid://bq1stj2mujnp2" path="res://scenes/players/StateMachine/wallrun_state_script.gd" id="12_5fuve"]
 [ext_resource type="LabelSettings" uid="uid://bs0stms0b56kp" path="res://addons/Arts/label_settings.tres" id="14_gfbru"]
 [ext_resource type="Shader" uid="uid://b34228uop3gdf" path="res://scenes/players/Shaders/speed_lines_shader.gdshader" id="14_jv0i6"]
-[ext_resource type="PackedScene" uid="uid://ci0wuvhky4vnj" path="res://assets/Models/stoneMaskV2.glb" id="15_m644i"]
-[ext_resource type="Script" uid="uid://cq6ke8dw5t6nb" path="res://scenes/players/Shooting.gd" id="14_m644i"]
+[ext_resource type="Script" path="res://scenes/players/Shooting.gd" id="14_m644i"]
 [ext_resource type="PackedScene" uid="uid://d05w7k8wtngv2" path="res://scenes/Weapons/super_shotgun.tscn" id="15_m644i"]
 [ext_resource type="Script" uid="uid://dx02l6p6behb8" path="res://scenes/players/UI/hud_script.gd" id="16_5jm78"]
 [ext_resource type="Texture2D" uid="uid://dv747ov6fcrsg" path="res://addons/Arts/crosshair.png" id="16_gfbru"]
+[ext_resource type="PackedScene" uid="uid://ci0wuvhky4vnj" path="res://assets/Models/stoneMaskV2.glb" id="16_xq8ws"]
 [ext_resource type="Script" uid="uid://sca7ypsol83f" path="res://scenes/players/StateMachine/state_machine_script.gd" id="54_e0r17"]
 [ext_resource type="Script" uid="uid://stil4xkf3tk0" path="res://scenes/players/StateMachine/idle_state_script.gd" id="55_dayh2"]
 [ext_resource type="Script" uid="uid://blt7dest23fk0" path="res://scenes/players/StateMachine/walk_state_script.gd" id="56_w3td4"]
@@ -182,14 +182,14 @@ debug_shape_custom_color = Color(0.91764706, 0.79607844, 0.18039216, 1)
 [node name="SuperShotgun" parent="CameraHolder/Camera" unique_id=505632400 instance=ExtResource("15_m644i")]
 transform = Transform3D(-4.371138e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.371138e-08, 0.36448643, -0.22091031, -0.36316282)
 
-[node name="stoneMask" parent="CameraHolder/Camera" unique_id=191783486 instance=ExtResource("15_m644i")]
-transform = Transform3D(0.22475435, 0, -0.05117438, 0, 0.65714353, 0, 0.02261966, 0, 0.50848025, 1.0132291, -1.1237633, -0.19064136)
-
 [node name="MaskOnPosition" type="Node3D" parent="CameraHolder/Camera" unique_id=744150991]
 transform = Transform3D(-9.873951e-09, 0, 0.51104885, 0, 0.65714353, 0, -0.22588968, 0, -2.2338655e-08, -0.027353277, -0.15750802, -0.22531056)
 
 [node name="MaskOffPosition" type="Node3D" parent="CameraHolder/Camera" unique_id=247764457]
 transform = Transform3D(0.22475432, 0, -0.05117431, 0, 0.65714353, 0, 0.022619655, 0, 0.5084802, 1.0132291, -1.1237633, -0.19064136)
+
+[node name="stoneMask" parent="CameraHolder/Camera" unique_id=191783486 instance=ExtResource("16_xq8ws")]
+transform = Transform3D(0.22475433, 0, -0.051174313, 0, 0.65714353, 0, 0.022619657, 0, 0.5084802, 1.0132291, -1.1237633, -0.19064136)
 
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1589340362]
 shape = SubResource("CapsuleShape3D_5yjma")
