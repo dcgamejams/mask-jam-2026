@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cdj2iwi0ancxn" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://baj8m7u6tlib5" path="res://scenes/environment/demo_level.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://vydo5ihqeu0v" path="res://scenes/enemies/ghost_1/enemy_ghost_1.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://scenes/players/player_character_scene.tscn" id="4_1bvp3"]
 
 [node name="Main" type="Node3D" unique_id=60408776]
 script = ExtResource("1_h2yge")
@@ -22,17 +23,19 @@ transform = Transform3D(0.7045599, 0, -0.7096445, 0, 1, 0, 0.7096445, 0, 0.70455
 transform = Transform3D(0.8186512, 0, 0.57429105, 0, 1, 0, -0.57429105, 0, 0.8186512, 14.266295, 7.5512524, 27.324368)
 cull_mask = 1047553
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1385662631]
+[node name="MainMenu" type="CanvasLayer" parent="." unique_id=1385662631]
+visible = false
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=1376760367]
+[node name="Control" type="Control" parent="MainMenu" unique_id=1376760367]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control" unique_id=524806769]
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu/Control" unique_id=524806769]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -42,14 +45,16 @@ offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer" unique_id=658144783]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Control/MarginContainer" unique_id=658144783]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=116978910]
+[node name="Title" type="Label" parent="MainMenu/Control/MarginContainer/VBoxContainer" unique_id=116978910]
 layout_mode = 2
 text = "GOAT GAME"
 
-[node name="Startbutton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" unique_id=1660462818]
+[node name="Startbutton" type="Button" parent="MainMenu/Control/MarginContainer/VBoxContainer" unique_id=1660462818]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Start"
+
+[node name="PlayerCharacter" parent="." unique_id=1717030456 instance=ExtResource("4_1bvp3")]
