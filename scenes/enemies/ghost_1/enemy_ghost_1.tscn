@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://vydo5ihqeu0v"]
+
+[ext_resource type="Script" uid="uid://2so0dr2208kn" path="res://scenes/enemies/ghost_1/enemy_ghost_1.gd" id="1_j1tbm"]
+[ext_resource type="Script" uid="uid://d5jl3b0hfehw" path="res://scripts/components/health_system.gd" id="2_ip34o"]
+[ext_resource type="Script" uid="uid://es67axqa8ao6" path="res://scripts/components/navigation_system.gd" id="3_uvqya"]
+[ext_resource type="PackedScene" uid="uid://by81nft6ho4cn" path="res://assets/mesh/castlevania_lod_-_ghost/scene.gltf" id="4_qp7ua"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_indh1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nd7sd"]
+size = Vector3(30, 3, 30)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8fdcm"]
+radius = 0.6
+
+[sub_resource type="Animation" id="Animation_ca8pr"]
+resource_name = "new_animation"
+step = 0.0333333
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3tcfh"]
+_data = {
+&"new_animation": SubResource("Animation_ca8pr")
+}
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_j1tbm"]
+height = 0.2
+
+[node name="EnemyGhost1" type="CharacterBody3D" unique_id=427302985 node_paths=PackedStringArray("animation_player", "health_system", "nav", "nav_agent", "search_box", "attack_box")]
+script = ExtResource("1_j1tbm")
+animation_player = NodePath("AnimationPlayer")
+health_system = NodePath("HealthSystem")
+nav = NodePath("NavigationSystem")
+nav_agent = NodePath("NavigationAgent3D")
+search_box = NodePath("SearchBox")
+attack_box = NodePath("AttackBox")
+max_speed = 3.0
+attack_value = 20
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=475714064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99247503, 0)
+shape = SubResource("CapsuleShape3D_indh1")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=892091126]
+
+[node name="SearchBox" type="Area3D" parent="." unique_id=528706763]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, -8)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SearchBox" unique_id=606131953]
+shape = SubResource("BoxShape3D_nd7sd")
+
+[node name="AttackBox" type="Area3D" parent="." unique_id=1496836165]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackBox" unique_id=1196945054]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0157165, 0.693908, -0.861981)
+shape = SubResource("SphereShape3D_8fdcm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=406928111]
+libraries/ = SubResource("AnimationLibrary_3tcfh")
+
+[node name="HealthSystem" type="Node" parent="." unique_id=374662232]
+script = ExtResource("2_ip34o")
+
+[node name="NavigationSystem" type="Node" parent="." unique_id=516601289 node_paths=PackedStringArray("nav_agent", "search_box")]
+script = ExtResource("3_uvqya")
+nav_agent = NodePath("../NavigationAgent3D")
+search_box = NodePath("../SearchBox")
+
+[node name="Sketchfab_Scene" parent="." unique_id=2083895909 instance=ExtResource("4_qp7ua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041427255, 0)
+
+[node name="ghost_Material #19442_0" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" parent_id_path=PackedInt32Array(2083895909, 1755810353) index="0" unique_id=1622544883]
+layers = 512
+
+[node name="ghost_Material #19443_0" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" parent_id_path=PackedInt32Array(2083895909, 1755810353) index="1" unique_id=1464145499]
+layers = 512
+
+[node name="ghost_Material #19441_0" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" parent_id_path=PackedInt32Array(2083895909, 1755810353) index="2" unique_id=294736173]
+layers = 512
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=103209726]
+transform = Transform3D(1, 0, 0, 0, -0.017609445, 0.99984497, 0, -0.99984497, -0.017609445, 0, 2.2572672, -0.6309147)
+layers = 0
+mesh = SubResource("CylinderMesh_j1tbm")
+
+[editable path="Sketchfab_Scene"]

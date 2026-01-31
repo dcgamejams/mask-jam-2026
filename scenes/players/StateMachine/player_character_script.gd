@@ -2,6 +2,15 @@ extends CharacterBody3D
 
 class_name PlayerCharacter
 
+@onready var health_system: HealthSystem = $HealthSystem
+@onready var camera: Camera3D = %Camera
+
+var immobile = false
+
+
+# WARNING: DO NOT UN-COLLAPSE. USE SIDEBAR on Character
+#region vars
+
 @export_group("Movement variables")
 var move_speed: float
 var move_accel: float
@@ -158,6 +167,8 @@ run_action, crouch_action, jump_action, slide_action, dash_action, fly_action]
 @onready var left_wall_check : RayCast3D = %LeftWallCheck
 @onready var right_wall_check : RayCast3D = %RightWallCheck
 
+#endregion
+
 func _ready() -> void:
 	#set and value references
 	hit_ground_cooldown_ref = hit_ground_cooldown
@@ -179,6 +190,8 @@ func _ready() -> void:
 	walljump_lock_in_air_movement_time = -1.0
 	
 	input_actions_check()
+	
+	init_game_logic()
 	
 func input_actions_check() -> void:
 	#check if the input actions written in the editor are the same as the ones registered in the Input map, and if they are written correctly
@@ -204,9 +217,15 @@ func _process(delta: float) -> void:
 	dash_timer(delta)
 	
 func _physics_process(_delta: float) -> void:
+	if immobile:
+		return
+		
 	modify_physics_properties()
 
 	move_and_slide()
+
+# WARNING: Default phys, no need to un-collapse or edit, just add
+#region phys
 	
 func wallrun_timer(delta : float) -> void:
 	if !can_wallrun:
@@ -275,4 +294,18 @@ func tween_model_height(state_model_height : float) -> void:
 	else:
 		model_tween.tween_interval(0.1)
 	model_tween.finished.connect(Callable(model_tween, "kill"))
-		
+	
+#endregion
+
+
+func init_game_logic():
+	health_system.signal_death.connect(on_player_die)
+	
+func on_player_die():
+	immobile = true
+
+	await get_tree().create_timer(1).timeout
+	camera.current = false
+	
+	await get_tree().create_timer(5).timeout
+	queue_free()

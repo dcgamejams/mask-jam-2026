@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cpqf6gqli8puq"
-path="res://.godot/imported/House.glb-7c20736c159c6a79090c181e99a1bb45.scn"
+uid="uid://by81nft6ho4cn"
+path="res://.godot/imported/scene.gltf-7826c6631f97a201c2a4781c8fa73ce4.scn"
 
 [deps]
 
-source_file="res://assets/Models/House/House.glb"
-dest_files=["res://.godot/imported/House.glb-7c20736c159c6a79090c181e99a1bb45.scn"]
+source_file="res://assets/mesh/castlevania_lod_-_ghost/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-7826c6631f97a201c2a4781c8fa73ce4.scn"]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.7
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
@@ -37,30 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"nodes": {
-"PATH:Cube": {
-"generate/physics": true
-},
-"PATH:Cube_001": {
-"generate/physics": true
-},
-"PATH:Cube_002": {
-"generate/physics": true
-},
-"PATH:Cube_003": {
-"generate/physics": true
-},
-"PATH:Cube_004": {
-"generate/physics": true
-},
-"PATH:Cube_005": {
-"generate/physics": true
-},
-"PATH:Cube_006": {
-"import/skip_import": true
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

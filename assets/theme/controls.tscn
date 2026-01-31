@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://lm4alclh6bt3"]
+
+[ext_resource type="Theme" uid="uid://b3kq74llqlv3x" path="res://assets/theme/MinimalUI4/MinimalUI.tres" id="1_m3kry"]
+[ext_resource type="Texture2D" uid="uid://hhl651tx8h11" path="res://assets/theme/keyboard-&-mouse_sheet_default.png" id="1_rw3g5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwui3"]
+atlas = ExtResource("1_rw3g5")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1erae"]
+atlas = ExtResource("1_rw3g5")
+region = Rect2(640, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymbhe"]
+atlas = ExtResource("1_rw3g5")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjdiv"]
+atlas = ExtResource("1_rw3g5")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji8en"]
+atlas = ExtResource("1_rw3g5")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3kry"]
+atlas = ExtResource("1_rw3g5")
+region = Rect2(384, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8vgi"]
+atlas = ExtResource("1_rw3g5")
+region = Rect2(448, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si35s"]
+atlas = ExtResource("1_rw3g5")
+region = Rect2(448, 704, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah6aa"]
+atlas = ExtResource("1_rw3g5")
+region = Rect2(704, 640, 64, 64)
+
+[node name="Controls" type="VBoxContainer" unique_id=1906408976]
+theme = ExtResource("1_m3kry")
+theme_override_constants/separation = 0
+
+[node name="Tab" type="HBoxContainer" parent="." unique_id=1686525312]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Tab" unique_id=1696525029]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dwui3")
+
+[node name="Label" type="Label" parent="Tab" unique_id=1056369276]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Focus Window "
+
+[node name="Fire" type="HBoxContainer" parent="." unique_id=1053070620]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Fire" unique_id=251089590]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_1erae")
+
+[node name="TextureRect2" type="TextureRect" parent="Fire" unique_id=760640579]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ymbhe")
+
+[node name="Label" type="Label" parent="Fire" unique_id=540230839]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Fire"
+
+[node name="Mask" type="HBoxContainer" parent="." unique_id=294479181]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Mask" unique_id=1531068695]
+layout_mode = 2
+texture = SubResource("AtlasTexture_rjdiv")
+
+[node name="Label" type="Label" parent="Mask" unique_id=1282792870]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Mask (HOLD)"
+
+[node name="Reload3" type="HBoxContainer" parent="." unique_id=37142308]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Reload3" unique_id=1619654210]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ji8en")
+
+[node name="Label" type="Label" parent="Reload3" unique_id=1771169245]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Sprint"
+
+[node name="Reload" type="HBoxContainer" parent="." unique_id=1400739749]
+visible = false
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Reload" unique_id=599319666]
+layout_mode = 2
+texture = SubResource("AtlasTexture_m3kry")
+
+[node name="Label" type="Label" parent="Reload" unique_id=1101083458]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Reload"
+
+[node name="Boost" type="HBoxContainer" parent="." unique_id=1717113212]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Boost" unique_id=689840363]
+layout_mode = 2
+texture = SubResource("AtlasTexture_k8vgi")
+
+[node name="Label" type="Label" parent="Boost" unique_id=1991886043]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Boost"
+
+[node name="Slide" type="HBoxContainer" parent="." unique_id=1463276534]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Slide" unique_id=2074386245]
+layout_mode = 2
+texture = SubResource("AtlasTexture_si35s")
+
+[node name="Label" type="Label" parent="Slide" unique_id=403369424]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Slide"
+
+[node name="Interact" type="HBoxContainer" parent="." unique_id=233439701]
+visible = false
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Interact" unique_id=1159010257]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ah6aa")
+
+[node name="Label" type="Label" parent="Interact" unique_id=847903273]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Interact"
