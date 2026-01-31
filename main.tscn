@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6dfmct6e0d5j"]
 
 [ext_resource type="Script" uid="uid://cdj2iwi0ancxn" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bjumh2hbls3un" path="res://scenes/environment/demo_level_REMOTE_1312.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bjumh2hbls3un" path="res://scenes/environment/demo_level.tscn" id="2_0xm2m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 128
