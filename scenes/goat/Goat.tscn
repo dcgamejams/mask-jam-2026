@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://sihi44mpqa7y"]
 
-[ext_resource type="PackedScene" uid="uid://coaogoa7llitc" path="res://assets/mesh/goat/scene.gltf" id="1_gwd1m"]
+[ext_resource type="PackedScene" uid="uid://bqf47hlgfrvaa" path="res://assets/Models/goat/Goat.glb" id="1_gwd1m"]
+[ext_resource type="Material" uid="uid://0jqi3l8k5qs7" path="res://scenes/goat/eye_mat.tres" id="2_gm73t"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gwd1m"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gm73t"]
+albedo_color = Color(0.2784314, 0, 1, 1)
 
-[node name="Goat" type="CharacterBody3D" unique_id=1820980182]
+[node name="Goat" unique_id=1678804613 instance=ExtResource("1_gwd1m")]
 
-[node name="Sketchfab_Scene" parent="." unique_id=592788371 instance=ExtResource("1_gwd1m")]
+[node name="Sphere" parent="." index="8" unique_id=1043002856]
+surface_material_override/0 = ExtResource("2_gm73t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1640987442]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55851126, 0)
-shape = SubResource("BoxShape3D_gwd1m")
+[node name="Sphere_001" parent="." index="9" unique_id=1707622667]
+surface_material_override/0 = ExtResource("2_gm73t")
+
+[node name="Circle" parent="." index="13" unique_id=1781938038]
+surface_material_override/0 = SubResource("StandardMaterial3D_gm73t")

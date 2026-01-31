@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhgi1yej5bo4d"
-path.s3tc="res://.godot/imported/House_plank_flooring_03_diff_1k.jpg-476faef421bd8761f04536d1e26fa43a.s3tc.ctex"
+path.s3tc="res://.godot/imported/House_plank_flooring_03_diff_1k.jpg-008c1f1499b4fbd034df0ab45b769d55.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/House/House_plank_flooring_03_diff_1k.jpg"
-dest_files=["res://.godot/imported/House_plank_flooring_03_diff_1k.jpg-476faef421bd8761f04536d1e26fa43a.s3tc.ctex"]
+source_file="res://assets/Models/House/House_plank_flooring_03_diff_1k.jpg"
+dest_files=["res://.godot/imported/House_plank_flooring_03_diff_1k.jpg-008c1f1499b4fbd034df0ab45b769d55.s3tc.ctex"]
 
 [params]
 

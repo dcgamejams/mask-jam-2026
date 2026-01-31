@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://0jqi3l8k5qs7"]
+
+[ext_resource type="Texture2D" uid="uid://dbxi33c85t58a" path="res://assets/Models/goat/eye.jpg" id="1_88pvb"]
+
+[resource]
+albedo_texture = ExtResource("1_88pvb")

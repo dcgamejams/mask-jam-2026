@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://babfjhwebxbuw"
-path.s3tc="res://.godot/imported/House_red_brick_diff_1k.jpg-ffb5befb0525c6950f489dad654cee3a.s3tc.ctex"
+uid="uid://dbxi33c85t58a"
+path.s3tc="res://.godot/imported/eye.jpg-aa46ec5732f0628d1ca00c66c53e0780.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "bfe2ee49fae6bb7f1ef2200f34fd8813"
-}
 
 [deps]
 
-source_file="res://assets/Models/House/House_red_brick_diff_1k.jpg"
-dest_files=["res://.godot/imported/House_red_brick_diff_1k.jpg-ffb5befb0525c6950f489dad654cee3a.s3tc.ctex"]
+source_file="res://assets/Models/goat/eye.jpg"
+dest_files=["res://.godot/imported/eye.jpg-aa46ec5732f0628d1ca00c66c53e0780.s3tc.ctex"]
 
 [params]
 

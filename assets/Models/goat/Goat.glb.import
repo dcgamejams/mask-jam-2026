@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bqf47hlgfrvaa"
-path="res://.godot/imported/Goat.glb-1889cc87475b103d7c1480cfb500d888.scn"
+path="res://.godot/imported/Goat.glb-db6cd6aef2e74d067b54414ab5a12b9d.scn"
 
 [deps]
 
-source_file="res://assets/models/goat/Goat.glb"
-dest_files=["res://.godot/imported/Goat.glb-1889cc87475b103d7c1480cfb500d888.scn"]
+source_file="res://assets/Models/goat/Goat.glb"
+dest_files=["res://.godot/imported/Goat.glb-db6cd6aef2e74d067b54414ab5a12b9d.scn"]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.5
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
