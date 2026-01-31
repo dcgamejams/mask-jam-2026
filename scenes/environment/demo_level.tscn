@@ -3,7 +3,9 @@
 [ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_2vmhc"]
 [ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="1_etyyu"]
 [ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="2_fxo6y"]
-[ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/Models/House/House.glb" id="4_gta14"]
+[ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/models/House/House.glb" id="4_gta14"]
+[ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="5_ud7u2"]
+[ext_resource type="PackedScene" uid="uid://bqf47hlgfrvaa" path="res://assets/models/goat/Goat.glb" id="6_dvvca"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
 albedo_texture = ExtResource("1_etyyu")
@@ -139,3 +141,9 @@ shape = SubResource("BoxShape3D_0xm2m")
 
 [node name="House" parent="NavigationRegion3D" unique_id=485721794 instance=ExtResource("4_gta14")]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 4.0490246, 0)
+
+[node name="Goat" parent="." unique_id=1820980182 instance=ExtResource("5_ud7u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.991396, 13.719517, -9.104963)
+
+[node name="Goat2" parent="." unique_id=1128971427 instance=ExtResource("6_dvvca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 2, 1)

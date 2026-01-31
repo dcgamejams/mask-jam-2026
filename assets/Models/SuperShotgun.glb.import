@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cghaci0ntf50e"
-path="res://.godot/imported/SuperShotgun.glb-de2ac2782571b95cb226978bea47c3e4.scn"
+path="res://.godot/imported/SuperShotgun.glb-fa1a5d24753cbc18e4dd28e0e199f92e.scn"
 
 [deps]
 
-source_file="res://assets/Models/SuperShotgun.glb"
-dest_files=["res://.godot/imported/SuperShotgun.glb-de2ac2782571b95cb226978bea47c3e4.scn"]
+source_file="res://assets/models/SuperShotgun.glb"
+dest_files=["res://.godot/imported/SuperShotgun.glb-fa1a5d24753cbc18e4dd28e0e199f92e.scn"]
 
 [params]
 
