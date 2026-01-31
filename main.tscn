@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b6dfmct6e0d5j"]
 
 [ext_resource type="Script" uid="uid://cdj2iwi0ancxn" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://baj8m7u6tlib5" path="res://scenes/environment/demo_level.tscn" id="2_0xm2m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 128
@@ -14,7 +13,6 @@ shadow_color = Color(0.6269097, 0, 0, 0.9882353)
 script = ExtResource("1_h2yge")
 camera_rotation_speed = 0.25
 
-[node name="DemoLevel" parent="." unique_id=1123410095 instance=ExtResource("2_0xm2m")]
 
 [node name="MainMenu" type="CanvasLayer" parent="." unique_id=1385662631]
 

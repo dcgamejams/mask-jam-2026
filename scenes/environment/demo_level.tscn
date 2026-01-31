@@ -19,16 +19,12 @@
 [ext_resource type="PackedScene" uid="uid://vydo5ihqeu0v" path="res://scenes/enemies/ghost_1/enemy_ghost_1.tscn" id="8_kyuqp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
-<<<<<<< HEAD
-albedo_texture = ExtResource("2_ojrxk")
-=======
 albedo_color = Color(0.7898419, 0.7258606, 0.6907761, 1)
 albedo_texture = ExtResource("2_dvvca")
 metallic_specular = 0.03
 roughness_texture = ExtResource("4_ojrxk")
 normal_enabled = true
 normal_texture = ExtResource("3_0id7f")
->>>>>>> 7a65591 (added grass texture to ground and edit the main menu to look presentable)
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gta14"]
