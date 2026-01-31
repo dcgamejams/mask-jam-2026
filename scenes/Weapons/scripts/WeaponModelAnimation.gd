@@ -4,16 +4,20 @@ class_name WeaponModel
 
 @onready var animation_player = $AnimationPlayer
 
+@onready var particle_animation_player = $Root/Skeleton3D/Barrel/Barrels/MuzzleFlash_01/AnimationPlayer
+
 @onready var parent_node = get_parent()
 
 signal ShootingAnimationFinished
 
 func _ready() -> void:
 	Global.Shoot.connect(ShootSignal)
+	particle_animation_player.play("RESET")
 	
 
 func _playShootingAnimtion() -> void:
 	animation_player.play("ShootAndReload")
+	particle_animation_player.play("main")
 
 
 

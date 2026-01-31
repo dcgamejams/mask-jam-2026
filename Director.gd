@@ -25,8 +25,10 @@ func _do_sequence(sequence: EnemySequence) -> void:
 		#pick a random spawn point
 		#spawm enemy at that point
 		var newEnemy = sequence.Enemy.instantiate()
+		newEnemy.position = _pick_random_point()
 		add_child(newEnemy)
-		newEnemy.global_position = _pick_random_point()
+		
+		print("my spawning position is:" + str(newEnemy.position))
 		
 		
 		
