@@ -55,8 +55,7 @@ func fire_manual_raycast():
 		if result.collider is Enemy:
 			var enemy: Enemy = result.collider
 			print("Hit: ", result.collider.name)
-			enemy.health_system.damage(50)
-
+			enemy.health_system.damage(50, 99)
 
 func _on_super_shotgun_shooting_animation_finished() -> void:
 	ResetShooting()

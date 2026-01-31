@@ -16,7 +16,6 @@ func _playShootingAnimtion() -> void:
 	animation_player.play("ShootAndReload")
 
 
-
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	ShootingAnimationFinished.emit()
 	

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vydo5ihqeu0v"]
 
-[ext_resource type="Script" uid="uid://2so0dr2208kn" path="res://scenes/enemies/ghost_1/enemy_ghost_1.gd" id="1_j1tbm"]
+[ext_resource type="Script" uid="uid://2so0dr2208kn" path="res://scripts/enemy.gd" id="1_j1tbm"]
 [ext_resource type="Script" uid="uid://d5jl3b0hfehw" path="res://scripts/components/health_system.gd" id="2_ip34o"]
 [ext_resource type="Script" uid="uid://es67axqa8ao6" path="res://scripts/components/navigation_system.gd" id="3_uvqya"]
 [ext_resource type="PackedScene" uid="uid://by81nft6ho4cn" path="res://assets/mesh/castlevania_lod_-_ghost/scene.gltf" id="4_qp7ua"]
@@ -102,6 +102,7 @@ libraries/ = SubResource("AnimationLibrary_3tcfh")
 
 [node name="HealthSystem" type="Node" parent="." unique_id=374662232]
 script = ExtResource("2_ip34o")
+regen_enabled = false
 
 [node name="NavigationSystem" type="Node" parent="." unique_id=516601289 node_paths=PackedStringArray("nav_agent", "search_box")]
 script = ExtResource("3_uvqya")
@@ -112,13 +113,13 @@ search_box = NodePath("../SearchBox")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041427255, 0)
 
 [node name="ghost_Material #19442_0" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" parent_id_path=PackedInt32Array(2083895909, 1755810353) index="0" unique_id=1622544883]
-layers = 513
+layers = 512
 
 [node name="ghost_Material #19443_0" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" parent_id_path=PackedInt32Array(2083895909, 1755810353) index="1" unique_id=1464145499]
-layers = 513
+layers = 512
 
 [node name="ghost_Material #19441_0" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" parent_id_path=PackedInt32Array(2083895909, 1755810353) index="2" unique_id=294736173]
-layers = 513
+layers = 512
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=103209726]
 transform = Transform3D(1, 0, 0, 0, -0.017609445, 0.99984497, 0, -0.99984497, -0.017609445, 0, 2.2572672, -0.6309147)

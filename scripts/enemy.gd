@@ -257,7 +257,7 @@ func attack():
 		return
 	# TODO: Pick a position on the left or the right of the player.
 	if state == States.CHASING or state == States.HURTING:
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.25).timeout
 		if nav_agent.is_navigation_finished():
 			if target and global_position.distance_to(target.transform.origin) < 7.0:
 				attack_position = target.transform.origin
