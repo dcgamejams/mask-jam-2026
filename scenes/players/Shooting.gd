@@ -6,8 +6,7 @@ var CurrentAmmo:int = 10
 var MaxAmmo:int = 10
 
 @export var Weapon: Node3D
-
-
+@export var player: PlayerCharacter
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:

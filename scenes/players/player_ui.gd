@@ -18,4 +18,4 @@ func _on_health_max(new_max):
 func _on_health_updated(next_health):
 	health_bar.value = next_health
 	health_label.text = str(next_health)
-	
+	  

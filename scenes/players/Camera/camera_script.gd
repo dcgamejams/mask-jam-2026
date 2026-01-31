@@ -109,6 +109,9 @@ func input_actions_check() -> void:
 				
 
 func _unhandled_input(event) -> void:
+	if play_char.immobile:
+		return
+
 	#manage camera rotation (360 on x axis, blocked at specified values on y axis, to not having the character do a complete head turn, which will be kinda weird)
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * (x_axis_sensibility / 10))
