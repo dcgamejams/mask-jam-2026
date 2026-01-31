@@ -9,6 +9,7 @@
 script = ExtResource("1_h2yge")
 
 [node name="DemoLevel" parent="." unique_id=1123410095 instance=ExtResource("2_0xm2m")]
+script = null
 
 [node name="EnemyGhost1" parent="." unique_id=427302985 instance=ExtResource("3_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1201363, 40.580658)

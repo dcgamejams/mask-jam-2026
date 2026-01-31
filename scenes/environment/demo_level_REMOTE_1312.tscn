@@ -5,13 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="1_etyyu"]
 [ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="2_fxo6y"]
 [ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/Models/House/House.glb" id="4_gta14"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="5_ud7u2"]
-=======
 [ext_resource type="PackedScene" uid="uid://hryrrhwq3bpx" path="res://scenes/Director.tscn" id="6_ud7u2"]
 [ext_resource type="Script" uid="uid://ca6hc1lxuykiv" path="res://EnemySequence.gd" id="7_0id7f"]
 [ext_resource type="PackedScene" uid="uid://vydo5ihqeu0v" path="res://scenes/enemies/ghost_1/enemy_ghost_1.tscn" id="8_ojrxk"]
->>>>>>> Stashed changes
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
 albedo_texture = ExtResource("1_etyyu")
@@ -78,6 +74,7 @@ environment = ExtResource("1_2vmhc")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=732522290]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038600445, 1.9073486e-06, 0.007162094)
 mesh = SubResource("PlaneMesh_gta14")
+metadata/_edit_lock_ = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=689863502]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038600445, 1.9073486e-06, 0.007162094)
@@ -172,10 +169,6 @@ shape = SubResource("BoxShape3D_0xm2m")
 [node name="House" parent="NavigationRegion3D" unique_id=485721794 instance=ExtResource("4_gta14")]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 4.0490246, 0)
 
-<<<<<<< Updated upstream
-[node name="Goat" parent="." unique_id=600539230 instance=ExtResource("5_ud7u2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.357613, 0.5640688, 0)
-=======
 [node name="Director" parent="." unique_id=1691822802 instance=ExtResource("6_ud7u2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.6440344)
 enemy_data = Array[ExtResource("1_4nk08")]([SubResource("Resource_ojrxk"), SubResource("Resource_hwvuq")])
@@ -190,4 +183,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.773903, 0, -124.4759)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.40656, 0, -13.931022)
 
 [connection signal="_ready_for_next_wave" from="Director" to="Director" method="_on__ready_for_next_wave"]
->>>>>>> Stashed changes
