@@ -3,7 +3,7 @@
 [ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_2vmhc"]
 [ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="1_etyyu"]
 [ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="2_fxo6y"]
-[ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/models/House/House.glb" id="4_gta14"]
+[ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/Models/House/House.glb" id="4_gta14"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
 albedo_texture = ExtResource("1_etyyu")
@@ -106,6 +106,18 @@ mesh = SubResource("BoxMesh_ig7tw")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/EnvironmentObjects/Box5" unique_id=966245093]
+shape = SubResource("BoxShape3D_0xm2m")
+metadata/_edit_lock_ = true
+
+[node name="Box7" type="StaticBody3D" parent="NavigationRegion3D/EnvironmentObjects" unique_id=1640328017]
+transform = Transform3D(1, 0, 0, 0, 0.26838976, 0, 0, 0, 1, 9.820328, 0.89033175, -9.780809)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/EnvironmentObjects/Box7" unique_id=732292300]
+layers = 512
+mesh = SubResource("BoxMesh_ig7tw")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/EnvironmentObjects/Box7" unique_id=1758817862]
 shape = SubResource("BoxShape3D_0xm2m")
 metadata/_edit_lock_ = true
 

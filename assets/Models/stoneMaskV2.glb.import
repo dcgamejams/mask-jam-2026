@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cghaci0ntf50e"
-path="res://.godot/imported/SuperShotgun.glb-de2ac2782571b95cb226978bea47c3e4.scn"
+uid="uid://ci0wuvhky4vnj"
+path="res://.godot/imported/stoneMaskV2.glb-7a4e22ced62197d74045af59e6482f12.scn"
 
 [deps]
 
-source_file="res://assets/Models/SuperShotgun.glb"
-dest_files=["res://.godot/imported/SuperShotgun.glb-de2ac2782571b95cb226978bea47c3e4.scn"]
+source_file="res://assets/Models/stoneMaskV2.glb"
+dest_files=["res://.godot/imported/stoneMaskV2.glb-7a4e22ced62197d74045af59e6482f12.scn"]
 
 [params]
 
