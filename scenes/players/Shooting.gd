@@ -11,7 +11,7 @@ var MaxAmmo:int = 10
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			print("Left click at: ", event.position)
+			#print("Left click at: ", event.position)
 			
 			if canShoot:
 				if CurrentAmmo > 0:
@@ -22,9 +22,7 @@ func _input(event):
 				else:
 					canShoot = false 
 				
-				
-		elif event.button_index == MOUSE_BUTTON_RIGHT:
-			print("Right click at: ", event.position)
+		#print("Right click at: ", event.position)
 			
 
 func ResetShooting() -> void:
@@ -51,8 +49,10 @@ func fire_manual_raycast():
 	var result: Dictionary = space_state.intersect_ray(query)
 
 	if result:
-		print("Hit: ", result.collider.name)
-		print("At position: ", result.position)
+		if result.collider is Enemy:
+			var enemy: Enemy = result.collider
+			print("Hit: ", result.collider.name)
+			enemy.health_system.damage(20)
 
 
 

@@ -5,6 +5,8 @@
 
 extends CharacterBody3D
 
+class_name Enemy
+
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 const FRICTION = 12
 const ROTATION_SPEED = 3.0

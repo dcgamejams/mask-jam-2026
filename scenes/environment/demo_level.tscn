@@ -45,7 +45,6 @@ environment = ExtResource("1_2vmhc")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=732522290]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038600445, 1.9073486e-06, 0.007162094)
 mesh = SubResource("PlaneMesh_gta14")
-metadata/_edit_lock_ = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=689863502]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038600445, 1.9073486e-06, 0.007162094)
