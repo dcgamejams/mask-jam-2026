@@ -9,19 +9,18 @@ class_name WeaponModel
 signal ShootingAnimationFinished
 
 func _ready() -> void:
-	pass
+	Global.Shoot.connect(ShootSignal)
 	
 
 func _playShootingAnimtion() -> void:
 	animation_player.play("ShootAndReload")
 
-func _input(event):
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			_playShootingAnimtion()
-		
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	ShootingAnimationFinished.emit()
+	
+	
+func ShootSignal() -> void:
+	_playShootingAnimtion()
 	

@@ -27,10 +27,15 @@ class_name HUD
 @onready var camera_bob_vertical_offset_label_text: Label = %CameraBobVerticalOffsetLabelText
 @onready var speed_lines_container: ColorRect = %SpeedLinesContainer
 
+#gameplay elements
+@onready var AmmoCounter: Label = %AmmoCount
+
 func _process(_delta : float) -> void:
 	display_current_FPS()
 	
 	display_properties()
+	
+	display_gameplay_properties()
 	
 func display_properties() -> void:
 	#player character properties
@@ -64,8 +69,6 @@ func display_speed_lines(value : bool) -> void:
 func round_to_3_decimals(value: float) -> float:
 	return round(value * 1000.0) / 1000.0
 	
-	
-	
-	
-	
+func display_gameplay_properties() -> void:
+	AmmoCounter.set_text(str(%Camera.CurrentAmmo) + "/" + str(%Camera.MaxAmmo))
 	

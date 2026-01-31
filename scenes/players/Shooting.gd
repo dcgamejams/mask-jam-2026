@@ -2,7 +2,12 @@ extends Camera3D
 
 var canShoot:bool = true
 
+var CurrentAmmo:int = 10
+var MaxAmmo:int = 10
+
 @export var Weapon: Node3D
+
+
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -10,8 +15,14 @@ func _input(event):
 			print("Left click at: ", event.position)
 			
 			if canShoot:
-				fire_manual_raycast()
-				canShoot = false	
+				if CurrentAmmo > 0:
+					fire_manual_raycast()
+					Global.Shoot.emit()
+					canShoot = false	
+					CurrentAmmo -= 1
+				else:
+					canShoot = false 
+				
 				
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			print("Right click at: ", event.position)
