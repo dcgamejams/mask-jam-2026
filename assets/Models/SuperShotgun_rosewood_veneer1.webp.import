@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://babfjhwebxbuw"
-path.s3tc="res://.godot/imported/House_red_brick_diff_1k.jpg-ffb5befb0525c6950f489dad654cee3a.s3tc.ctex"
+uid="uid://tpgspj1toc01"
+path.s3tc="res://.godot/imported/SuperShotgun_rosewood_veneer1.webp-5971c013f32bbdb8ac02331dc79ad970.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "bfe2ee49fae6bb7f1ef2200f34fd8813"
+"md5": "4bd5d95e66528ca8b9a0b37f589fb70d"
 }
 
 [deps]
 
-source_file="res://assets/Models/House/House_red_brick_diff_1k.jpg"
-dest_files=["res://.godot/imported/House_red_brick_diff_1k.jpg-ffb5befb0525c6950f489dad654cee3a.s3tc.ctex"]
+source_file="res://assets/Models/SuperShotgun_rosewood_veneer1.webp"
+dest_files=["res://.godot/imported/SuperShotgun_rosewood_veneer1.webp-5971c013f32bbdb8ac02331dc79ad970.s3tc.ctex"]
 
 [params]
 
