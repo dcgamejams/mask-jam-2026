@@ -3,6 +3,7 @@
 [ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_2vmhc"]
 [ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="1_etyyu"]
 [ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="2_fxo6y"]
+[ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/models/House/House.glb" id="4_gta14"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
 albedo_texture = ExtResource("1_etyyu")
@@ -129,3 +130,13 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/EnvironmentObjects/Box4" unique_id=1055686231]
 shape = SubResource("BoxShape3D_0xm2m")
 metadata/_edit_lock_ = true
+
+[node name="House" parent="." unique_id=637310338 instance=ExtResource("4_gta14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.341122, 2.6986022, -3.5472298)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=125857713]
+transform = Transform3D(0.98950565, 0.14449435, 0, -0.14449435, 0.98950565, 0, 0, 0, 1, -3.9040442, 3.3879225, -3.963334)
+light_energy = 5.515
+light_indirect_energy = 4.248
+light_size = 0.15
+omni_range = 8.899

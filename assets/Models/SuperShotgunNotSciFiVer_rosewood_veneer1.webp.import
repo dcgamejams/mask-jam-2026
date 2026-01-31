@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgncoo3rc17yq"
-path.s3tc="res://.godot/imported/SuperShotgunNotSciFiVer_rosewood_veneer1.webp-15f45b93c0a3ea2f087046e9bdd05672.s3tc.ctex"
+path.s3tc="res://.godot/imported/SuperShotgunNotSciFiVer_rosewood_veneer1.webp-ce8290950caee1308b09b533be91e0a8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Models/SuperShotgunNotSciFiVer_rosewood_veneer1.webp"
-dest_files=["res://.godot/imported/SuperShotgunNotSciFiVer_rosewood_veneer1.webp-15f45b93c0a3ea2f087046e9bdd05672.s3tc.ctex"]
+source_file="res://assets/models/SuperShotgunNotSciFiVer_rosewood_veneer1.webp"
+dest_files=["res://.godot/imported/SuperShotgunNotSciFiVer_rosewood_veneer1.webp-ce8290950caee1308b09b533be91e0a8.s3tc.ctex"]
 
 [params]
 
