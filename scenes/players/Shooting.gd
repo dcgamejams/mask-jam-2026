@@ -21,7 +21,10 @@ func _input(event):
 					CurrentAmmo -= 1
 				else:
 					canShoot = false 
-				
+					CurrentAmmo = 10
+					#await get_tree().create_timer(2.0).timeout
+					canShoot = true
+
 		#print("Right click at: ", event.position)
 			
 
@@ -52,8 +55,7 @@ func fire_manual_raycast():
 		if result.collider is Enemy:
 			var enemy: Enemy = result.collider
 			print("Hit: ", result.collider.name)
-			enemy.health_system.damage(100)
-
+			enemy.health_system.damage(50)
 
 
 func _on_super_shotgun_shooting_animation_finished() -> void:
