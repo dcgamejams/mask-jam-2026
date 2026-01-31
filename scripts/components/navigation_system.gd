@@ -40,7 +40,7 @@ func _ready() -> void:
 
 	add_child(timer_patrol)
 	timer_patrol.timeout.connect(pick_patrol_destination)
-	timer_patrol.wait_time = 60.0
+	timer_patrol.wait_time = randf_range(15.0, 25.0)
 	timer_patrol.start()
 
 func chase_target():

@@ -1,10 +1,10 @@
 extends Node
 class_name HealthSystem
 
-signal hurt
-signal health_updated
-signal max_health_updated
-signal death
+signal signal_hurt
+signal signal_health_updated
+signal signal_max_health_updated
+signal signal_death
 
 @export var max_health : int = 100
 @export var health : int = 100
@@ -20,8 +20,9 @@ signal death
 var last_damage_source := 0
 
 func _ready() -> void:
+	await get_tree().create_timer(0.5).timeout
 	prepare_regen_timer()
-	max_health_updated.emit(max_health)
+	signal_max_health_updated.emit(max_health)
 	heal(max_health)
 
 func damage(value: int, source: int = 0) -> bool:
@@ -45,25 +46,25 @@ func damage(value: int, source: int = 0) -> bool:
 		regen_timer.stop()
 		health = 0
 		last_damage_source = source
-		health_updated.emit(0)
-		hurt.emit()
-		death.emit()
+		signal_health_updated.emit(0)
+		signal_hurt.emit()
+		signal_death.emit()
 		return true
 
 	# Damage
 	if next_health < health and regen_enabled:
-		hurt.emit()
+		signal_hurt.emit()
 		regen_timer.start()
 
 	# Death
 	if next_health == 0:
-		death.emit()
+		signal_death.emit()
 	
 	# Valid damage, not dead
 	last_damage_source = source
 	health = next_health
-	health_updated.emit(next_health)
-	hurt.emit()
+	signal_health_updated.emit(next_health)
+	signal_hurt.emit()
 
 	return true
 
@@ -83,7 +84,7 @@ func heal(value):
 		next_health = max_health
 	
 	health = next_health
-	health_updated.emit(next_health)
+	signal_health_updated.emit(next_health)
 
 func prepare_regen_timer():
 	add_child(regen_timer)

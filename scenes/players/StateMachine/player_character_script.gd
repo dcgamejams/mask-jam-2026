@@ -3,6 +3,10 @@ extends CharacterBody3D
 class_name PlayerCharacter
 
 @onready var health_system: HealthSystem = $HealthSystem
+@onready var camera: Camera3D = %Camera
+
+var immobile = false
+
 
 # WARNING: DO NOT UN-COLLAPSE. USE SIDEBAR on Character
 #region vars
@@ -187,6 +191,8 @@ func _ready() -> void:
 	
 	input_actions_check()
 	
+	init_game_logic()
+	
 func input_actions_check() -> void:
 	#check if the input actions written in the editor are the same as the ones registered in the Input map, and if they are written correctly
 	#if not, stop the program with an assert
@@ -211,6 +217,9 @@ func _process(delta: float) -> void:
 	dash_timer(delta)
 	
 func _physics_process(_delta: float) -> void:
+	if immobile:
+		return
+		
 	modify_physics_properties()
 
 	move_and_slide()
@@ -287,3 +296,16 @@ func tween_model_height(state_model_height : float) -> void:
 	model_tween.finished.connect(Callable(model_tween, "kill"))
 	
 #endregion
+
+
+func init_game_logic():
+	health_system.signal_death.connect(on_player_die)
+	
+func on_player_die():
+	immobile = true
+
+	await get_tree().create_timer(1).timeout
+	camera.current = false
+	
+	await get_tree().create_timer(5).timeout
+	queue_free()

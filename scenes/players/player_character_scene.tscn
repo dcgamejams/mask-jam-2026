@@ -15,6 +15,8 @@
 [ext_resource type="Script" uid="uid://d5jl3b0hfehw" path="res://scripts/components/health_system.gd" id="17_427iv"]
 [ext_resource type="Theme" uid="uid://b3kq74llqlv3x" path="res://assets/theme/MinimalUI4/MinimalUI.tres" id="18_m644i"]
 [ext_resource type="PackedScene" uid="uid://lm4alclh6bt3" path="res://assets/theme/controls.tscn" id="19_xq8ws"]
+[ext_resource type="Script" uid="uid://didxq4aqwvnqm" path="res://scenes/players/player_ui.gd" id="19_y85m3"]
+[ext_resource type="PackedScene" path="res://assets/theme/hurt_texture.tscn" id="19_yrqow"]
 [ext_resource type="Script" uid="uid://sca7ypsol83f" path="res://scenes/players/StateMachine/state_machine_script.gd" id="54_e0r17"]
 [ext_resource type="Script" uid="uid://stil4xkf3tk0" path="res://scenes/players/StateMachine/idle_state_script.gd" id="55_dayh2"]
 [ext_resource type="Script" uid="uid://blt7dest23fk0" path="res://scenes/players/StateMachine/walk_state_script.gd" id="56_w3td4"]
@@ -284,6 +286,29 @@ shader_parameter/animation_speed = 20.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m644i"]
 load_path = "res://.godot/imported/crosshair.png-cec23d9b10a460a7a894dceef5e88085.ctex"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d61dg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlx67"]
+bg_color = Color(0.04, 0.0028, 0.01644, 0.278431)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.194746, 0.194746, 0.194746, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_by614"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 2.0
+bg_color = Color(0.949949, 0.883835, 0.931763, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.682968, 0.682969, 0.682968, 1)
+border_blend = true
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=1717030456 groups=["PlayerCharacter"]]
 collision_layer = 2
@@ -852,7 +877,13 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CompressedTexture2D_m644i")
 
-[node name="PlayerUI" type="CanvasLayer" parent="." unique_id=2010144729]
+[node name="PlayerUI" type="CanvasLayer" parent="." unique_id=2010144729 node_paths=PackedStringArray("health")]
+script = ExtResource("19_y85m3")
+health = NodePath("../HealthSystem")
+
+[node name="HurtTexture" parent="PlayerUI" unique_id=86974853 instance=ExtResource("19_yrqow")]
+unique_name_in_owner = true
+visible = false
 
 [node name="Control" type="Control" parent="PlayerUI" unique_id=1947404034]
 layout_mode = 3
@@ -864,7 +895,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("18_m644i")
 
-[node name="MarginContainer" type="MarginContainer" parent="PlayerUI/Control" unique_id=241646224]
+[node name="TopLeft" type="MarginContainer" parent="PlayerUI/Control" unique_id=241646224]
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 40.0
@@ -873,14 +904,14 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/Control/MarginContainer" unique_id=2006622111]
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/Control/TopLeft" unique_id=2006622111]
 layout_mode = 2
 
-[node name="ControlsResize" type="CanvasLayer" parent="PlayerUI/Control/MarginContainer/VBoxContainer" unique_id=1538681212]
+[node name="ControlsResize" type="CanvasLayer" parent="PlayerUI/Control/TopLeft/VBoxContainer" unique_id=1538681212]
 scale = Vector2(0.7, 0.7)
 transform = Transform2D(0.7, 0, 0, 0.7, 0, 0)
 
-[node name="Controls" parent="PlayerUI/Control/MarginContainer/VBoxContainer/ControlsResize" unique_id=1906408976 instance=ExtResource("19_xq8ws")]
+[node name="Controls" parent="PlayerUI/Control/TopLeft/VBoxContainer/ControlsResize" unique_id=1906408976 instance=ExtResource("19_xq8ws")]
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 226.0
@@ -899,6 +930,44 @@ offset_right = -0.080078125
 offset_bottom = 26.0
 theme_override_font_sizes/font_size = 182
 text = "10/10"
+[node name="BottomLeft" type="MarginContainer" parent="PlayerUI/Control" unique_id=1964443869]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HealthBarRoot" type="VBoxContainer" parent="PlayerUI/Control/BottomLeft" unique_id=1129106926]
+layout_mode = 2
+theme = ExtResource("18_m644i")
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerUI/Control/BottomLeft/HealthBarRoot" unique_id=1655345160]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="PlayerUI/Control/BottomLeft/HealthBarRoot/HBoxContainer" unique_id=1339426584]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 23
+
+[node name="HealthBar" type="ProgressBar" parent="PlayerUI/Control/BottomLeft/HealthBarRoot" unique_id=870496983]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_d61dg")
+custom_minimum_size = Vector2(300, 25)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_nlx67")
+theme_override_styles/fill = SubResource("StyleBoxFlat_by614")
+step = 1.0
+value = 50.0
+show_percentage = false
 
 [connection signal="change_fov" from="StateMachine" to="CameraHolder" method="change_fov"]
 [connection signal="ShootingAnimationFinished" from="CameraHolder/Camera/SuperShotgun" to="CameraHolder/Camera" method="_on_super_shotgun_shooting_animation_finished"]

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cihnw3cdspppv"]
+
+[ext_resource type="Theme" uid="uid://b3kq74llqlv3x" path="res://assets/theme/MinimalUI4/MinimalUI.tres" id="1_cy6ur"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d61dg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlx67"]
+bg_color = Color(0.04, 0.0028, 0.01644, 0.278431)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.194746, 0.194746, 0.194746, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_by614"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 2.0
+bg_color = Color(0.949949, 0.883835, 0.931763, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.682968, 0.682969, 0.682968, 1)
+border_blend = true
+
+[node name="HealthBarRoot" type="VBoxContainer" unique_id=1129106926]
+theme = ExtResource("1_cy6ur")
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1655345160]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="HBoxContainer" unique_id=1339426584]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 23
+text = "100 / 100"
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=870496983]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_d61dg")
+custom_minimum_size = Vector2(300, 25)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_nlx67")
+theme_override_styles/fill = SubResource("StyleBoxFlat_by614")
+step = 1.0
+value = 50.0
+show_percentage = false

@@ -69,8 +69,8 @@ func _ready():
 	animation_player.animation_finished.connect(on_animation_finished)
 	
 	# Health
-	health_system.hurt.connect(on_hurt)
-	health_system.death.connect(on_death)
+	health_system.signal_hurt.connect(on_hurt)
+	health_system.signal_death.connect(on_death)
 	
 	# Nav
 	#nav_agent.navigation_finished.connect(on_navigation_finished)
@@ -278,6 +278,6 @@ func on_path_changed():
 
 func on_attack_box_entered(body):
 	if body.is_in_group('PlayerCharacter'):
-		var damage_successful = body.health_system.damage(attack_value, 0)
+		var damage_successful = body.health_system.damage(attack_value, 4)
 		if damage_successful && attack_box:
 			attack_box.set_deferred('monitoring', false)
