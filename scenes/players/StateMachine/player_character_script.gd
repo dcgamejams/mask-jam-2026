@@ -2,6 +2,11 @@ extends CharacterBody3D
 
 class_name PlayerCharacter
 
+@onready var health_system: HealthSystem = $HealthSystem
+
+# WARNING: DO NOT UN-COLLAPSE. USE SIDEBAR on Character
+#region vars
+
 @export_group("Movement variables")
 var move_speed: float
 var move_accel: float
@@ -158,6 +163,8 @@ run_action, crouch_action, jump_action, slide_action, dash_action, fly_action]
 @onready var left_wall_check : RayCast3D = %LeftWallCheck
 @onready var right_wall_check : RayCast3D = %RightWallCheck
 
+#endregion
+
 func _ready() -> void:
 	#set and value references
 	hit_ground_cooldown_ref = hit_ground_cooldown
@@ -207,6 +214,9 @@ func _physics_process(_delta: float) -> void:
 	modify_physics_properties()
 
 	move_and_slide()
+
+# WARNING: Default phys, no need to un-collapse or edit, just add
+#region phys
 	
 func wallrun_timer(delta : float) -> void:
 	if !can_wallrun:
@@ -275,4 +285,5 @@ func tween_model_height(state_model_height : float) -> void:
 	else:
 		model_tween.tween_interval(0.1)
 	model_tween.finished.connect(Callable(model_tween, "kill"))
-		
+	
+#endregion

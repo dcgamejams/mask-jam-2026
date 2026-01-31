@@ -1,0 +1,11 @@
+Model Information:
+* title:	Castlevania: LOD - Ghost
+* source:	https://sketchfab.com/3d-models/castlevania-lod-ghost-446117e5104346c6b8ae14a0fe105776
+* author:	ziggertron (https://sketchfab.com/ziggertron)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Castlevania: LOD - Ghost" (https://sketchfab.com/3d-models/castlevania-lod-ghost-446117e5104346c6b8ae14a0fe105776) by ziggertron (https://sketchfab.com/ziggertron) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

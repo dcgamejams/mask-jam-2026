@@ -143,7 +143,7 @@ metadata/_edit_lock_ = true
 shape = SubResource("BoxShape3D_0xm2m")
 metadata/_edit_lock_ = true
 
-[node name="House" parent="." unique_id=637310338 instance=ExtResource("4_gta14")]
+[node name="House" parent="." unique_id=485721794 instance=ExtResource("4_gta14")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.341122, 2.6986022, -3.5472298)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=125857713]
