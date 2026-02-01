@@ -531,7 +531,7 @@ nav_agent = NodePath("../NavigationAgent3D")
 search_box = NodePath("../Search")
 search_box_ghost = NodePath("../Search2")
 min_patrol = 10.0
-max_patrol = 20.0
+max_patrol = 30.0
 metadata/_custom_type_script = "uid://es67axqa8ao6"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1266396648]

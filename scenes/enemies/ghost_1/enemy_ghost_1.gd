@@ -98,15 +98,21 @@ func _ready():
 
 	add_child(timer_attack_cooldown)
 	timer_attack_cooldown.timeout.connect(attack)
-	timer_attack_cooldown.wait_time = randf_range(2.0, 5.5)
+	timer_attack_cooldown.wait_time = randf_range(2.0, 4.0)
 	timer_attack_cooldown.one_shot = false
 	timer_attack_cooldown.start()
 
 	await get_tree().create_timer(0.2).timeout
 	set_state(States.SEARCHING)
-	
+
+
 	#ambient sounds stuff 
 	_play_new_random_ambient_sound()
+
+	await get_tree().create_timer(randf_range(5.0, 8.0)).timeout
+	if not target: 
+		target = get_tree().get_first_node_in_group("Goat")
+		set_state(States.CHASING)
 	
 func _play_new_random_ambient_sound() -> void:
 	await get_tree().create_timer(randf_range(0.5, 10.0)).timeout
@@ -297,7 +303,7 @@ func attack():
 	if state == States.CHASING or state == States.HURTING:
 		await get_tree().create_timer(0.1).timeout
 		if nav_agent.is_navigation_finished():
-			if target and global_position.distance_to(target.transform.origin) < 5.0:
+			if target and global_position.distance_to(target.transform.origin) < 7.0:
 				attack_position = target.transform.origin
 				set_state(States.ATTACKING)
 				attack_position = target.transform.origin + Vector3(0.0, 0.1, 0.0)

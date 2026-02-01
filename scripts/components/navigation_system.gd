@@ -60,7 +60,7 @@ func chase_target():
 func pick_patrol_destination():
 	var map = NavigationServer3D.get_maps()[0]
 	var random_point = NavigationServer3D.map_get_random_point(map, 1, true)
-	if random_point.distance_to(Vector3.ZERO) > 30.0:
+	if random_point.distance_to(Vector3.ZERO) > 25.0:
 		pick_patrol_destination()
 	else:
 		nav_agent.set_target_position(random_point)
@@ -75,7 +75,7 @@ func on_search_box_body_entered(body: Node3D):
 	if not body:
 		return
 
-	var rand = randi_range(0, 2)
+	var rand = randi_range(0, 4)
 	
 	if parent.target and (parent.target is Goat and rand == 0): 
 		return 
@@ -90,7 +90,7 @@ func on_search_box_body_entered(body: Node3D):
 func on_search_goat_body_entered(body: Node3D):
 	if not body:
 		return
-	var rand = randi_range(0, 1)
+	var rand = randi_range(0, 4)
 	if parent.target and (parent.target is PlayerCharacter and rand == 0): 
 		return 
 		

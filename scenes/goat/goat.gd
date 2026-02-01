@@ -29,6 +29,7 @@ func _ready():
 	nav_agent.path_changed.connect(func(): animation_player.play('walk'))
 	Global.signal_start.connect(start_goat)
 	animation_player.play("idle")
+	animation_player.speed_scale = 0.7
 	
 	_playRandomIdleSound()
 	
@@ -69,15 +70,12 @@ func move_and_look(delta):
 		return
 	var new_look_at
 	if nav_agent.is_navigation_finished() == false:
-		velocity = (nav.next_path_pos - global_transform.origin).normalized() * 2.0
+		velocity = (nav.next_path_pos - global_transform.origin).normalized() * 1.0
 	else:
 		velocity = velocity.move_toward(Vector3.ZERO, FRICTION * delta)
 		velocity.y -= gravity * delta
 
-	if target:
-		new_look_at = target.transform.origin * Vector3(1.0, 0.5, 1.0) * -1.0
-	else:
-		new_look_at = nav.next_path_pos * Vector3(1.0, 0.5, 1.0) * -1.0
+	new_look_at = nav.next_path_pos
 
 	# Finally fix "Target and up vectors are colinear" by
 	# doing the same checks as the source code (used C++ source!)
@@ -88,15 +86,7 @@ func move_and_look(delta):
 	if v_x.is_zero_approx():
 		return
 	
-	var old = transform.basis.orthonormalized() 
 	look_at(new_look_at)
-	var new = transform.basis.orthonormalized()
-	if nav_agent.is_navigation_finished():
-		transform.basis = Basis.IDENTITY
-		transform.basis = lerp(old, Basis.IDENTITY, ROTATION_SPEED * delta).orthonormalized()
-	else:
-		transform.basis = lerp(old, new, ROTATION_SPEED * delta).orthonormalized()
-
 
 func _on_health_signal_hurt() -> void:
 	soundplayer.stream = PainSound
