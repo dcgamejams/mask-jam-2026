@@ -24,21 +24,10 @@ func _do_sequence(sequence: EnemySequence) -> void:
 		
 		#pick a random spawn point
 		#spawm enemy at that point
-<<<<<<< HEAD
 		var newEnemy:Enemy = sequence.EnemyScene.instantiate()
 		newEnemy.position = _pick_random_point()
 		add_child(newEnemy)
-=======
-		var newEnemy = sequence.Enemy.instantiate()
-		newEnemy.position = _pick_random_point()
-		add_child(newEnemy)
-		
-		print("my spawning position is:" + str(newEnemy.position))
-		
->>>>>>> 79c7ba8 (particle effects when we shoot)
-		
-		print("my spawning position is:" + str(newEnemy.position))
-		
+
 	# If we were the last sequence, signal to the wave manager that we're
 	# ready for the next wave
 	outstanding_sequences -= 1

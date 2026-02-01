@@ -99,18 +99,20 @@ func _ready():
 	_play_new_random_ambient_sound()
 	
 func _play_new_random_ambient_sound() -> void:
-	await get_tree().create_timer(randf_range(0.5, 10.0)).timeout
-	
-	var RandomAmbientSound: AudioStream = AmbientSoundsArray.pick_random()
-	
-	AudioPlayerAmbient.stream = RandomAmbientSound
-	AudioPlayerAmbient.play()
+	pass
+	#await get_tree().create_timer(randf_range(0.5, 10.0)).timeout
+	#
+	#var RandomAmbientSound: AudioStream = AmbientSoundsArray.pick_random()
+	#
+	#AudioPlayerAmbient.stream = RandomAmbientSound
+	#AudioPlayerAmbient.play()
 	
 func _play_random_attack_sound() -> void:
-	var RandomAttackSound: AudioStream = AttackSoundsArray.pick_random()
-	
-	AudioPlayerAttack.stream = RandomAttackSound
-	AudioPlayerAttack.play()
+	pass
+	#var RandomAttackSound: AudioStream = AttackSoundsArray.pick_random()
+	#
+	#AudioPlayerAttack.stream = RandomAttackSound
+	#AudioPlayerAttack.play()
 
 
 func _physics_process(delta: float) -> void:

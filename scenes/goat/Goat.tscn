@@ -518,21 +518,21 @@ transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, 
 mesh = SubResource("ArrayMesh_8hakc")
 
 [node name="LEG-FR" type="Node3D" parent="." unique_id=35198184]
-transform = Transform3D(1, 0, 0, 0, 0.9659256, -0.25881892, 0, 0.25881892, 0.9659256, -0.17935985, 0, 0.33547997)
+transform = Transform3D(1, 0, 0, 0, 0.9659255, -0.2588189, 0, 0.2588189, 0.9659255, -0.17935985, 0, 0.33547997)
 
 [node name="LegFL" type="MeshInstance3D" parent="LEG-FR" unique_id=1542053976]
 transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)
 mesh = SubResource("ArrayMesh_8hakc")
 
 [node name="LEG-BL" type="Node3D" parent="." unique_id=1595987499]
-transform = Transform3D(1, 0, 0, 0, 0.9659256, 0.25881892, 0, -0.25881892, 0.9659256, 0.123175085, 0, -0.5256649)
+transform = Transform3D(1, 0, 0, 0, 0.9659255, 0.2588189, 0, -0.2588189, 0.9659255, 0.123175085, 0, -0.5256649)
 
 [node name="LegFL" type="MeshInstance3D" parent="LEG-BL" unique_id=1737596866]
 transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)
 mesh = SubResource("ArrayMesh_8hakc")
 
 [node name="LEG-BR" type="Node3D" parent="." unique_id=855031840]
-transform = Transform3D(1, 0, 0, 0, 0.9659256, -0.25881892, 0, 0.25881892, 0.9659256, -0.27060252, 0, -0.4347602)
+transform = Transform3D(1, 0, 0, 0, 0.9659255, -0.2588189, 0, 0.2588189, 0.9659255, -0.27060252, 0, -0.4347602)
 
 [node name="LegFL" type="MeshInstance3D" parent="LEG-BR" unique_id=982463341]
 transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)

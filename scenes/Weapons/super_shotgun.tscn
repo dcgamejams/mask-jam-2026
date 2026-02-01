@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://cghaci0ntf50e" path="res://assets/Models/SuperShotgun.glb" id="1_06rot"]
 [ext_resource type="Script" uid="uid://csma0fwxuue15" path="res://scenes/Weapons/scripts/WeaponModelAnimation.gd" id="2_4fik0"]
-[ext_resource type="PackedScene" uid="uid://dd7uf7xlh4l1w" path="res://BinbunVFX/muzzle_flash/effects/muzzle_flash/muzzle_flash_01.tscn" id="3_k4p76"]
-[ext_resource type="Script" uid="uid://tb7n6ybv43ch" path="res://BinbunVFX/shared/script/vfx_controller.gd" id="3_n8d88"]
-[ext_resource type="Material" uid="uid://bckofk27jdjm7" path="res://BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/flash_01_long.tres" id="4_thdy4"]
-[ext_resource type="Material" uid="uid://c7y2313k5rvbm" path="res://BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/flash_01_side.tres" id="5_3jo0e"]
-[ext_resource type="Material" uid="uid://dws4vfcxkfdr7" path="res://BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/wide_01_front.tres" id="6_i4val"]
-[ext_resource type="Material" uid="uid://dtcnjkjbdkbbn" path="res://BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/flash_01_glow.tres" id="7_25adq"]
-[ext_resource type="Script" uid="uid://bdk8hhttligw" path="res://BinbunVFX/shared/script/vfx_light.gd" id="8_1hgcp"]
+[ext_resource type="PackedScene" uid="uid://dd7uf7xlh4l1w" path="res://assets/BinbunVFX/muzzle_flash/effects/muzzle_flash/muzzle_flash_01.tscn" id="3_k4p76"]
+[ext_resource type="Script" uid="uid://tb7n6ybv43ch" path="res://assets/BinbunVFX/shared/script/vfx_controller.gd" id="3_n8d88"]
+[ext_resource type="Material" uid="uid://bckofk27jdjm7" path="res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/flash_01_long.tres" id="4_thdy4"]
+[ext_resource type="Material" uid="uid://c7y2313k5rvbm" path="res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/flash_01_side.tres" id="5_3jo0e"]
+[ext_resource type="Material" uid="uid://dws4vfcxkfdr7" path="res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/wide_01_front.tres" id="6_i4val"]
+[ext_resource type="Material" uid="uid://dtcnjkjbdkbbn" path="res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/flash_01_glow.tres" id="7_25adq"]
+[ext_resource type="Script" uid="uid://bdk8hhttligw" path="res://assets/BinbunVFX/shared/script/vfx_light.gd" id="8_1hgcp"]
 [ext_resource type="AudioStream" uid="uid://d3i463dffrndv" path="res://Audio/SFX/Shotgun/BreakClosed.WAV" id="10_25adq"]
 [ext_resource type="AudioStream" uid="uid://ccjoquo8cmmpv" path="res://Audio/SFX/Shotgun/supershotgun.WAV" id="11_1hgcp"]
 [ext_resource type="AudioStream" uid="uid://b27l3t1o1drri" path="res://Audio/SFX/Shotgun/ShellsOut.WAV" id="12_p5t54"]
@@ -156,7 +156,7 @@ tracks/7/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("11_1hgcp")
 }],
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0.033333335)
 }
 tracks/7/use_blend = true
 tracks/8/type = "audio"
@@ -270,36 +270,36 @@ light_color = Color(1, 0.690196, 0, 1)
 light_energy = 2.0
 mesh_resolutions = 16
 
-[node name="Skeleton3D" parent="Root" parent_id_path=PackedInt32Array(1747983469) index="0" unique_id=1237529045]
+[node name="Skeleton3D" parent="Root" parent_id_path=PackedInt32Array(919205294) index="0" unique_id=1284453278]
 bones/0/position = Vector3(-0.08563218, -0.054073323, -1.39512535e-08)
 bones/0/rotation = Quaternion(1.2325218e-08, -7.740446e-08, -0.44886053, 0.89360183)
 bones/2/rotation = Quaternion(-3.5948824e-07, 2.5664738e-07, 0.23203838, 0.97270674)
-bones/3/position = Vector3(-0.049398728, -0.076192126, 0.025068145)
-bones/3/rotation = Quaternion(2.5993064e-08, -7.3125335e-07, -0.08295804, 0.99655306)
+bones/3/position = Vector3(-0.04939873, -0.076192096, 0.025068147)
+bones/3/rotation = Quaternion(2.5993067e-08, -7.3125335e-07, -0.08295806, 0.99655306)
 bones/4/position = Vector3(-0.051873084, -0.076200776, -0.030798934)
 bones/4/rotation = Quaternion(2.599306e-08, -7.312534e-07, -0.082958035, 0.99655306)
 
-[node name="Shell1" parent="Root/Skeleton3D" index="0" unique_id=932229102]
-transform = Transform3D(-1.3411045e-07, 0.9999999, -1.6979413e-07, -0.99999964, -7.450603e-08, 1.477299e-07, 1.4773036e-07, 1.697942e-07, 1, 0.25442758, 0.05853968, 0.025068311)
+[node name="Shell1" parent="Root/Skeleton3D" index="0" unique_id=1712887756]
+transform = Transform3D(-1.6391277e-07, 0.9999999, -1.697941e-07, -0.99999964, -1.04308356e-07, 1.477299e-07, 1.4773036e-07, 1.697942e-07, 1, 0.2544276, 0.05853969, 0.025068313)
 
-[node name="Shell2" parent="Root/Skeleton3D" index="1" unique_id=224810766]
+[node name="Shell2" parent="Root/Skeleton3D" index="1" unique_id=970580855]
 transform = Transform3D(-1.1920928e-07, 0.9999999, -1.6979416e-07, -0.99999964, -5.960487e-08, 1.4773002e-07, 1.4773047e-07, 1.6979423e-07, 1, 0.25400993, 0.060978625, -0.030798765)
 
-[node name="Barrel" parent="Root/Skeleton3D" index="2" unique_id=145911120]
+[node name="Barrel" parent="Root/Skeleton3D" index="2" unique_id=1106878646]
 transform = Transform3D(0.16534406, 0.986236, 3.3393235e-09, -0.9862357, 0.16534406, -1.3054225e-06, -1.2880066e-06, 2.1255056e-07, 1, 0.33773878, 0.022418842, 1.1955574e-07)
 
-[node name="MuzzleFlash_01" parent="Root/Skeleton3D/Barrel/Barrels" parent_id_path=PackedInt32Array(774118302) index="0" unique_id=1480076221 instance=ExtResource("3_k4p76")]
+[node name="MuzzleFlash_01" parent="Root/Skeleton3D/Barrel/Barrels" parent_id_path=PackedInt32Array(788175023) index="0" unique_id=1480076221 instance=ExtResource("3_k4p76")]
 transform = Transform3D(1, -1.5597388e-13, -3.907985e-14, 3.4550694e-16, 1, 0, 3.907985e-14, 0, 1, 0.79696417, 0.05210348, 0.009483852)
 
-[node name="Trigger" parent="Root/Skeleton3D" index="3" unique_id=2134563002]
+[node name="Trigger" parent="Root/Skeleton3D" index="3" unique_id=672165852]
 transform = Transform3D(-0.9742651, 0.22540519, -3.6770584e-07, -0.22540522, -0.97426486, 6.7933115e-08, -3.4293043e-07, 1.4906777e-07, 1, 0.15569907, -0.010385424, 4.4602146e-08)
 
-[node name="Main" parent="Root/Skeleton3D" index="4" unique_id=6962108]
+[node name="Main" parent="Root/Skeleton3D" index="4" unique_id=964749900]
 transform = Transform3D(-0.29765803, 0.9546726, -6.790614e-07, -0.95467246, -0.29765797, -7.444165e-07, -9.128021e-07, 4.2669973e-07, 1, 0.07801423, 0.10339853, 3.4694532e-09)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Root" parent_id_path=PackedInt32Array(1747983469) index="1" unique_id=799288726]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Root" parent_id_path=PackedInt32Array(919205294) index="1" unique_id=799288726]
 
-[node name="AnimationPlayer" parent="." index="8" unique_id=1974163393]
+[node name="AnimationPlayer" parent="." index="8" unique_id=1692915716]
 libraries/ = SubResource("AnimationLibrary_nv03g")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

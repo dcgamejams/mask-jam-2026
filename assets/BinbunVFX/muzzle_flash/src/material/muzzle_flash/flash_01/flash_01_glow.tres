@@ -18,6 +18,6 @@ shader_parameter/emission_amount = 4.0
 shader_parameter/primary_color = Color(1, 0.690196, 0, 1)
 shader_parameter/secondary_color = Color(1, 0.376471, 0, 1)
 shader_parameter/alpha_mode = 0
-shader_parameter/alpha_multiplier = 1.0
+shader_parameter/alpha_multiplier = 0.0625
 shader_parameter/proximity_fade = false
 shader_parameter/proximity_fade_distance = 1.0

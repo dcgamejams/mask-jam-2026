@@ -5,7 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://m7un8rmop8kb" path="res://Audio/SFX/Ghost/ambient/classic-ghost-sound-95773.mp3" id="2_p51wp"]
 [ext_resource type="AudioStream" uid="uid://ces4y1doe7p4a" path="res://Audio/SFX/Ghost/ambient/ghost-6979.mp3" id="3_4yjmm"]
 [ext_resource type="Script" uid="uid://es67axqa8ao6" path="res://scripts/components/navigation_system.gd" id="3_uvqya"]
-[ext_resource type="PackedScene" uid="uid://by81nft6ho4cn" path="res://assets/mesh/castlevania_lod_-_ghost/scene.gltf" id="4_qp7ua"]
 [ext_resource type="AudioStream" uid="uid://bjja560ur5soh" path="res://Audio/SFX/Ghost/ambient/ghost-horror-sound-382709.mp3" id="4_sx73x"]
 [ext_resource type="AudioStream" uid="uid://de4qhngkhf12k" path="res://Audio/SFX/Ghost/ambient/ghost-voice-halloween-moany-ghost-168411.mp3" id="5_g6jhv"]
 [ext_resource type="Texture2D" uid="uid://ecu1d0y8q5f7" path="res://assets/mesh/castlevania_lod_-_ghost/textures/Material_19442_baseColor.png" id="5_qp7ua"]
@@ -185,21 +184,6 @@ tracks/12/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_qp7ua"]
-resource_name = "attack"
-length = 1.2666667
-tracks/13/type = "method"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath(".")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
 }
 
 [sub_resource type="Animation" id="Animation_qp7ua"]
@@ -655,7 +639,6 @@ transform = Transform3D(1, 0, 0, 0, -0.017609445, 0.99984497, 0, -0.99984497, -0
 layers = 0
 mesh = SubResource("CylinderMesh_j1tbm")
 
-[editable path="Sketchfab_Scene"]
 [node name="AudioStreamPlayer3DAmbient" type="AudioStreamPlayer3D" parent="." unique_id=2071931980]
 
 [node name="AudioStreamPlayer3DAttack" type="AudioStreamPlayer3D" parent="." unique_id=1183111435]
