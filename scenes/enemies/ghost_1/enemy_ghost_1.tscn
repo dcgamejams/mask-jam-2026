@@ -200,7 +200,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0157
 shape = SubResource("SphereShape3D_8fdcm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=406928111]
-libraries/GhostAni = ExtResource("14_v1528")
+libraries/ = ExtResource("14_v1528")
 
 [node name="HealthSystem" type="Node" parent="." unique_id=374662232]
 script = ExtResource("2_ip34o")
