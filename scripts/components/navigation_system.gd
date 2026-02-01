@@ -3,6 +3,7 @@ class_name NavigationSystem
 
 @export var nav_agent: NavigationAgent3D
 @export var search_box: Area3D
+@export var search_box_ghost: Area3D
 
 var next_path_pos
 var parent: CharacterBody3D
@@ -19,6 +20,8 @@ func _ready() -> void:
 
 	search_box.body_entered.connect(on_search_box_body_entered)
 	search_box.body_exited.connect(on_search_box_body_exited)
+
+	search_box.body_entered.connect(on_search_goat_body_entered)
 
 	# Navigation
 	add_child(timer_navigate)
@@ -69,8 +72,26 @@ func update_navigation_path():
 func on_search_box_body_entered(body: Node3D):
 	if not body:
 		return
+
+	var rand = randi_range(0, 2)
+	if parent.target is Goat and rand == 0: 
+		return 
+	
+	if body.is_in_group('PlayerCharacter'):
+		if timer_give_up and timer_give_up.is_inside_tree():
+			timer_give_up.stop()
+		parent.target = body
+		parent.set_state(parent.States.CHASING)
+
+
+func on_search_goat_body_entered(body: Node3D):
+	if not body:
+		return
+	var rand = randi_range(0, 1)
+	if parent.target is PlayerCharacter and rand == 0: 
+		return 
 		
-	if body.is_in_group('PlayerCharacter') or body.is_in_group('Goat'):
+	if body.is_in_group('Goat'):
 		if timer_give_up and timer_give_up.is_inside_tree():
 			timer_give_up.stop()
 		parent.target = body

@@ -232,11 +232,10 @@ func set_state(new_state: States) -> void:
 			return
 		animation_player.play(ANI[LIST.HURT])
 		# TODO: interrupt whever we are doing to get hurt. Maybe a 33% chance to? 
-		if !target:
-			var get_player = get_tree().get_first_node_in_group('PlayerCharacter')
-			if get_player:
-				target = get_player
-				set_state(States.CHASING)
+		var get_player = get_tree().get_first_node_in_group('PlayerCharacter')
+		if get_player:
+			target = get_player
+			set_state(States.CHASING)
 
 	if state == States.DYING:
 		# Helps prevent monitoring issues

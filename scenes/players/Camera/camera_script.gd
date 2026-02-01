@@ -130,26 +130,31 @@ func _process(delta : float) -> void:
 	
 	#mouse_mode()
 	
-	handle_mask()
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed or event.is_action_pressed('put_on_mask'):
+			mask_on()
+		elif event.button_index == MOUSE_BUTTON_RIGHT and event.canceled or event.is_action_released('put_on_mask'):
+			mask_off()
+			
+func mask_on():
+	if maskTween:
+		maskTween.kill()
+	maskTween = create_tween()
+	maskTween.tween_property(stone_mask,"transform", mask_on_position.transform, maskAnimationTime).set_ease(Tween.EASE_IN)
+	maskTween.tween_callback(
+		func(): 
+			camera.cull_mask = (1 << 0) | (1 << 9)
+	)
 	
-func handle_mask():
-	if Input.is_action_just_pressed("put_on_mask"):
-		if maskTween:
-			maskTween.kill()
-		maskTween = create_tween()
-		maskTween.tween_property(stone_mask,"transform", mask_on_position.transform, maskAnimationTime).set_ease(Tween.EASE_IN)
-		maskTween.tween_callback(
-			func(): 
-				camera.cull_mask = (1 << 0) | (1 << 9)
-		)
-		
-	elif Input.is_action_just_released("put_on_mask"):
-		if maskTween:
-			maskTween.kill()
-		maskTween = create_tween()
-		maskTween.tween_property(stone_mask,"transform", mask_off_position.transform, maskAnimationTime).set_ease(Tween.EASE_OUT)
-		camera.cull_mask = 1 << 0
+func mask_off():
+	if maskTween:
+		maskTween.kill()
+	maskTween = create_tween()
+	maskTween.tween_property(stone_mask,"transform", mask_off_position.transform, maskAnimationTime).set_ease(Tween.EASE_OUT)
+	camera.cull_mask = 1 << 0
 	
+
 func tilt(delta : float) -> void:
 	if state != "Fly" and state != "Slide" and state != "Wallrun":
 		if enable_forward_tilt:

@@ -26,6 +26,9 @@ height = 2.4
 [sub_resource type="BoxShape3D" id="BoxShape3D_nd7sd"]
 size = Vector3(30, 3, 30)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v1528"]
+size = Vector3(20, 3, 20)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_8fdcm"]
 radius = 1.0
 
@@ -188,6 +191,14 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SearchBox" unique_id=606131953]
 shape = SubResource("BoxShape3D_nd7sd")
 
+[node name="SearchBoxGoat" type="Area3D" parent="." unique_id=1422699205]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, -8)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SearchBoxGoat" unique_id=1086672061]
+shape = SubResource("BoxShape3D_v1528")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=406928111]
 libraries/ = ExtResource("14_v1528")
 
@@ -195,10 +206,11 @@ libraries/ = ExtResource("14_v1528")
 script = ExtResource("2_ip34o")
 regen_enabled = false
 
-[node name="NavigationSystem" type="Node" parent="." unique_id=516601289 node_paths=PackedStringArray("nav_agent", "search_box")]
+[node name="NavigationSystem" type="Node" parent="." unique_id=516601289 node_paths=PackedStringArray("nav_agent", "search_box", "search_box_ghost")]
 script = ExtResource("3_uvqya")
 nav_agent = NodePath("../NavigationAgent3D")
 search_box = NodePath("../SearchBox")
+search_box_ghost = NodePath("../SearchBoxGoat")
 
 [node name="AttackBox" type="Area3D" parent="." unique_id=1496836165]
 transform = Transform3D(1, -1.2621775e-29, 0, 3.1554436e-30, 1, 7.1054274e-15, -1.0587912e-22, -7.1054274e-15, 1, -1.4901161e-08, 1.7517948, -2.1708367)
