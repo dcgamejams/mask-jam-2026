@@ -4,6 +4,8 @@ class_name NavigationSystem
 @export var nav_agent: NavigationAgent3D
 @export var search_box: Area3D
 @export var search_box_ghost: Area3D
+@export var min_patrol: float = 5.0
+@export var max_patrol: float = 12.0
 
 var next_path_pos
 var parent: CharacterBody3D
@@ -43,7 +45,7 @@ func _ready() -> void:
 
 	add_child(timer_patrol)
 	timer_patrol.timeout.connect(pick_patrol_destination)
-	timer_patrol.wait_time = randf_range(5.0, 10.0)
+	timer_patrol.wait_time = randf_range(min_patrol, max_patrol)
 	timer_patrol.start()
 
 func chase_target():

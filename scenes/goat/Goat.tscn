@@ -524,6 +524,8 @@ regen_enabled = false
 script = ExtResource("9_scptj")
 nav_agent = NodePath("../NavigationAgent3D")
 search_box = NodePath("../Search")
+min_patrol = 10.0
+max_patrol = 20.0
 metadata/_custom_type_script = "uid://es67axqa8ao6"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1266396648]
