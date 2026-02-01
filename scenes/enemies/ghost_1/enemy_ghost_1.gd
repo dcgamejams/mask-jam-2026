@@ -33,6 +33,14 @@ var timer_attack_cooldown = Timer.new()
 
 var target = null
 
+@onready var AudioPlayerAmbient: AudioStreamPlayer3D = $AudioStreamPlayer3DAmbient
+
+@export var AmbientSoundsArray: Array[AudioStream]
+
+@onready var AudioPlayerAttack: AudioStreamPlayer3D = $AudioStreamPlayer3DAttack
+
+@export var AttackSoundsArray: Array[AudioStream]
+
 # ANIMATION LIST. These are required
 enum LIST { 
 	WALK,
@@ -86,6 +94,24 @@ func _ready():
 
 	await get_tree().create_timer(0.2).timeout
 	set_state(States.SEARCHING)
+	
+	#ambient sounds stuff 
+	_play_new_random_ambient_sound()
+	
+func _play_new_random_ambient_sound() -> void:
+	await get_tree().create_timer(randf_range(0.5, 10.0)).timeout
+	
+	var RandomAmbientSound: AudioStream = AmbientSoundsArray.pick_random()
+	
+	AudioPlayerAmbient.stream = RandomAmbientSound
+	AudioPlayerAmbient.play()
+	
+func _play_random_attack_sound() -> void:
+	var RandomAttackSound: AudioStream = AttackSoundsArray.pick_random()
+	
+	AudioPlayerAttack.stream = RandomAttackSound
+	AudioPlayerAttack.play()
+
 
 func _physics_process(delta: float) -> void:
 	match state:
@@ -284,3 +310,7 @@ func on_attack_box_entered(body):
 		var damage_successful = body.health_system.damage(attack_value, 4)
 		if damage_successful && attack_box:
 			attack_box.set_deferred('monitoring', false)
+
+
+func _on_audio_stream_player_3d_ambient_finished() -> void:
+	_play_new_random_ambient_sound()
