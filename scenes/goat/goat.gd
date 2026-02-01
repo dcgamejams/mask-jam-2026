@@ -11,6 +11,8 @@ const ROTATION_SPEED = 2.0
 @onready var nav: NavigationSystem = $NavigationSystem
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 
+var gameHasStarted = false
+
 func _ready():
 	add_to_group('Goat')
 	#nav_agent.target_desired_distance = randf_range(4.5, 6.5)
@@ -20,6 +22,7 @@ func _ready():
 	nav_agent.navigation_finished.connect(func(): animation_player.play("idle"))
 	nav.pick_patrol_destination()
 	nav_agent.path_changed.connect(func(): animation_player.play('walk'))
+	Global.signal_start.connect(func(): gameHasStarted = true)
 
 func _physics_process(delta: float) -> void:
 	velocity.y -= gravity * delta
@@ -38,6 +41,8 @@ func goat_die():
 var target
 
 func move_and_look(delta):
+	if not gameHasStarted:
+		return
 	var new_look_at
 	if nav_agent.is_navigation_finished() == false:
 		velocity = (nav.next_path_pos - global_transform.origin).normalized() * 2.0
