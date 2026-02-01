@@ -44,7 +44,6 @@ func start_goat():
 	gameHasStarted = true
 	nav.pick_patrol_destination()
 
-
 func move_and_look(delta):
 	if not gameHasStarted:
 		return

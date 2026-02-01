@@ -19,6 +19,10 @@ region = Rect2(192, 64, 64, 64)
 atlas = ExtResource("1_rw3g5")
 region = Rect2(448, 64, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ene8m"]
+atlas = ExtResource("1_rw3g5")
+region = Rect2(704, 640, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ji8en"]
 atlas = ExtResource("1_rw3g5")
 region = Rect2(0, 192, 64, 64)
@@ -76,14 +80,19 @@ text = "Fire"
 [node name="Mask" type="HBoxContainer" parent="." unique_id=294479181]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Mask" unique_id=1531068695]
+[node name="TextureRect2" type="TextureRect" parent="Mask" unique_id=628494951]
 layout_mode = 2
 texture = SubResource("AtlasTexture_rjdiv")
 
 [node name="Label" type="Label" parent="Mask" unique_id=1282792870]
 layout_mode = 2
 theme_override_font_sizes/font_size = 21
-text = "Mask (HOLD)"
+text = "Mask 
+(Hold)"
+
+[node name="TextureRect" type="TextureRect" parent="Mask" unique_id=1531068695]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ene8m")
 
 [node name="Reload3" type="HBoxContainer" parent="." unique_id=37142308]
 layout_mode = 2

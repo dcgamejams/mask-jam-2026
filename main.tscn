@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdj2iwi0ancxn" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cow3kiecu6e17" path="res://scenes/environment/farm.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="3_h2yge"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 128
@@ -84,6 +85,9 @@ cull_mask = 1047553
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.653, 1.888, 6.831)
 
 [node name="Farm" parent="." unique_id=1123410095 instance=ExtResource("2_0xm2m")]
+
+[node name="Goat" parent="." unique_id=752746429 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.353529, 0, 0)
 
 [node name="DeathMenu" type="CanvasLayer" parent="." unique_id=1852251889]
 

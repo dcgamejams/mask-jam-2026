@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c4mvird5y1dc" path="res://assets/img/Ground003_1K-JPG_Roughness.jpg" id="4_aj54g"]
 [ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="5_sdmqi"]
 [ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/Models/House/House.glb" id="6_6tkbu"]
-[ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="7_1l027"]
 [ext_resource type="PackedScene" uid="uid://cfwi4twmewpkt" path="res://scenes/environment/walls.tscn" id="8_wtekp"]
 [ext_resource type="Texture2D" uid="uid://bsibwek86jhec" path="res://assets/img/forest-dist.png" id="9_gm8pk"]
 [ext_resource type="PackedScene" uid="uid://hryrrhwq3bpx" path="res://scenes/Director.tscn" id="10_sycuu"]
@@ -178,9 +177,6 @@ shape = SubResource("BoxShape3D_0xm2m")
 
 [node name="House" parent="NavigationRegion3D" unique_id=970260079 instance=ExtResource("6_6tkbu")]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -13.092138, 4.473965, 0)
-
-[node name="Goat" parent="." unique_id=600539230 instance=ExtResource("7_1l027")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.357613, 0.5640688, 0)
 
 [node name="Walls" parent="." unique_id=814791399 instance=ExtResource("8_wtekp")]
 

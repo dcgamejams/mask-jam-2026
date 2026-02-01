@@ -235,7 +235,7 @@ func set_state(new_state: States) -> void:
 		var get_player = get_tree().get_first_node_in_group('PlayerCharacter')
 		if get_player:
 			target = get_player
-			set_state(States.CHASING)
+			#set_state(States.CHASING)
 
 	if state == States.DYING:
 		# Helps prevent monitoring issues
@@ -295,7 +295,7 @@ func attack():
 		return
 	# TODO: Pick a position on the left or the right of the player.
 	if state == States.CHASING or state == States.HURTING:
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(0.05).timeout
 		if nav_agent.is_navigation_finished():
 			if target and global_position.distance_to(target.transform.origin) < 8.0:
 				attack_position = target.transform.origin

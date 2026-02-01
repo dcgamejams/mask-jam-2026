@@ -132,9 +132,14 @@ func _process(delta : float) -> void:
 	
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed or event.is_action_pressed('put_on_mask'):
+		if (event.button_index == MOUSE_BUTTON_RIGHT and event.pressed) or event.is_action_pressed('put_on_mask'):
 			mask_on()
-		elif event.button_index == MOUSE_BUTTON_RIGHT and event.canceled or event.is_action_released('put_on_mask'):
+		elif (event.button_index == MOUSE_BUTTON_RIGHT and event.canceled) or event.is_action_released('put_on_mask'):
+			mask_off()
+	else:
+		if event.is_action_pressed('put_on_mask'):
+			mask_on()
+		elif event.is_action_released('put_on_mask'):
 			mask_off()
 			
 func mask_on():
