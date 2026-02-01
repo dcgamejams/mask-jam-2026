@@ -18,20 +18,15 @@ func _input(event):
 			if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED: 
 				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #set mouse mode as captured
 
-			if canShoot:
-				if CurrentAmmo > 0:
-					#var ray_origin: Vector3 = camera.global_position
-					#var ray_direction: Vector3 = -player.cam_holder.global_basis.z
-					#fire_manual_raycast(ray_origin, ray_direction)
-					fire_scatter_raycast()
-					Global.Shoot.emit()
-					canShoot = false	
-					CurrentAmmo -= 1
-				else:
-					canShoot = false 
-					CurrentAmmo = 10
-					#await get_tree().create_timer(2.0).timeout
-					canShoot = true
+			if canShoot:				
+				#var ray_origin: Vector3 = camera.global_position
+				#var ray_direction: Vector3 = -player.cam_holder.global_basis.z
+				#fire_manual_raycast(ray_origin, ray_direction)
+				fire_scatter_raycast()
+				Global.Shoot.emit()
+				canShoot = false	
+				CurrentAmmo -= 1
+				
 
 		#print("Right click at: ", event.position)
 
