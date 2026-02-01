@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbxi33c85t58a"
-path.s3tc="res://.godot/imported/eye.jpg-989664cf53571473a68eed81fc3ed31d.s3tc.ctex"
+path.s3tc="res://.godot/imported/eye.jpg-aa46ec5732f0628d1ca00c66c53e0780.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/goat/eye.jpg"
-dest_files=["res://.godot/imported/eye.jpg-989664cf53571473a68eed81fc3ed31d.s3tc.ctex"]
+source_file="res://assets/Models/goat/eye.jpg"
+dest_files=["res://.godot/imported/eye.jpg-aa46ec5732f0628d1ca00c66c53e0780.s3tc.ctex"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ci0wuvhky4vnj"
-path="res://.godot/imported/stoneMaskV2.glb-440ab311212e51b1da3d64e44a3399ed.scn"
+path="res://.godot/imported/stoneMaskV2.glb-7a4e22ced62197d74045af59e6482f12.scn"
 
 [deps]
 
-source_file="res://assets/models/stoneMaskV2.glb"
-dest_files=["res://.godot/imported/stoneMaskV2.glb-440ab311212e51b1da3d64e44a3399ed.scn"]
+source_file="res://assets/Models/stoneMaskV2.glb"
+dest_files=["res://.godot/imported/stoneMaskV2.glb-7a4e22ced62197d74045af59e6482f12.scn"]
 
 [params]
 

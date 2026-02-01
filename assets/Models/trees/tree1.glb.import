@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dqws8632k60fg"
-path="res://.godot/imported/tree1.glb-822113e472cdd44d6d4466ca31aa92a6.scn"
+path="res://.godot/imported/tree1.glb-9061e5b71e81fe6782518dd1117d4245.scn"
 
 [deps]
 
-source_file="res://assets/models/trees/tree1.glb"
-dest_files=["res://.godot/imported/tree1.glb-822113e472cdd44d6d4466ca31aa92a6.scn"]
+source_file="res://assets/Models/trees/tree1.glb"
+dest_files=["res://.godot/imported/tree1.glb-9061e5b71e81fe6782518dd1117d4245.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ _subresources={
 "materials": {
 "material_0": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/models/trees/bark.tres",
+"use_external/fallback_path": "res://assets/Models/trees/bark.tres",
 "use_external/path": "uid://fagtvs8moacy"
 }
 }

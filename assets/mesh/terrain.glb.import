@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cl7nxip4ocus2"
-path="res://.godot/imported/tree3.glb-d75dda22c85ae42a51944f0896e0df92.scn"
+uid="uid://d1uibpgxt4wbx"
+path="res://.godot/imported/terrain.glb-0e77346ef021580840d79ea0673c30c1.scn"
 
 [deps]
 
-source_file="res://assets/Models/trees/tree3.glb"
-dest_files=["res://.godot/imported/tree3.glb-d75dda22c85ae42a51944f0896e0df92.scn"]
+source_file="res://assets/mesh/terrain.glb"
+dest_files=["res://.godot/imported/terrain.glb-0e77346ef021580840d79ea0673c30c1.scn"]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=4.0
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
@@ -37,14 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"material_0": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://assets/Models/trees/bark.tres",
-"use_external/path": "uid://fagtvs8moacy"
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
