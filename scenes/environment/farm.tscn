@@ -14,15 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://ii7ds23fkycr" path="res://assets/Models/trees/tree2.glb" id="15_sdmqi"]
 [ext_resource type="PackedScene" uid="uid://cl7nxip4ocus2" path="res://assets/Models/trees/tree3.glb" id="16_6tkbu"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
-albedo_color = Color(0.7898419, 0.7258606, 0.6907761, 1)
-albedo_texture = ExtResource("2_vpt6u")
-metallic_specular = 0.03
-roughness_texture = ExtResource("4_aj54g")
-normal_enabled = true
-normal_texture = ExtResource("3_p7ptl")
-uv1_triplanar = true
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_gta14"]
 material = ExtResource("2_vpt6u")
 size = Vector2(15000, 15000)
@@ -127,7 +118,7 @@ navigation_mesh = SubResource("NavigationMesh_etyyu")
 [node name="glat" parent="NavigationRegion3D" unique_id=717603836 instance=ExtResource("5_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.8603191, 0)
 
-[node name="Landscape_004" parent="NavigationRegion3D/glat" index="0" unique_id=797851075]
+[node name="Landscape_004" parent="NavigationRegion3D/glat" index="0" unique_id=2078449011]
 surface_material_override/0 = ExtResource("2_vpt6u")
 
 [node name="EnvironmentObjects" type="Node3D" parent="NavigationRegion3D" unique_id=108156336]
