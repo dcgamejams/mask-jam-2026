@@ -76,7 +76,8 @@ func on_search_box_body_entered(body: Node3D):
 		return
 
 	var rand = randi_range(0, 2)
-	if parent.target is Goat and rand == 0: 
+	
+	if parent.target and (parent.target is Goat and rand == 0): 
 		return 
 	
 	if body.is_in_group('PlayerCharacter'):
@@ -90,7 +91,7 @@ func on_search_goat_body_entered(body: Node3D):
 	if not body:
 		return
 	var rand = randi_range(0, 1)
-	if parent.target is PlayerCharacter and rand == 0: 
+	if parent.target and (parent.target is PlayerCharacter and rand == 0): 
 		return 
 		
 	if body.is_in_group('Goat'):

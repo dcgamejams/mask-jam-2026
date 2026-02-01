@@ -434,6 +434,7 @@ script = ExtResource("12_5fuve")
 metadata/_custom_type_script = "uid://bq1stj2mujnp2"
 
 [node name="CameraHolder" type="Node3D" parent="." unique_id=669360709]
+unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.715, 0)
 script = ExtResource("2_x12n0")
 cam_fov_per_state = Dictionary[String, Vector2]({
@@ -539,6 +540,9 @@ debug_shape_custom_color = Color(0, 0.823529, 0.956863, 1)
 
 [node name="HealthSystem" type="Node" parent="." unique_id=606836465]
 script = ExtResource("17_427iv")
+regen_delay = 2.0
+regen_speed = 0.1
+regen_increment = 1
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1041177002 node_paths=PackedStringArray("play_char")]
 script = ExtResource("16_5jm78")
