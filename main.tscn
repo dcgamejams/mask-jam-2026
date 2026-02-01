@@ -10,6 +10,11 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 78
 shadow_color = Color(0.6269097, 0, 0, 0.9882353)
 
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+font_size = 48
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Main" type="Node3D" unique_id=60408776]
 script = ExtResource("1_h2yge")
 camera_rotation_speed = 0.25
@@ -70,3 +75,56 @@ transform = Transform3D(0.8186512, 0, 0.57429105, 0, 1, 0, -0.57429105, 0, 0.818
 cull_mask = 1047553
 
 [node name="Farm" parent="." unique_id=1123410095 instance=ExtResource("2_0xm2m")]
+
+[node name="DeathMenu" type="CanvasLayer" parent="." unique_id=1852251889]
+
+[node name="Control" type="Control" parent="DeathMenu" unique_id=855845725]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DeathMenu/Control" unique_id=2096467695]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -585.0
+offset_top = -264.0
+offset_right = 605.5
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeathMenu/Control/MarginContainer" unique_id=407388173]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="DeathMenu/Control/MarginContainer/VBoxContainer" unique_id=1927777267]
+layout_mode = 2
+text = "You Died!"
+label_settings = SubResource("LabelSettings_0xm2m")
+horizontal_alignment = 1
+
+[node name="Time" type="Label" parent="DeathMenu/Control/MarginContainer/VBoxContainer" unique_id=36801949]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "You lasted for 5 minutes and 36 seconds"
+label_settings = SubResource("LabelSettings_h2yge")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="RestartButton" type="Button" parent="DeathMenu/Control/MarginContainer/VBoxContainer" unique_id=1713386960]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+text = "Restart"
+icon_alignment = 1
