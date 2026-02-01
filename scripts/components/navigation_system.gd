@@ -3,6 +3,9 @@ class_name NavigationSystem
 
 @export var nav_agent: NavigationAgent3D
 @export var search_box: Area3D
+@export var search_box_ghost: Area3D
+@export var min_patrol: float = 5.0
+@export var max_patrol: float = 12.0
 
 var next_path_pos
 var parent: CharacterBody3D
@@ -20,6 +23,8 @@ func _ready() -> void:
 	search_box.body_entered.connect(on_search_box_body_entered)
 	search_box.body_exited.connect(on_search_box_body_exited)
 
+	search_box.body_entered.connect(on_search_goat_body_entered)
+
 	# Navigation
 	add_child(timer_navigate)
 	timer_navigate.timeout.connect(update_navigation_path)
@@ -34,13 +39,13 @@ func _ready() -> void:
 	add_child(timer_chase_target)
 	
 	timer_give_up.timeout.connect(give_up)
-	timer_give_up.wait_time = randf_range(7.0, 11.0)
+	timer_give_up.wait_time = randf_range(2.0, 9.0)
 	timer_give_up.one_shot = true # Do not repeatedly give up
 	add_child(timer_give_up)
 
 	add_child(timer_patrol)
 	timer_patrol.timeout.connect(pick_patrol_destination)
-	timer_patrol.wait_time = randf_range(15.0, 25.0)
+	timer_patrol.wait_time = randf_range(min_patrol, max_patrol)
 	timer_patrol.start()
 
 func chase_target():
@@ -54,14 +59,12 @@ func chase_target():
 
 func pick_patrol_destination():
 	var map = NavigationServer3D.get_maps()[0]
-	var random_point = NavigationServer3D.map_get_random_point(map, 1, false)
-	if random_point.distance_to(Vector3.ZERO) > 25.0:
-		print('random')
+	var random_point = NavigationServer3D.map_get_random_point(map, 1, true)
+	if random_point.distance_to(Vector3.ZERO) > 30.0:
 		pick_patrol_destination()
 	else:
 		nav_agent.set_target_position(random_point)
 		next_path_pos = nav_agent.get_next_path_position()
-
 		
 func update_navigation_path():
 	if nav_agent.is_navigation_finished() == false:
@@ -69,14 +72,37 @@ func update_navigation_path():
 
 # TODO: Setting & forgetting target might need to be signal emits?
 func on_search_box_body_entered(body: Node3D):
-	if body && body.is_in_group('PlayerCharacter') and timer_give_up: 
-		timer_give_up.stop()
+	if not body:
+		return
+
+	var rand = randi_range(0, 2)
+	if parent.target is Goat and rand == 0: 
+		return 
+	
+	if body.is_in_group('PlayerCharacter'):
+		if timer_give_up and timer_give_up.is_inside_tree():
+			timer_give_up.stop()
+		parent.target = body
+		parent.set_state(parent.States.CHASING)
+
+
+func on_search_goat_body_entered(body: Node3D):
+	if not body:
+		return
+	var rand = randi_range(0, 1)
+	if parent.target is PlayerCharacter and rand == 0: 
+		return 
+		
+	if body.is_in_group('Goat'):
+		if timer_give_up and timer_give_up.is_inside_tree():
+			timer_give_up.stop()
 		parent.target = body
 		parent.set_state(parent.States.CHASING)
 
 func on_search_box_body_exited(body: Node3D):
-	if parent.target == body and timer_give_up: 
-		timer_give_up.start()
+	if parent.target == body:
+		if timer_give_up and timer_give_up.is_inside_tree():
+			timer_give_up.start()
 
 func give_up():
 	print('give up')

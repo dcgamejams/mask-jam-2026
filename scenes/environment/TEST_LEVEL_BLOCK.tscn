@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cfwi4twmewpkt" path="res://scenes/environment/walls.tscn" id="1_p5fs4"]
 [ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="2_vd5di"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://scenes/players/player_character_scene.tscn" id="3_qslaw"]
+[ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="4_75c45"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qslaw"]
 albedo_texture = ExtResource("2_vd5di")
@@ -15,6 +16,7 @@ size = Vector2(50, 50)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qslaw"]
 
 [sub_resource type="Environment" id="Environment_qslaw"]
+background_mode = 1
 
 [node name="TestLevelBlock" type="Node3D" unique_id=1028373562]
 
@@ -36,3 +38,6 @@ environment = SubResource("Environment_qslaw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1514010381]
 transform = Transform3D(0.88762254, -0.46057165, 0, 0.3647344, 0.7029232, 0.6106291, -0.28123844, -0.54200816, 0.7919168, -2.7370405, 0, 0)
+
+[node name="Goat" parent="." unique_id=752746429 instance=ExtResource("4_75c45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2824116, -2.1894977)

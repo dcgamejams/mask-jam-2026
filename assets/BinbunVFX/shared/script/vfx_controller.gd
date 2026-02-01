@@ -179,6 +179,7 @@ func _reset_particles():
 	for p in _get_particles():
 		p.restart()
 
+@warning_ignore("shadowed_variable_base_class")
 func _set_shader_params(name : String, value) -> void:
 	for p in _get_particles():
 		if is_instance_valid(p):
@@ -193,6 +194,7 @@ func _set_mesh_resolutions(value : int) -> void:
 	for m in _get_meshes(): if is_instance_valid(m):
 		if m is SphereMesh:
 			m.radial_segments = value
+			@warning_ignore("integer_division")
 			m.rings = value/2
 		if m is CylinderMesh:
 			m.radial_segments = value

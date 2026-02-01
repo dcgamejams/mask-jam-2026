@@ -2,17 +2,15 @@
 
 [ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_2vmhc"]
 [ext_resource type="Script" uid="uid://hep76rg80iwt" path="res://Wave.gd" id="1_4nk08"]
+[ext_resource type="Texture2D" uid="uid://bvyg6crwvf166" path="res://assets/img/sample/Dark/texture_07.png" id="1_etyyu"]
 [ext_resource type="Texture2D" uid="uid://cwko5p4gdm8e7" path="res://assets/img/sample/Green/texture_09.png" id="2_fxo6y"]
-[ext_resource type="Texture2D" uid="uid://qr2skr1h0ddi" path="res://assets/img/Ground003_1K-JPG_Color.jpg" id="2_iugom"]
 [ext_resource type="PackedScene" uid="uid://cpqf6gqli8puq" path="res://assets/Models/House/House.glb" id="4_gta14"]
 [ext_resource type="PackedScene" uid="uid://hryrrhwq3bpx" path="res://scenes/Director.tscn" id="6_ud7u2"]
 [ext_resource type="Script" uid="uid://ca6hc1lxuykiv" path="res://EnemySequence.gd" id="7_0id7f"]
 [ext_resource type="PackedScene" uid="uid://vydo5ihqeu0v" path="res://scenes/enemies/ghost_1/enemy_ghost_1.tscn" id="8_ojrxk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
-albedo_color = Color(0.6862745, 0.5372549, 0.52156866, 1)
-albedo_texture = ExtResource("2_iugom")
-uv1_scale = Vector3(0.05, 0.1, 0.1)
+albedo_texture = ExtResource("1_etyyu")
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gta14"]

@@ -166,6 +166,8 @@ run_action, crouch_action, jump_action, slide_action, dash_action, fly_action]
 @onready var left_wall_check : RayCast3D = %LeftWallCheck
 @onready var right_wall_check : RayCast3D = %RightWallCheck
 
+signal player_death
+
 #endregion
 
 func _ready() -> void:
@@ -292,19 +294,13 @@ func tween_model_height(state_model_height : float) -> void:
 	
 #endregion
 
-
 func init_game_logic():
 	health_system.signal_death.connect(on_player_die)
 	
 func on_player_die():
 	immobile = true
-
-	await get_tree().create_timer(1).timeout
 	camera.current = false
-	
-	await get_tree().create_timer(5).timeout
 	queue_free()
-
 
 func _on_state_machine_ready() -> void:
 	pass # Replace with function body.

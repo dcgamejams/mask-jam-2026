@@ -1,0 +1,8 @@
+Model Information:
+* title:	Monk
+* source:	https://sketchfab.com/3d-models/monk-fd3a96ae4eed48ff8fbb462a07281c27
+* author:	nolanfa (https://sketchfab.com/nolanfa)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

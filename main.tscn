@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdj2iwi0ancxn" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cow3kiecu6e17" path="res://scenes/environment/farm.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="3_h2yge"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 128
@@ -10,9 +11,20 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 78
 shadow_color = Color(0.6269097, 0, 0, 0.9882353)
 
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+font_size = 48
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
+font_size = 43
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Main" type="Node3D" unique_id=60408776]
 script = ExtResource("1_h2yge")
 camera_rotation_speed = 0.25
+cameraTweenTime = 0.4
 
 [node name="MainMenu" type="CanvasLayer" parent="." unique_id=1385662631]
 
@@ -45,7 +57,7 @@ theme_override_constants/separation = 40
 
 [node name="Title" type="Label" parent="MainMenu/Control/MarginContainer/VBoxContainer" unique_id=116978910]
 layout_mode = 2
-text = "GOAT GAME"
+text = "THE GOAT"
 label_settings = SubResource("LabelSettings_0xm2m")
 horizontal_alignment = 1
 
@@ -63,10 +75,118 @@ icon_alignment = 1
 transform = Transform3D(-0.9939322, 0, 0.10999447, 0, 1, 0, -0.10999447, 0, -0.9939322, 0, 1.6213799, -1.2480963)
 
 [node name="MenuCameraFocus" type="Node3D" parent="." unique_id=74178869]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.655115, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.303235, 1.6407166, -0.38796473)
 
 [node name="Camera3D" type="Camera3D" parent="MenuCameraFocus" unique_id=154145269]
 transform = Transform3D(0.8186512, 0, 0.57429105, 0, 1, 0, -0.57429105, 0, 0.8186512, 6.6111803, 7.5512524, 27.324368)
 cull_mask = 1047553
 
+[node name="IntroCameraPosition" type="Node3D" parent="MenuCameraFocus" unique_id=642613711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.653, 1.888, 6.831)
+
 [node name="Farm" parent="." unique_id=1123410095 instance=ExtResource("2_0xm2m")]
+
+[node name="Goat" parent="." unique_id=752746429 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.353529, 0, 0)
+
+[node name="DeathMenu" type="CanvasLayer" parent="." unique_id=1852251889]
+
+[node name="Control" type="Control" parent="DeathMenu" unique_id=855845725]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DeathMenu/Control" unique_id=2096467695]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -585.0
+offset_top = -264.0
+offset_right = 605.5
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeathMenu/Control/MarginContainer" unique_id=407388173]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="DeathMenu/Control/MarginContainer/VBoxContainer" unique_id=1927777267]
+layout_mode = 2
+text = "You Died!"
+label_settings = SubResource("LabelSettings_0xm2m")
+horizontal_alignment = 1
+
+[node name="Time" type="Label" parent="DeathMenu/Control/MarginContainer/VBoxContainer" unique_id=36801949]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "You lasted for 5 minutes and 36 seconds"
+label_settings = SubResource("LabelSettings_h2yge")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="RestartButton" type="Button" parent="DeathMenu/Control/MarginContainer/VBoxContainer" unique_id=1713386960]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+text = "Restart"
+icon_alignment = 1
+
+[node name="Introduction" type="CanvasLayer" parent="." unique_id=596229279]
+
+[node name="Control" type="Control" parent="Introduction" unique_id=1288744672]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Introduction/Control" unique_id=445890992]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -585.5
+offset_top = -164.5
+offset_right = 605.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Introduction/Control/MarginContainer" unique_id=1359898932]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="Introduction/Control/MarginContainer/VBoxContainer" unique_id=1370049348]
+layout_mode = 2
+text = "Ghosts are coming to attack  your GOAT!
+
+Ghosts are invisible, so you must look through
+ your handy spirit mask to see them.
+
+Defend yourself and your GOAT as long as you can!"
+label_settings = SubResource("LabelSettings_1bvp3")
+horizontal_alignment = 1
+
+[node name="Startbutton" type="Button" parent="Introduction/Control/MarginContainer/VBoxContainer" unique_id=292889307]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+text = "Start"
+icon_alignment = 1
