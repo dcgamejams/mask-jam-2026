@@ -7,6 +7,13 @@ extends CharacterBody3D
 
 class_name Enemy
 
+enum TYPE { 
+	GHOST,
+	CULTIST
+}
+
+@export var enemy_type: TYPE
+
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 const FRICTION = 12
 const ROTATION_SPEED = 3.0
@@ -69,6 +76,9 @@ var state: States = States.IDLE
 
 func _ready(): 
 	add_to_group("Enemies")
+	
+	if enemy_type == TYPE.CULTIST:
+		print("IM A CULTIST")
 	
 	animation_player.playback_default_blend_time = 0.4
 

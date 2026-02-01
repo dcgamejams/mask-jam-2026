@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdj2iwi0ancxn" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cow3kiecu6e17" path="res://scenes/environment/farm.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://vydo5ihqeu0v" path="res://scenes/enemies/ghost_1/enemy_ghost_1.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://55aifbe538fr" path="res://scenes/enemies/cultist/cultist.tscn" id="3_h2yge"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 128
@@ -130,5 +130,5 @@ theme_override_font_sizes/font_size = 64
 text = "Restart"
 icon_alignment = 1
 
-[node name="EnemyGhost1" parent="." unique_id=427302985 instance=ExtResource("3_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.968067, 2.7052097, 0)
+[node name="EnemyCultist" parent="." unique_id=427302985 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.32964, 1.3896694, 0)
