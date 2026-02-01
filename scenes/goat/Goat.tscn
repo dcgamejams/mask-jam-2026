@@ -520,10 +520,11 @@ max_health = 1000
 health = 1000
 regen_enabled = false
 
-[node name="NavigationSystem" type="Node" parent="." unique_id=902741949 node_paths=PackedStringArray("nav_agent", "search_box")]
+[node name="NavigationSystem" type="Node" parent="." unique_id=902741949 node_paths=PackedStringArray("nav_agent", "search_box", "search_box_ghost")]
 script = ExtResource("9_scptj")
 nav_agent = NodePath("../NavigationAgent3D")
 search_box = NodePath("../Search")
+search_box_ghost = NodePath("../Search2")
 min_patrol = 10.0
 max_patrol = 20.0
 metadata/_custom_type_script = "uid://es67axqa8ao6"
@@ -537,6 +538,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67440987, 0)
 shape = SubResource("BoxShape3D_7hkpy")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1466534450]
+path_desired_distance = 2.11
+target_desired_distance = 2.85
 
 [node name="Search" type="Area3D" parent="." unique_id=358728936]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3615873, 0)
@@ -546,6 +549,16 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Search" unique_id=1081302019]
+shape = SubResource("SphereShape3D_yfvqt")
+
+[node name="Search2" type="Area3D" parent="." unique_id=702189709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3615873, 0)
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Search2" unique_id=716147520]
 shape = SubResource("SphereShape3D_yfvqt")
 
 [node name="MeshRoot" type="Node3D" parent="." unique_id=68246385]
