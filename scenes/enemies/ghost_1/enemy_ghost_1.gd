@@ -109,7 +109,7 @@ func _ready():
 	_play_new_random_ambient_sound()
 	
 func _play_new_random_ambient_sound() -> void:
-	#await get_tree().create_timer(randf_range(0.5, 10.0)).timeout
+	await get_tree().create_timer(randf_range(0.5, 10.0)).timeout
 	var RandomAmbientSound: AudioStream = AmbientSoundsArray.pick_random()
 	AudioPlayerAmbient.stream = RandomAmbientSound
 	AudioPlayerAmbient.play()

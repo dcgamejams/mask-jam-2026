@@ -4,11 +4,15 @@ extends Node3D
 
 @export var current_wave: int
 
+
+
 var outstanding_sequences: int = 0
 
 var WavesAreDone : bool = false
 
 signal _ready_for_next_wave
+
+
 
 func _pick_random_point() -> Vector3:
 	#var point = Vector3(0,0,0)

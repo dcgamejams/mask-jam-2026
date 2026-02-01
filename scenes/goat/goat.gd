@@ -11,6 +11,12 @@ const ROTATION_SPEED = 2.0
 @onready var nav: NavigationSystem = $NavigationSystem
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 
+@onready var soundplayer: AudioStreamPlayer3D = $AudioStreamPlayer3D
+
+@export var IdleSounds: Array[AudioStream]
+
+@export var PainSound: AudioStream
+
 var gameHasStarted = false
 
 func _ready():
@@ -23,6 +29,20 @@ func _ready():
 	nav_agent.path_changed.connect(func(): animation_player.play('walk'))
 	Global.signal_start.connect(start_goat)
 	animation_player.play("idle")
+	
+	_playRandomIdleSound()
+	
+	
+func _playRandomIdleSound() -> void:
+	
+	await get_tree().create_timer(randf_range(0.5, 10.0)).timeout
+	soundplayer.stream = IdleSounds.pick_random()
+	
+	soundplayer.play()
+	
+	_playRandomIdleSound()
+	
+	
 	
 func _physics_process(delta: float) -> void:
 	velocity.y -= gravity * delta
@@ -76,3 +96,8 @@ func move_and_look(delta):
 		transform.basis = lerp(old, Basis.IDENTITY, ROTATION_SPEED * delta).orthonormalized()
 	else:
 		transform.basis = lerp(old, new, ROTATION_SPEED * delta).orthonormalized()
+
+
+func _on_health_signal_hurt() -> void:
+	soundplayer.stream = PainSound
+	soundplayer.play()
