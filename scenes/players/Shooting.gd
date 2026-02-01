@@ -11,8 +11,6 @@ var MaxAmmo:int = 10
 @onready var camera : Camera3D = %Camera
 @onready var gun_origin: Marker3D = %"Gun Origin"
 
-var minSpread := 0.0
-var maxSpread := 3.0
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -21,9 +19,10 @@ func _input(event):
 			
 			if canShoot:
 				if CurrentAmmo > 0:
-					var ray_origin: Vector3 = camera.global_position
-					var ray_direction: Vector3 = -player.cam_holder.global_basis.z
-					fire_manual_raycast(ray_origin, ray_direction)
+					#var ray_origin: Vector3 = camera.global_position
+					#var ray_direction: Vector3 = -player.cam_holder.global_basis.z
+					#fire_manual_raycast(ray_origin, ray_direction)
+					fire_scatter_raycast()
 					Global.Shoot.emit()
 					canShoot = false	
 					CurrentAmmo -= 1
@@ -40,44 +39,50 @@ func ResetShooting() -> void:
 
 func fire_scatter_raycast():
 	var ray_origin: Vector3 = camera.global_position
-	var ray_direction: Vector3 = -player.cam_holder.global_basis.z
+	# Ensure we use the forward vector of the camera/holder
+	var forward: Vector3 = -player.cam_holder.global_basis.z
+	var right: Vector3 = player.cam_holder.global_basis.x
+	var up: Vector3 = player.cam_holder.global_basis.y
+	var debug_origin = super_shotgun.marker_3d.global_position
 	for i in 20:
-		#hitscanShot(target)
-		var spread_min := 4.0
-		var spread_max := 15.0
-		var cast_to = Vector3(randf_range(spread_min, spread_max), randf_range(spread_min, spread_max), -20.0) * 0.01
-		fire_manual_raycast(ray_origin, ray_direction + cast_to)
+		# 1. Use a lower spread range. 0.0 allows center shots.
+		var spread_intensity := 0.15 # Adjust this to tighten/loosen the cone
 
-func fire_manual_raycast(ray_origin: Vector3, cast_to):
-	@warning_ignore("narrowing_conversion")
-	await get_tree().create_timer(randi_range(0.02, 0.1)).timeout
-	
-	#get camera positino and direction for vector
-	#var ray_origin: Vector3 = camera.global_position
-	#var ray_direction: Vector3 = -camera.global_basis.z
-	
-	# Define the ray's end point (e.g., 1000 units away)
+		# 2. Calculate a random point inside a circle
+		var angle = randf() * TAU
+		var distance = randf() * spread_intensity
+
+		# 3. Create the offset vector based on the camera's local axes
+		var spread_offset = (right * cos(angle) * distance) + (up * sin(angle) * distance)
+		var direction = (forward + spread_offset).normalized()
+
+		fire_manual_raycast(ray_origin, direction, debug_origin)
+
+func fire_manual_raycast(ray_origin: Vector3, direction: Vector3, debug_origin: Vector3):
+	# Short random delay for "popcorn" effect
+	await get_tree().create_timer(randf_range(0.05, 0.2)).timeout
+
 	var ray_length: float = 50.0
-	var ray_end: Vector3 = ray_origin + (cast_to * ray_length)
-	
-	# CRITICAL: DEBUG HERE, do not enable it gets in the way o caera
-	#DebugDraw3D.draw_line(ray_origin, ray_end, Color.NAVAJO_WHITE, 0.5)
+	var ray_end: Vector3 = ray_origin + (direction * ray_length)
+	var ray_end_short: Vector3 = ray_origin + (direction * ray_length / 2)
 
-	# Perform the intersection query
+	DebugDraw3D.draw_line(debug_origin, ray_end_short, Color(1.0, 1.0, 1.0, 0.1), 0.3)
+
 	var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
 	var query = PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
-	# Optional: add exceptions, e.g., query.set_exclude([self])
+
+	# Optional: Exclude the player so you don't shoot yourself
+	query.exclude = [player.get_rid()] 
+
 	var result: Dictionary = space_state.intersect_ray(query)
 
 	if result:
 		if result.collider is Enemy:
 			var enemy: Enemy = result.collider
-			print("Hit: ", result.collider.name)
-			enemy.health_system.damage(50, 999)
+			enemy.health_system.damage(20, 999)
 		elif result.collider is Goat:
-			print("Hit: ", result.collider.name)
 			var goat: Goat = result.collider
-			goat.health_system.damage(500, 999)
+			goat.health_system.damage(0, 999)
 
 func _on_super_shotgun_shooting_animation_finished() -> void:
 	ResetShooting()
@@ -85,6 +90,9 @@ func _on_super_shotgun_shooting_animation_finished() -> void:
 func fire_poc():
 	var target = getCameraPOV()
 	hitscanShot(target)
+
+var minSpread := 0.0
+var maxSpread := 3.0
 
 func getCameraPOV():  
 	var _window : Window = get_window()

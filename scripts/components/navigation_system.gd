@@ -54,8 +54,8 @@ func chase_target():
 
 func pick_patrol_destination():
 	var map = NavigationServer3D.get_maps()[0]
-	var random_point = NavigationServer3D.map_get_random_point(map, 1, false)
-	if random_point.distance_to(Vector3.ZERO) > 25.0:
+	var random_point = NavigationServer3D.map_get_random_point(map, 1, true)
+	if random_point.distance_to(Vector3.ZERO) > 30.0:
 		pick_patrol_destination()
 	else:
 		nav_agent.set_target_position(random_point)

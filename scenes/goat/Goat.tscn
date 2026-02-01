@@ -11,6 +11,85 @@
 [ext_resource type="Script" uid="uid://d5jl3b0hfehw" path="res://scripts/components/health_system.gd" id="8_gg4qc"]
 [ext_resource type="Script" uid="uid://es67axqa8ao6" path="res://scripts/components/navigation_system.gd" id="9_scptj"]
 
+[sub_resource type="Animation" id="Animation_7hkpy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshRoot/LEG-FL:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k6wi4"]
+resource_name = "walk"
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshRoot/LEG-FL:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.2617994, 0, 0), Vector3(0.2617994, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshRoot/LEG-FR:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.2617994, 0, 0), Vector3(-0.2617994, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshRoot/LEG-BL:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.2617994, 0, 0), Vector3(0.2617994, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshRoot/LEG-BR:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.2617994, 0, 0), Vector3(-0.2617994, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gg4qc"]
+_data = {
+&"RESET": SubResource("Animation_7hkpy"),
+&"walk": SubResource("Animation_k6wi4")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7hkpy"]
+size = Vector3(1, 1.7, 2)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yfvqt"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ba4rx"]
 resource_name = "curly_teddy_natural"
 cull_mode = 2
@@ -344,80 +423,6 @@ shadow_mesh = SubResource("ArrayMesh_3qua2")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gm73t"]
 albedo_color = Color(0.2784314, 0, 1, 1)
 
-[sub_resource type="Animation" id="Animation_7hkpy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LEG-FL:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_k6wi4"]
-resource_name = "walk"
-loop_mode = 1
-step = 0.0333333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LEG-FL:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.2617994, 0, 0), Vector3(0.2617994, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("LEG-FR:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.2617994, 0, 0), Vector3(-0.2617994, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("LEG-BL:rotation")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.2617994, 0, 0), Vector3(0.2617994, 0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("LEG-BR:rotation")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.6666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.2617994, 0, 0), Vector3(-0.2617994, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gg4qc"]
-_data = {
-&"RESET": SubResource("Animation_7hkpy"),
-&"walk": SubResource("Animation_k6wi4")
-}
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_rg8ap"]
 _surfaces = [{
 "aabb": AABB(-0.5, -0.5, -0.5, 1, 1, 1),
@@ -450,13 +455,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rg8ap")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7hkpy"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_yfvqt"]
-
 [node name="Goat" type="CharacterBody3D" unique_id=752746429]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_scptj")
 
 [node name="Health" type="Node" parent="." unique_id=2138779065]
@@ -471,83 +472,92 @@ nav_agent = NodePath("../NavigationAgent3D")
 search_box = NodePath("../Search")
 metadata/_custom_type_script = "uid://es67axqa8ao6"
 
-[node name="Cube" type="MeshInstance3D" parent="." unique_id=1554593848]
-transform = Transform3D(0.96141607, 0, 0, 0, 0.96141607, 0, 0, 0, 1.9779444, -0.070167795, 0.14448917, -0.019229092)
-mesh = SubResource("ArrayMesh_hdiap")
-
-[node name="Head" type="MeshInstance3D" parent="." unique_id=1428504391]
-transform = Transform3D(0.5907492, 0, 0, 0, 0.5907492, 0, 0, 0, 0.5907492, -0.099591926, 0.5943601, 0.901258)
-mesh = SubResource("ArrayMesh_f5k6x")
-
-[node name="Sphere" type="MeshInstance3D" parent="." unique_id=1043002856]
-transform = Transform3D(-0.14475693, 0, -0.09426677, 0, 0.17274487, 0, 0.09426677, 0, -0.14475693, -0.2977327, 0.6855499, 1.032302)
-mesh = SubResource("ArrayMesh_nl286")
-surface_material_override/0 = ExtResource("2_gm73t")
-
-[node name="Sphere_001" type="MeshInstance3D" parent="." unique_id=1707622667]
-transform = Transform3D(0.10065988, 0, -0.14038652, 0, 0.17274487, 0, 0.14038652, 0, 0.10065988, 0.07716869, 0.72483414, 1.0824242)
-mesh = SubResource("ArrayMesh_n6ap0")
-surface_material_override/0 = ExtResource("2_gm73t")
-
-[node name="Cube_006" type="MeshInstance3D" parent="." unique_id=691006739]
-transform = Transform3D(-0.15522853, 0.07899352, 0.057336375, 0.055946894, 0.16026746, -0.06933704, -0.07998364, -0.041203212, -0.1597756, 0.071433194, 0.8250193, 0.9075207)
-mesh = SubResource("ArrayMesh_2ac5w")
-
-[node name="Cube_007" type="MeshInstance3D" parent="." unique_id=705944566]
-transform = Transform3D(-0.15522853, 0.07899352, 0.057336375, 0.055946894, 0.16026746, -0.06933704, -0.07998364, -0.041203212, -0.1597756, 0.071433194, 0.8250193, 0.9075207)
-mesh = SubResource("ArrayMesh_1s1kw")
-
-[node name="Cube_008" type="MeshInstance3D" parent="." unique_id=1287886200]
-transform = Transform3D(0.16488598, -0.07879767, 0.015062089, 0.06945133, 0.12297367, -0.11695006, -0.040155355, -0.110868074, -0.14042488, -0.34554622, 0.8000796, 0.779511)
-mesh = SubResource("ArrayMesh_th7rb")
-
-[node name="Circle" type="MeshInstance3D" parent="." unique_id=1781938038]
-transform = Transform3D(0.72480106, -1.1133066, -0.325788, 0.21993822, 0.5090803, -1.2503563, 1.1389542, 0.6101735, 0.44877362, -0.3581295, 0.37118176, 0.43951792)
-mesh = SubResource("ArrayMesh_17ipp")
-surface_material_override/0 = SubResource("StandardMaterial3D_gm73t")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1266396648]
 libraries/ = SubResource("AnimationLibrary_gg4qc")
 autoplay = &"walk"
 
-[node name="Node3D" type="Node3D" parent="." unique_id=1344117041]
-
-[node name="LEG-FL" type="Node3D" parent="." unique_id=1723438872]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.123175085, 0, 0.39346766)
-
-[node name="LegFL" type="MeshInstance3D" parent="LEG-FL" unique_id=1088430948]
-transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)
-mesh = SubResource("ArrayMesh_8hakc")
-
-[node name="LEG-FR" type="Node3D" parent="." unique_id=35198184]
-transform = Transform3D(1, 0, 0, 0, 0.9659255, -0.25881886, 0, 0.25881886, 0.9659255, -0.17935985, 0, 0.33547997)
-
-[node name="LegFL" type="MeshInstance3D" parent="LEG-FR" unique_id=1542053976]
-transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)
-mesh = SubResource("ArrayMesh_8hakc")
-
-[node name="LEG-BL" type="Node3D" parent="." unique_id=1595987499]
-transform = Transform3D(1, 0, 0, 0, 0.9659255, 0.25881886, 0, -0.25881886, 0.9659255, 0.123175085, 0, -0.5256649)
-
-[node name="LegFL" type="MeshInstance3D" parent="LEG-BL" unique_id=1737596866]
-transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)
-mesh = SubResource("ArrayMesh_8hakc")
-
-[node name="LEG-BR" type="Node3D" parent="." unique_id=855031840]
-transform = Transform3D(1, 0, 0, 0, 0.9659255, -0.25881886, 0, 0.25881886, 0.9659255, -0.27060252, 0, -0.4347602)
-
-[node name="LegFL" type="MeshInstance3D" parent="LEG-BR" unique_id=982463341]
-transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)
-mesh = SubResource("ArrayMesh_8hakc")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=792010485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67440987, 0)
 shape = SubResource("BoxShape3D_7hkpy")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1466534450]
 
 [node name="Search" type="Area3D" parent="." unique_id=358728936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3615873, 0)
 collision_layer = 0
 collision_mask = 0
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Search" unique_id=1081302019]
 shape = SubResource("SphereShape3D_yfvqt")
+
+[node name="MeshRoot" type="Node3D" parent="." unique_id=68246385]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Cube" type="MeshInstance3D" parent="MeshRoot" unique_id=1554593848]
+transform = Transform3D(0.96141607, 0, 0, 0, 0.96141607, 0, 0, 0, 1.9779444, -0.070167795, 0.50607646, -0.019229092)
+mesh = SubResource("ArrayMesh_hdiap")
+
+[node name="Head" type="MeshInstance3D" parent="MeshRoot" unique_id=1428504391]
+transform = Transform3D(0.5907492, 0, 0, 0, 0.5907492, 0, 0, 0, 0.5907492, -0.099591926, 0.9559474, 0.901258)
+mesh = SubResource("ArrayMesh_f5k6x")
+
+[node name="Sphere" type="MeshInstance3D" parent="MeshRoot" unique_id=1043002856]
+transform = Transform3D(-0.14475693, 0, -0.09426677, 0, 0.17274487, 0, 0.09426677, 0, -0.14475693, -0.2977327, 1.0471371, 1.032302)
+mesh = SubResource("ArrayMesh_nl286")
+surface_material_override/0 = ExtResource("2_gm73t")
+
+[node name="Sphere_001" type="MeshInstance3D" parent="MeshRoot" unique_id=1707622667]
+transform = Transform3D(0.10065988, 0, -0.14038652, 0, 0.17274487, 0, 0.14038652, 0, 0.10065988, 0.07716869, 1.0864214, 1.0824242)
+mesh = SubResource("ArrayMesh_n6ap0")
+surface_material_override/0 = ExtResource("2_gm73t")
+
+[node name="Cube_006" type="MeshInstance3D" parent="MeshRoot" unique_id=691006739]
+transform = Transform3D(-0.15522853, 0.07899352, 0.057336375, 0.055946894, 0.16026746, -0.06933704, -0.07998364, -0.041203212, -0.1597756, 0.071433194, 1.1866065, 0.9075207)
+mesh = SubResource("ArrayMesh_2ac5w")
+
+[node name="Cube_007" type="MeshInstance3D" parent="MeshRoot" unique_id=705944566]
+transform = Transform3D(-0.15522853, 0.07899352, 0.057336375, 0.055946894, 0.16026746, -0.06933704, -0.07998364, -0.041203212, -0.1597756, 0.071433194, 1.1866065, 0.9075207)
+mesh = SubResource("ArrayMesh_1s1kw")
+
+[node name="Cube_008" type="MeshInstance3D" parent="MeshRoot" unique_id=1287886200]
+transform = Transform3D(0.16488598, -0.07879767, 0.015062089, 0.06945133, 0.12297367, -0.11695006, -0.040155355, -0.110868074, -0.14042488, -0.34554622, 1.1616669, 0.779511)
+mesh = SubResource("ArrayMesh_th7rb")
+
+[node name="Circle" type="MeshInstance3D" parent="MeshRoot" unique_id=1781938038]
+transform = Transform3D(0.72480106, -1.1133066, -0.325788, 0.21993822, 0.5090803, -1.2503563, 1.1389542, 0.6101735, 0.44877362, -0.3581295, 0.732769, 0.43951792)
+mesh = SubResource("ArrayMesh_17ipp")
+surface_material_override/0 = SubResource("StandardMaterial3D_gm73t")
+
+[node name="Node3D" type="Node3D" parent="MeshRoot" unique_id=1344117041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3615873, 0)
+
+[node name="LEG-FL" type="Node3D" parent="MeshRoot" unique_id=1723438872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.123175085, 0.3615873, 0.39346766)
+
+[node name="LegFL" type="MeshInstance3D" parent="MeshRoot/LEG-FL" unique_id=1088430948]
+transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)
+mesh = SubResource("ArrayMesh_8hakc")
+
+[node name="LEG-FR" type="Node3D" parent="MeshRoot" unique_id=35198184]
+transform = Transform3D(1, 0, 0, 0, 0.9659255, -0.25881878, 0, 0.25881878, 0.9659255, -0.17935985, 0.3615873, 0.33547997)
+
+[node name="LegFL" type="MeshInstance3D" parent="MeshRoot/LEG-FR" unique_id=1542053976]
+transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)
+mesh = SubResource("ArrayMesh_8hakc")
+
+[node name="LEG-BL" type="Node3D" parent="MeshRoot" unique_id=1595987499]
+transform = Transform3D(1, 0, 0, 0, 0.9659255, 0.25881878, 0, -0.25881878, 0.9659255, 0.123175085, 0.3615873, -0.5256649)
+
+[node name="LegFL" type="MeshInstance3D" parent="MeshRoot/LEG-BL" unique_id=1737596866]
+transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)
+mesh = SubResource("ArrayMesh_8hakc")
+
+[node name="LEG-BR" type="Node3D" parent="MeshRoot" unique_id=855031840]
+transform = Transform3D(1, 0, 0, 0, 0.9659255, -0.25881878, 0, 0.25881878, 0.9659255, -0.27060252, 0.3615873, -0.4347602)
+
+[node name="LegFL" type="MeshInstance3D" parent="MeshRoot/LEG-BR" unique_id=982463341]
+transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)
+mesh = SubResource("ArrayMesh_8hakc")

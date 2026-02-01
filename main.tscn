@@ -51,7 +51,7 @@ theme_override_constants/separation = 40
 
 [node name="Title" type="Label" parent="MainMenu/Control/MarginContainer/VBoxContainer" unique_id=116978910]
 layout_mode = 2
-text = "GOAT GAME"
+text = "THE GOAT"
 label_settings = SubResource("LabelSettings_0xm2m")
 horizontal_alignment = 1
 

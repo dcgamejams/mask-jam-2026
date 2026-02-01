@@ -48,8 +48,9 @@ func start_game():
 func goat_died():
 	death_title.text = "Your GOAT died!"
 	
-	player.health_system.damage(9999, 1)
-	print(player.health_system.health)
+	if player:
+		player.health_system.damage(9999, 1)
+		print(player.health_system.health)
 
 func you_died():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

@@ -54,7 +54,8 @@ func damage(value: int, source: int = 0) -> bool:
 	# Damage
 	if next_health < health and regen_enabled:
 		signal_hurt.emit()
-		regen_timer.start()
+		if regen_timer.is_inside_tree():
+			regen_timer.start()
 
 	# Death
 	if next_health == 0:
