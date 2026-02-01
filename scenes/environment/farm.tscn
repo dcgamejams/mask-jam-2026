@@ -24,7 +24,9 @@ polygons = [PackedInt32Array(2, 12, 3), PackedInt32Array(3, 12, 11), PackedInt32
 filter_walkable_low_height_spans = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0id7f"]
-transparency = 1
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("9_gm8pk")
 
@@ -103,6 +105,7 @@ metadata/_custom_type_script = "uid://hep76rg80iwt"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=499851286]
 transform = Transform3D(0.7982783, 0.39898634, -0.45117822, -5.5660045e-09, 0.74910605, 0.66245013, 0.6022889, -0.5288195, 0.59799504, 0, 9.463956, 0)
+light_color = Color(0.75479823, 0.57973844, 0.45238978, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=599480204]
 environment = ExtResource("1_0v5j5")
