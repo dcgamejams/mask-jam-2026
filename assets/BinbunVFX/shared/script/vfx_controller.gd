@@ -91,8 +91,6 @@ enum Alpha_Mode {
 	## Uses dithering and hard cut to achieve better results
 	HYBRID
 }
-@onready var cpu_particles_3d: CPUParticles3D = %CPUParticles3D
-
 ## Specifies how to handle [b]transparency[/b] within shaders.
 @export var alpha_mode : Alpha_Mode = Alpha_Mode.SMOOTH:
 	set(value):
@@ -141,7 +139,6 @@ func play():
 			return
 		play()
 	else:
-
 		if anim.has_animation("oneshot"):
 			anim.play("oneshot")
 		else:
