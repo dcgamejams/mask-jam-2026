@@ -132,7 +132,7 @@ surface_material_override/0 = ExtResource("2_vpt6u")
 
 [node name="EnvironmentObjects" type="Node3D" parent="NavigationRegion3D" unique_id=108156336]
 
-[node name="House" parent="NavigationRegion3D" unique_id=970260079 instance=ExtResource("6_6tkbu")]
+[node name="House" parent="NavigationRegion3D" unique_id=1951695818 instance=ExtResource("6_6tkbu")]
 transform = Transform3D(1.5424119, 0, -0.71481895, 0, 1.6999999, 0, 0.71481895, 0, 1.5424119, -13.092138, 5.305922, -12.73463)
 
 [node name="Walls" parent="." unique_id=814791399 instance=ExtResource("8_wtekp")]
