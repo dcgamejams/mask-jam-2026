@@ -80,7 +80,7 @@ func _ready():
 
 	add_child(timer_attack_cooldown)
 	timer_attack_cooldown.timeout.connect(attack)
-	timer_attack_cooldown.wait_time = randf_range(3.0, 5.5)
+	timer_attack_cooldown.wait_time = randf_range(2.0, 4.5)
 	timer_attack_cooldown.one_shot = false
 	timer_attack_cooldown.start()
 
@@ -258,7 +258,7 @@ func attack():
 		return
 	# TODO: Pick a position on the left or the right of the player.
 	if state == States.CHASING or state == States.HURTING:
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.1).timeout
 		if nav_agent.is_navigation_finished():
 			if target and global_position.distance_to(target.transform.origin) < 7.0:
 				attack_position = target.transform.origin

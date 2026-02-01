@@ -44,6 +44,7 @@ theme = ExtResource("1_m3kry")
 theme_override_constants/separation = 0
 
 [node name="Tab" type="HBoxContainer" parent="." unique_id=1686525312]
+visible = false
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Tab" unique_id=1696525029]

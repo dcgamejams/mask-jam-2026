@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://cfwi4twmewpkt" path="res://scenes/environment/walls.tscn" id="6_ud7u2"]
 [ext_resource type="Texture2D" uid="uid://bsibwek86jhec" path="res://assets/img/forest-dist.png" id="7_dvvca"]
 [ext_resource type="Script" uid="uid://ca6hc1lxuykiv" path="res://EnemySequence.gd" id="7_p3xl3"]
-[ext_resource type="PackedScene" uid="uid://vydo5ihqeu0v" path="res://scenes/enemies/ghost_1/enemy_ghost_1.tscn" id="8_kyuqp"]
 [ext_resource type="PackedScene" uid="uid://cow3kiecu6e17" path="res://scenes/environment/farm.tscn" id="14_p3xl3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
@@ -62,7 +61,6 @@ orientation = 0
 
 [sub_resource type="Resource" id="Resource_0id7f"]
 script = ExtResource("7_p3xl3")
-Enemy = ExtResource("8_kyuqp")
 EnemyAmount = 7
 EnemySpawnInterval = 2.0
 metadata/_custom_type_script = "uid://ca6hc1lxuykiv"
@@ -75,7 +73,6 @@ metadata/_custom_type_script = "uid://hep76rg80iwt"
 
 [sub_resource type="Resource" id="Resource_ykhrp"]
 script = ExtResource("7_p3xl3")
-Enemy = ExtResource("8_kyuqp")
 EnemyAmount = 10
 EnemySpawnInterval = 1.0
 metadata/_custom_type_script = "uid://ca6hc1lxuykiv"

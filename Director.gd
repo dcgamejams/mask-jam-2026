@@ -24,13 +24,11 @@ func _do_sequence(sequence: EnemySequence) -> void:
 		
 		#pick a random spawn point
 		#spawm enemy at that point
-		var newEnemy = sequence.Enemy.instantiate()
+		var newEnemy:Enemy = sequence.EnemyScene.instantiate()
 		newEnemy.position = _pick_random_point()
 		add_child(newEnemy)
 		
 		print("my spawning position is:" + str(newEnemy.position))
-		
-		
 		
 	# If we were the last sequence, signal to the wave manager that we're
 	# ready for the next wave

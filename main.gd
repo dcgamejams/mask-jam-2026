@@ -10,12 +10,15 @@ extends Node3D
 
 @export var camera_rotation_speed = 1.0
 
+<<<<<<< HEAD
 @onready var death_menu: CanvasLayer = $DeathMenu
 @onready var restart_button: Button = $DeathMenu/Control/MarginContainer/VBoxContainer/RestartButton
 @onready var time_label: Label = $DeathMenu/Control/MarginContainer/VBoxContainer/Time
 
 var time_start = 0.0
 
+=======
+>>>>>>> 4e48514 (feat: add goat health)
 func _ready() -> void:
 	startbutton.pressed.connect(start_game)
 	restart_button.pressed.connect(restart)

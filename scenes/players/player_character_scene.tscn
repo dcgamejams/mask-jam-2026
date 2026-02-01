@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://lm4alclh6bt3" path="res://assets/theme/controls.tscn" id="19_xq8ws"]
 [ext_resource type="Script" uid="uid://didxq4aqwvnqm" path="res://scenes/players/player_ui.gd" id="19_y85m3"]
 [ext_resource type="PackedScene" uid="uid://cmffu3ggwm1dr" path="res://assets/theme/hurt_texture.tscn" id="19_yrqow"]
+[ext_resource type="Texture2D" uid="uid://dmpyie3rbouy" path="res://assets/img/crosshair.png" id="20_mpkib"]
+[ext_resource type="Texture2D" uid="uid://1fjbon8u17w" path="res://assets/img/goat_fine.png" id="25_77o6m"]
+[ext_resource type="Texture2D" uid="uid://b6mysgvsi1mq5" path="res://assets/img/goat_hurt.png" id="26_xtmhn"]
 [ext_resource type="Script" uid="uid://sca7ypsol83f" path="res://scenes/players/StateMachine/state_machine_script.gd" id="54_e0r17"]
 [ext_resource type="Script" uid="uid://stil4xkf3tk0" path="res://scenes/players/StateMachine/idle_state_script.gd" id="55_dayh2"]
 [ext_resource type="Script" uid="uid://blt7dest23fk0" path="res://scenes/players/StateMachine/walk_state_script.gd" id="56_w3td4"]
@@ -283,9 +286,6 @@ shader_parameter/mask_size = 0.1
 shader_parameter/mask_edge = 0.800000038
 shader_parameter/animation_speed = 20.0
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m644i"]
-load_path = "res://.godot/imported/crosshair.png-cec23d9b10a460a7a894dceef5e88085.ctex"
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d61dg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlx67"]
@@ -308,6 +308,8 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.682968, 0.682969, 0.682968, 1)
 border_blend = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rk7w"]
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=1717030456 groups=["PlayerCharacter"]]
 collision_layer = 2
@@ -877,21 +879,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CompressedTexture2D_m644i")
-
-[node name="AmmoCount" type="Label" parent="HUD" unique_id=83805021]
-unique_name_in_owner = true
-anchors_preset = -1
-anchor_left = 0.9990001
-anchor_top = 1.0
-anchor_right = 0.9990001
-anchor_bottom = 1.0
-offset_left = -487.08008
-offset_top = -223.0
-offset_right = -0.080078125
-offset_bottom = 26.0
-theme_override_font_sizes/font_size = 182
-text = "10/10"
+texture = ExtResource("20_mpkib")
 
 [node name="PlayerUI" type="CanvasLayer" parent="." unique_id=2010144729 node_paths=PackedStringArray("health")]
 script = ExtResource("19_y85m3")
@@ -960,6 +948,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 23
+text = "100"
 
 [node name="HealthBar" type="ProgressBar" parent="PlayerUI/Control/BottomLeft/HealthBarRoot" unique_id=870496983]
 unique_name_in_owner = true
@@ -971,6 +960,97 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_by614")
 step = 1.0
 value = 50.0
 show_percentage = false
+
+[node name="BottomLeft2" type="MarginContainer" parent="PlayerUI/Control" unique_id=10782933]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_right = 170.0
+offset_bottom = 99.0
+grow_horizontal = 2
+scale = Vector2(1.4, 1.4)
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HealthBarRoot" type="VBoxContainer" parent="PlayerUI/Control/BottomLeft2" unique_id=683190600]
+layout_mode = 2
+theme = ExtResource("18_m644i")
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerUI/Control/BottomLeft2/HealthBarRoot" unique_id=1878290113]
+layout_mode = 2
+
+[node name="GoatPic" type="Panel" parent="PlayerUI/Control/BottomLeft2/HealthBarRoot/HBoxContainer" unique_id=2058893114]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8rk7w")
+
+[node name="Goat" type="TextureRect" parent="PlayerUI/Control/BottomLeft2/HealthBarRoot/HBoxContainer/GoatPic" unique_id=488105722]
+layout_mode = 1
+offset_left = 12.0
+offset_top = -15.0
+offset_right = 858.0
+offset_bottom = 724.99994
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("25_77o6m")
+
+[node name="GoatHurt" type="TextureRect" parent="PlayerUI/Control/BottomLeft2/HealthBarRoot/HBoxContainer/GoatPic" unique_id=639090286]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_left = 12.0
+offset_top = -15.0
+offset_right = 858.0
+offset_bottom = 723.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("26_xtmhn")
+
+[node name="GoatName" type="Label" parent="PlayerUI/Control/BottomLeft2/HealthBarRoot/HBoxContainer" unique_id=500810402]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 23
+text = "Goaty"
+horizontal_alignment = 1
+
+[node name="GoatHealthLabel" type="Label" parent="PlayerUI/Control/BottomLeft2/HealthBarRoot/HBoxContainer" unique_id=1705311504]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 23
+horizontal_alignment = 1
+
+[node name="GoatBar" type="ProgressBar" parent="PlayerUI/Control/BottomLeft2/HealthBarRoot" unique_id=2114380880]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_d61dg")
+custom_minimum_size = Vector2(300, 25)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_nlx67")
+theme_override_styles/fill = SubResource("StyleBoxFlat_by614")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerUI" unique_id=212224383]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -487.0
+offset_top = -249.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="AmmoCount" type="Label" parent="PlayerUI/MarginContainer" unique_id=83805021]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 90
+text = "10/10"
 
 [connection signal="change_fov" from="StateMachine" to="CameraHolder" method="change_fov"]
 [connection signal="ready" from="StateMachine" to="." method="_on_state_machine_ready"]

@@ -2,7 +2,7 @@ extends Node
 class_name HealthSystem
 
 signal signal_hurt
-signal signal_health_updated
+signal signal_health_updated(int)
 signal signal_max_health_updated
 signal signal_death
 
@@ -84,7 +84,8 @@ func heal(value):
 		next_health = max_health
 	
 	health = next_health
-	signal_health_updated.emit(next_health)
+	if next_health:
+		signal_health_updated.emit(next_health)
 
 func prepare_regen_timer():
 	add_child(regen_timer)
