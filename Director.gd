@@ -39,6 +39,9 @@ func _do_sequence(sequence: EnemySequence) -> void:
 		_ready_for_next_wave.emit()
 	
 func _ready() -> void:
+	Global.signal_start.connect(startSpawning)
+	
+func startSpawning():
 	print("thing is loaded")
 	
 	Global.MAX_WAVES = enemy_data.size()

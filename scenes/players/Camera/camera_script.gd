@@ -128,7 +128,7 @@ func _process(delta : float) -> void:
 	
 	zoom()
 	
-	mouse_mode()
+	#mouse_mode()
 	
 	handle_mask()
 	
