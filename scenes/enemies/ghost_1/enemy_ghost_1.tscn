@@ -30,7 +30,7 @@ size = Vector3(30, 3, 30)
 size = Vector3(20, 3, 20)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8fdcm"]
-radius = 1.5
+radius = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_khaxi"]
 resource_local_to_scene = true
@@ -211,6 +211,7 @@ script = ExtResource("3_uvqya")
 nav_agent = NodePath("../NavigationAgent3D")
 search_box = NodePath("../SearchBox")
 search_box_ghost = NodePath("../SearchBoxGoat")
+min_patrol = 8.0
 
 [node name="AttackBox" type="Area3D" parent="." unique_id=1496836165]
 transform = Transform3D(1, -1.2621775e-29, 0, 3.1554436e-30, 1, 7.1054274e-15, -1.0587912e-22, -7.1054274e-15, 1, -1.4901161e-08, 1.7517948, -2.1708367)
