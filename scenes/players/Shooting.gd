@@ -62,7 +62,6 @@ func fire_manual_raycast(ray_origin: Vector3, direction: Vector3, debug_origin: 
 	var ray_end: Vector3 = ray_origin + (direction * ray_length)
 	var ray_end_short: Vector3 = ray_origin + (direction * ray_length / 2)
 
-	DebugDraw3D.draw_line(debug_origin, ray_end_short, Color(1.0, 1.0, 1.0, 0.1), 0.3)
 
 	var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
 	var query = PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
@@ -136,8 +135,6 @@ func hitscanShot(pointOfCollisionHitscan : Vector3):
 	
 	#create new intersection space to contain possibe collisions 
 	var newIntersection = PhysicsRayQueryParameters3D.create(attackPoint.get_global_transform().origin, pointOfCollisionHitscan + spread)
-
-	DebugDraw3D.draw_line(attackPoint.get_global_transform().origin, pointOfCollisionHitscan + spread, Color.NAVAJO_WHITE, 0.5)
 
 	newIntersection.set_exclude([player.get_rid()])
 	newIntersection.collide_with_areas = true

@@ -558,8 +558,9 @@ transform = Transform3D(0.22475433, 0, -0.051174313, 0, 0.65714353, 0, 0.0226196
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_dtcv1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CameraHolder/Camera" unique_id=625004749]
+[node name="Filter" type="MeshInstance3D" parent="CameraHolder/Camera" unique_id=625004749]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7523288e-08, 0, -0.400886)
+sorting_offset = -1.0
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_77o6m")
 surface_material_override/0 = SubResource("ShaderMaterial_8rk7w")
