@@ -238,145 +238,145 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.40656, 0, -13.931022)
 
 [node name="Trees" type="Node" parent="." unique_id=342334310]
 
-[node name="AuxScene" parent="." unique_id=385952946 instance=ExtResource("14_aj54g")]
+[node name="AuxScene" parent="Trees" unique_id=385952946 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.14708, 9.000004, 49.67104)
 
-[node name="AuxScene2" parent="." unique_id=1393328176 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene2" parent="Trees" unique_id=1393328176 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.629993, 9.000004, 72.644135)
 
-[node name="AuxScene3" parent="." unique_id=786846063 instance=ExtResource("16_6tkbu")]
+[node name="AuxScene3" parent="Trees" unique_id=786846063 instance=ExtResource("16_6tkbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.94632, 9.000002, 39.924942)
 
-[node name="AuxScene4" parent="." unique_id=147736407 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene4" parent="Trees" unique_id=147736407 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.80738, 9, 67.79976)
 
-[node name="AuxScene5" parent="." unique_id=1311830989 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene5" parent="Trees" unique_id=1311830989 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.45203, 9, -11.687164)
 
-[node name="AuxScene6" parent="." unique_id=1210192908 instance=ExtResource("16_6tkbu")]
+[node name="AuxScene6" parent="Trees" unique_id=1210192908 instance=ExtResource("16_6tkbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.98749, 9, 1.8628502)
 
-[node name="AuxScene7" parent="." unique_id=756256278 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene7" parent="Trees" unique_id=756256278 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.965294, 9, 23.70906)
 
-[node name="AuxScene8" parent="." unique_id=1753671957 instance=ExtResource("16_6tkbu")]
+[node name="AuxScene8" parent="Trees" unique_id=1753671957 instance=ExtResource("16_6tkbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.74776, 9, 46.43841)
 
-[node name="AuxScene9" parent="." unique_id=1344086594 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene9" parent="Trees" unique_id=1344086594 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.33986, 9, 76.74678)
 
-[node name="AuxScene10" parent="." unique_id=662857466 instance=ExtResource("14_aj54g")]
+[node name="AuxScene10" parent="Trees" unique_id=662857466 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.52221, 9, 76.91048)
 
-[node name="AuxScene11" parent="." unique_id=947597000 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene11" parent="Trees" unique_id=947597000 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.512917, 9, 8.167593)
 
-[node name="AuxScene12" parent="." unique_id=1665473158 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene12" parent="Trees" unique_id=1665473158 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.39367, 12, -28.69368)
 
-[node name="AuxScene13" parent="." unique_id=1075622307 instance=ExtResource("14_aj54g")]
+[node name="AuxScene13" parent="Trees" unique_id=1075622307 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.298763, 12, -34.653694)
 
-[node name="AuxScene14" parent="." unique_id=600563584 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene14" parent="Trees" unique_id=600563584 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.58513, 12, -88.62503)
 
-[node name="AuxScene15" parent="." unique_id=696997190 instance=ExtResource("16_6tkbu")]
+[node name="AuxScene15" parent="Trees" unique_id=696997190 instance=ExtResource("16_6tkbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.98422, 12, -66.670525)
 
-[node name="AuxScene16" parent="." unique_id=1640157463 instance=ExtResource("14_aj54g")]
+[node name="AuxScene16" parent="Trees" unique_id=1640157463 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.364662, 12, -93.01418)
 
-[node name="AuxScene17" parent="." unique_id=370869779 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene17" parent="Trees" unique_id=370869779 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.276188, 12, -71.97711)
 
-[node name="AuxScene18" parent="." unique_id=617424100 instance=ExtResource("14_aj54g")]
+[node name="AuxScene18" parent="Trees" unique_id=617424100 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.802689, 12, -80.21517)
 
-[node name="AuxScene19" parent="." unique_id=1608969398 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene19" parent="Trees" unique_id=1608969398 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.717464, 12, -59.074333)
 
-[node name="AuxScene20" parent="." unique_id=1832221310 instance=ExtResource("16_6tkbu")]
+[node name="AuxScene20" parent="Trees" unique_id=1832221310 instance=ExtResource("16_6tkbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.46248, 12, -85.003334)
 
-[node name="AuxScene21" parent="." unique_id=1072587822 instance=ExtResource("14_aj54g")]
+[node name="AuxScene21" parent="Trees" unique_id=1072587822 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.87809, 12.000004, -73.36835)
 
-[node name="AuxScene22" parent="." unique_id=532897021 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene22" parent="Trees" unique_id=532897021 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.625113, 12.000004, -81.61474)
 
-[node name="AuxScene23" parent="." unique_id=141846632 instance=ExtResource("16_6tkbu")]
+[node name="AuxScene23" parent="Trees" unique_id=141846632 instance=ExtResource("16_6tkbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.09694, 12.000004, -32.832886)
 
-[node name="AuxScene24" parent="." unique_id=117562141 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene24" parent="Trees" unique_id=117562141 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.634605, 12.000004, -51.72233)
 
-[node name="AuxScene25" parent="." unique_id=937094642 instance=ExtResource("14_aj54g")]
+[node name="AuxScene25" parent="Trees" unique_id=937094642 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.68628, 12.000004, -60.965294)
 
-[node name="AuxScene26" parent="." unique_id=175075992 instance=ExtResource("16_6tkbu")]
+[node name="AuxScene26" parent="Trees" unique_id=175075992 instance=ExtResource("16_6tkbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.81906, 12.000004, -11.390196)
 
-[node name="AuxScene27" parent="." unique_id=1148606130 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene27" parent="Trees" unique_id=1148606130 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.822823, 12.000004, -40.495438)
 
-[node name="AuxScene28" parent="." unique_id=941511193 instance=ExtResource("16_6tkbu")]
+[node name="AuxScene28" parent="Trees" unique_id=941511193 instance=ExtResource("16_6tkbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.175964, 12, -80.048615)
 
-[node name="AuxScene29" parent="." unique_id=944629962 instance=ExtResource("14_aj54g")]
+[node name="AuxScene29" parent="Trees" unique_id=944629962 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.95892, 12, 88.392494)
 
-[node name="AuxScene30" parent="." unique_id=108365777 instance=ExtResource("16_6tkbu")]
+[node name="AuxScene30" parent="Trees" unique_id=108365777 instance=ExtResource("16_6tkbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.42797, 12, 61.608803)
 
-[node name="AuxScene31" parent="." unique_id=318122542 instance=ExtResource("16_6tkbu")]
+[node name="AuxScene31" parent="Trees" unique_id=318122542 instance=ExtResource("16_6tkbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.23787, 12, 81.46584)
 
-[node name="AuxScene32" parent="." unique_id=1638425814 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene32" parent="Trees" unique_id=1638425814 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.30873, 12, 71.63038)
 
-[node name="AuxScene33" parent="." unique_id=259989750 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene33" parent="Trees" unique_id=259989750 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.58069, 12, 47.95877)
 
-[node name="AuxScene34" parent="." unique_id=1874635040 instance=ExtResource("14_aj54g")]
+[node name="AuxScene34" parent="Trees" unique_id=1874635040 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.8053, 12, 66.14179)
 
-[node name="AuxScene35" parent="." unique_id=841086615 instance=ExtResource("14_aj54g")]
+[node name="AuxScene35" parent="Trees" unique_id=841086615 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.86459, 12, 37.305267)
 
-[node name="AuxScene36" parent="." unique_id=287214118 instance=ExtResource("14_aj54g")]
+[node name="AuxScene36" parent="Trees" unique_id=287214118 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.101074, 12.000008, -0.6066818)
 
-[node name="AuxScene37" parent="." unique_id=503464077 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene37" parent="Trees" unique_id=503464077 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.072963715, 12, 82.24684)
 
-[node name="AuxScene38" parent="." unique_id=2134829439 instance=ExtResource("16_6tkbu")]
+[node name="AuxScene38" parent="Trees" unique_id=2134829439 instance=ExtResource("16_6tkbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.65381, 10.549591, 46.32152)
 
-[node name="AuxScene39" parent="." unique_id=1900326580 instance=ExtResource("14_aj54g")]
+[node name="AuxScene39" parent="Trees" unique_id=1900326580 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.09953, 12, -9.721809)
 
-[node name="AuxScene40" parent="." unique_id=438732802 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene40" parent="Trees" unique_id=438732802 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.98739, 12, -55.60213)
 
-[node name="AuxScene41" parent="." unique_id=1954096619 instance=ExtResource("16_6tkbu")]
+[node name="AuxScene41" parent="Trees" unique_id=1954096619 instance=ExtResource("16_6tkbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.367035, 12, 33.74346)
 
-[node name="AuxScene42" parent="." unique_id=1598741104 instance=ExtResource("15_sdmqi")]
+[node name="AuxScene42" parent="Trees" unique_id=1598741104 instance=ExtResource("15_sdmqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.32754, 12, 19.381697)
 
-[node name="AuxScene43" parent="." unique_id=2014008897 instance=ExtResource("14_aj54g")]
+[node name="AuxScene43" parent="Trees" unique_id=2014008897 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.04485, 12, 73.45788)
 
-[node name="AuxScene44" parent="." unique_id=1791249554 instance=ExtResource("14_aj54g")]
+[node name="AuxScene44" parent="Trees" unique_id=1791249554 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.798065, 12, 46.022118)
 
-[node name="AuxScene45" parent="." unique_id=1391112600 instance=ExtResource("14_aj54g")]
+[node name="AuxScene45" parent="Trees" unique_id=1391112600 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.44662, 12, -42.757828)
 
-[node name="AuxScene46" parent="." unique_id=431611607 instance=ExtResource("14_aj54g")]
+[node name="AuxScene46" parent="Trees" unique_id=431611607 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.48943, 12.000015, -44.519665)
 
-[node name="AuxScene47" parent="." unique_id=1489113218 instance=ExtResource("14_aj54g")]
+[node name="AuxScene47" parent="Trees" unique_id=1489113218 instance=ExtResource("14_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.318085, 12.000015, -78.78891)
 
 [connection signal="_ready_for_next_wave" from="Director" to="Director" method="_on__ready_for_next_wave"]
