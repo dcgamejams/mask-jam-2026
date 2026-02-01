@@ -40,7 +40,6 @@ func _on_goat_health_updated(next_health):
 
 	goat_bar.value = next_health
 	goat_health_label.text = str(next_health)
-	print(next_health)
 	if next_health <= 1000:
 		%GoatHurt.show()
 		await get_tree().create_timer(0.5).timeout

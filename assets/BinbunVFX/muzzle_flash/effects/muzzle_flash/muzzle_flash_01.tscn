@@ -220,6 +220,8 @@ _data = {
 
 [node name="MuzzleFlash_01" type="Node3D" unique_id=936487956]
 script = ExtResource("1_wm4e3")
+preview = false
+autoplay = false
 primary_color = Color(1, 0.690196, 0, 1)
 secondary_color = Color(1, 0.376471, 0, 1)
 light_color = Color(1, 0.690196, 0, 1)
@@ -260,6 +262,7 @@ draw_pass_1 = SubResource("QuadMesh_6urkv")
 
 [node name="Glow" type="MeshInstance3D" parent="." unique_id=946483251]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.4, 0, 0)
+visible = false
 material_override = ExtResource("5_wm4e3")
 mesh = SubResource("SphereMesh_6urkv")
 

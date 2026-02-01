@@ -420,6 +420,10 @@ far = 1000.0
 script = ExtResource("14_m644i")
 player = NodePath("../..")
 
+[node name="Gun Origin" type="Marker3D" parent="CameraHolder/Camera" unique_id=1222225940]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.973959e-08, -0.15128672, -1.1379089)
+
 [node name="CameraBasedRaycasts" type="Node3D" parent="CameraHolder/Camera" unique_id=1892316695]
 
 [node name="LeftWallCheck" type="RayCast3D" parent="CameraHolder/Camera/CameraBasedRaycasts" unique_id=1296638190]
@@ -439,6 +443,7 @@ collision_mask = 4
 debug_shape_custom_color = Color(0.91764706, 0.79607844, 0.18039216, 1)
 
 [node name="SuperShotgun" parent="CameraHolder/Camera" unique_id=505632400 instance=ExtResource("15_m644i")]
+unique_name_in_owner = true
 transform = Transform3D(-4.371138e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.371138e-08, 0.36448643, -0.22091031, -0.36316282)
 
 [node name="MaskOnPosition" type="Node3D" parent="CameraHolder/Camera" unique_id=744150991]

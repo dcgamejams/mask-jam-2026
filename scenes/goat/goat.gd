@@ -7,7 +7,6 @@ class_name Goat
 
 func _ready():
 	add_to_group('Goat')
-	
 	health_system.signal_death.connect(goat_die)
 
 	

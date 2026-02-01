@@ -38,7 +38,7 @@ func _ready() -> void:
 	Global.signal_start.connect(startSpawning)
 	
 func startSpawning():
-	print("thing is loaded")
+	print("SPAWN STARTED")
 	
 	Global.MAX_WAVES = enemy_data.size()
 	

@@ -20,14 +20,16 @@
 [ext_resource type="AudioStream" uid="uid://ckhk165krhem" path="res://Audio/SFX/Ghost/attack/scary-scream-401725.mp3" id="13_pf5c0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_indh1"]
+height = 2.4
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nd7sd"]
 size = Vector3(30, 3, 30)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8fdcm"]
-radius = 0.6
+radius = 0.8
 
 [sub_resource type="Animation" id="Animation_uvqya"]
+resource_name = "RESET"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -188,7 +190,7 @@ tracks/12/keys = {
 
 [sub_resource type="Animation" id="Animation_qp7ua"]
 resource_name = "attack"
-length = 0.001
+length = 1.3
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -419,19 +421,199 @@ tracks/3/keys = {
 "values": [Color(1, 1, 1, 1), Color(0.29445758, 0.043696553, 0.06897158, 0.53333336), Color(1, 1, 1, 1), Color(0.29445758, 0.043696553, 0.06897158, 0.53333336), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_v1528"]
+resource_name = "walk"
+length = 2.0
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sketchfab_Scene:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.02, 0), Vector3(0, 0.6, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_en0gy"]
+resource_name = "RESET"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sketchfab_Scene:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sketchfab_Scene:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sketchfab_Scene:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.02, 0), Vector3(0, 0.6, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost/ghost_Material #19442_0:mesh:surface_0/material:albedo_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost/ghost_Material #19443_0:mesh:surface_0/material:albedo_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost/ghost_Material #19441_0:mesh:surface_0/material:albedo_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sketchfab_Scene/Sketchfab_model/Ghost_fbx:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sketchfab_Scene/Sketchfab_model/Ghost_fbx:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0254, 0.0254, 0.0254)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost/ghost_Material #19441_0:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost/ghost_Material #19441_0:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost/ghost_Material #19443_0:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost/ghost_Material #19443_0:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost/ghost_Material #19443_0:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3tcfh"]
 _data = {
 &"RESET": SubResource("Animation_uvqya"),
 &"attack": SubResource("Animation_qp7ua"),
 &"dying": SubResource("Animation_j1tbm"),
-&"hurt": SubResource("Animation_ip34o")
+&"hurt": SubResource("Animation_ip34o"),
+&"walk": SubResource("Animation_v1528"),
+&"walk2": SubResource("Animation_en0gy")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_khaxi"]
 resource_local_to_scene = true
 resource_name = "Material_19442"
 transparency = 1
-cull_mode = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_qp7ua")
 
@@ -474,7 +656,6 @@ shadow_mesh = SubResource("ArrayMesh_uvqya")
 resource_local_to_scene = true
 resource_name = "Material_19443"
 transparency = 1
-cull_mode = 2
 shading_mode = 0
 albedo_texture = ExtResource("6_v02x1")
 
@@ -516,7 +697,9 @@ shadow_mesh = SubResource("ArrayMesh_v02x1")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdnjl"]
 resource_local_to_scene = true
 resource_name = "Material_19441"
-transparency = 1
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 cull_mode = 1
 shading_mode = 0
 albedo_texture = ExtResource("7_h5xvx")
@@ -573,7 +756,7 @@ AmbientSoundsArray = Array[AudioStream]([ExtResource("2_p51wp"), ExtResource("3_
 AttackSoundsArray = Array[AudioStream]([ExtResource("10_en0gy"), ExtResource("11_v1528"), ExtResource("12_gknik"), ExtResource("13_pf5c0")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=475714064]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46449876, -0.08487642, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07483545, 1.2075865, -0.029321551)
 shape = SubResource("CapsuleShape3D_indh1")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=892091126]
@@ -587,13 +770,14 @@ collision_mask = 2
 shape = SubResource("BoxShape3D_nd7sd")
 
 [node name="AttackBox" type="Area3D" parent="." unique_id=1496836165]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7132993, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05289358, 0.96844983, 0.13930893)
 collision_layer = 0
 collision_mask = 2
+monitoring = false
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackBox" unique_id=1196945054]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0157165, 0.693908, -0.861981)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.015716493, 0.41824603, -1.1547447)
 shape = SubResource("SphereShape3D_8fdcm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=406928111]
@@ -617,7 +801,7 @@ transform = Transform3D(1, 0, 0, 0, 2.220446e-16, 1, 0, -1, 2.220446e-16, 0, 0, 
 transform = Transform3D(0.0254, 0, 0, 0, -1.1102692e-09, -0.0254, 0, 0.0254, -1.1102692e-09, 0, 0, 0)
 
 [node name="RootNode" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx" unique_id=994611035]
-transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -11.21233, -63.983017, 24.51446)
+transform = Transform3D(1.0000006, 0, -1.3322682e-15, -1.9411759e-23, 1.0000006, 1.0658141e-14, -8.881788e-16, -1.0658141e-14, 1.0000006, 4.6230497, -10.341488, 2.388426)
 
 [node name="ghost" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode" unique_id=1755810353]
 transform = Transform3D(1, 0, 0, 0, 2.220446e-16, 1, 0, -1, 2.220446e-16, 0, 0, -3.173413e-06)

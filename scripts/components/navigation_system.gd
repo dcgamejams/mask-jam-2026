@@ -56,12 +56,10 @@ func pick_patrol_destination():
 	var map = NavigationServer3D.get_maps()[0]
 	var random_point = NavigationServer3D.map_get_random_point(map, 1, false)
 	if random_point.distance_to(Vector3.ZERO) > 25.0:
-		print('random')
 		pick_patrol_destination()
 	else:
 		nav_agent.set_target_position(random_point)
 		next_path_pos = nav_agent.get_next_path_position()
-
 		
 func update_navigation_path():
 	if nav_agent.is_navigation_finished() == false:
@@ -69,14 +67,19 @@ func update_navigation_path():
 
 # TODO: Setting & forgetting target might need to be signal emits?
 func on_search_box_body_entered(body: Node3D):
-	if body && body.is_in_group('PlayerCharacter') and timer_give_up: 
-		timer_give_up.stop()
+	if not body:
+		return
+		
+	if body.is_in_group('PlayerCharacter') or body.is_in_group('Goat'):
+		if timer_give_up and timer_give_up.is_inside_tree():
+			timer_give_up.stop()
 		parent.target = body
 		parent.set_state(parent.States.CHASING)
 
 func on_search_box_body_exited(body: Node3D):
-	if parent.target == body and timer_give_up: 
-		timer_give_up.start()
+	if parent.target == body:
+		if timer_give_up and timer_give_up.is_inside_tree():
+			timer_give_up.start()
 
 func give_up():
 	print('give up')

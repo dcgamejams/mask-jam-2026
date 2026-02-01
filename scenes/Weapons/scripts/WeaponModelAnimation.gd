@@ -5,6 +5,7 @@ class_name WeaponModel
 @onready var animation_player = $AnimationPlayer
 
 @onready var particle_animation_player = $Root/Skeleton3D/Barrel/Barrels/MuzzleFlash_01/AnimationPlayer
+@onready var marker_3d: Marker3D = %Marker3D
 
 @onready var parent_node = get_parent()
 

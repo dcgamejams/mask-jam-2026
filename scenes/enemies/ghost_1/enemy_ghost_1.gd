@@ -53,8 +53,8 @@ enum LIST {
 
 # ANIMATION LIST. These are required
 const ANI = [
-	&"RESET", # Walk
-	&"RESET", # Idle
+	&"walk2", # Walk
+	&"idle", # Idle
 	&"attack", # Attack
 	&"hurt", # Hurt
 	&"dying", # Dying
@@ -114,7 +114,6 @@ func _play_random_attack_sound() -> void:
 	#AudioPlayerAttack.stream = RandomAttackSound
 	#AudioPlayerAttack.play()
 
-
 func _physics_process(delta: float) -> void:
 	match state:
 		States.SEARCHING:
@@ -134,7 +133,7 @@ func _physics_process(delta: float) -> void:
 	
 # TODO: ADD LOOK
 func move_and_attack(_delta):
-	if position.distance_to(attack_position) > 1.0:
+	if position.distance_to(attack_position) > 0.5:
 		velocity = (attack_position - global_transform.origin).normalized() * speed * 1.4
 	elif position.distance_to(attack_position) > 8.0: 
 		set_state(States.CHASING)
@@ -191,7 +190,8 @@ func set_state(new_state: States) -> void:
 	if previous_state == States.ATTACKING && new_state == States.HURTING:
 		animation_player.play(ANI[LIST.HURT])
 		return
-		
+				
+
 	#if previous_state == States.ATTACKING && animation_player.current_animation == ANI[LIST.ATTACK]: 
 		#return
 #
@@ -203,13 +203,15 @@ func set_state(new_state: States) -> void:
 	# Here, I check the new state.
 	if state == States.SEARCHING:
 		target = null
-		animation_player.play(ANI[LIST.WALK])
+		if not animation_player.current_animation == ANI[LIST.HURT]:
+			animation_player.play(ANI[LIST.WALK])
 		speed = 3.0
 		nav.pick_patrol_destination()
 		pass
 
 	if state == States.CHASING:
-		animation_player.play(ANI[LIST.WALK])
+		if not animation_player.current_animation == ANI[LIST.HURT]:
+			animation_player.play(ANI[LIST.WALK])
 		nav.chase_target()
 		speed = 5.0
 		pass
@@ -237,6 +239,9 @@ func set_state(new_state: States) -> void:
 		nav.timer_navigate.stop()
 		nav.timer_give_up.stop()
 		animation_player.play(ANI[LIST.DYING])
+		set_process(false)
+		await get_tree().create_timer(2.0).timeout
+		queue_free()
 		# Decay triggered by animation
 
 	if state == States.DECAYING:
@@ -288,7 +293,7 @@ func attack():
 	if state == States.CHASING or state == States.HURTING:
 		await get_tree().create_timer(0.1).timeout
 		if nav_agent.is_navigation_finished():
-			if target and global_position.distance_to(target.transform.origin) < 7.0:
+			if target and global_position.distance_to(target.transform.origin) < 8.0:
 				attack_position = target.transform.origin
 				set_state(States.ATTACKING)
 				attack_position = target.transform.origin + Vector3(0.0, 0.1, 0.0)
@@ -308,10 +313,11 @@ func on_path_changed():
 		animation_player.play(ANI[LIST.WALK])
 
 func on_attack_box_entered(body):
-	if body.is_in_group('PlayerCharacter'):
+	if body.is_in_group('PlayerCharacter') or body.is_in_group('Goat'):
 		var damage_successful = body.health_system.damage(attack_value, 4)
 		if damage_successful && attack_box:
 			attack_box.set_deferred('monitoring', false)
+
 
 
 func _on_audio_stream_player_3d_ambient_finished() -> void:
