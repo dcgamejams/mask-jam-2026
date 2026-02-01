@@ -244,17 +244,17 @@ transform = Transform3D(1.0000006, 0, -1.3322682e-15, -1.9411759e-23, 1.0000006,
 transform = Transform3D(1, 0, 0, 0, 2.220446e-16, 1, 0, -1, 2.220446e-16, 0, 0, -3.173413e-06)
 
 [node name="ghost_Material #19442_0" type="MeshInstance3D" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" unique_id=1622544883]
-layers = 513
+layers = 512
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_qp7ua")
 
 [node name="ghost_Material #19443_0" type="MeshInstance3D" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" unique_id=1464145499]
-layers = 513
+layers = 512
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_h5xvx")
 
 [node name="ghost_Material #19441_0" type="MeshInstance3D" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" unique_id=294736173]
-layers = 513
+layers = 512
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_nep5b")
 

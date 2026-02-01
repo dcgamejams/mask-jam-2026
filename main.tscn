@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdj2iwi0ancxn" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dvvyasmh7k7s6" path="res://scenes/environment/farm.tscn" id="2_0xm2m"]
+[ext_resource type="Shader" uid="uid://bhqhydrj6pq47" path="res://scenes/players/overlay.gdshader" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="3_h2yge"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
@@ -10,6 +11,17 @@ outline_size = 93
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 78
 shadow_color = Color(0.6269097, 0, 0, 0.9882353)
+
+[sub_resource type="QuadMesh" id="QuadMesh_lquwl"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mycd"]
+render_priority = 0
+shader = ExtResource("2_1bvp3")
+shader_parameter/pixel_size = 3.0
+shader_parameter/levels = 22.0
+shader_parameter/gamma = Vector2(0.98, 1.185)
 
 [sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
 font_size = 48
@@ -80,6 +92,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.303235, 1.6407166, -0.3879
 [node name="Camera3D" type="Camera3D" parent="MenuCameraFocus" unique_id=154145269]
 transform = Transform3D(0.8186512, 0, 0.57429105, 0, 1, 0, -0.57429105, 0, 0.8186512, 6.6111803, 7.5512524, 27.324368)
 cull_mask = 1047553
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MenuCameraFocus/Camera3D" unique_id=2011931764]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_lquwl")
+surface_material_override/0 = SubResource("ShaderMaterial_7mycd")
 
 [node name="IntroCameraPosition" type="Node3D" parent="MenuCameraFocus" unique_id=642613711]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.653, 1.888, 6.831)
