@@ -4,6 +4,8 @@ class_name NavigationSystem
 @export var nav_agent: NavigationAgent3D
 @export var search_box: Area3D
 @export var search_box_ghost: Area3D
+@export var min_patrol: float = 5.0
+@export var max_patrol: float = 12.0
 
 var next_path_pos
 var parent: CharacterBody3D
@@ -37,13 +39,13 @@ func _ready() -> void:
 	add_child(timer_chase_target)
 	
 	timer_give_up.timeout.connect(give_up)
-	timer_give_up.wait_time = randf_range(7.0, 11.0)
+	timer_give_up.wait_time = randf_range(2.0, 9.0)
 	timer_give_up.one_shot = true # Do not repeatedly give up
 	add_child(timer_give_up)
 
 	add_child(timer_patrol)
 	timer_patrol.timeout.connect(pick_patrol_destination)
-	timer_patrol.wait_time = randf_range(15.0, 25.0)
+	timer_patrol.wait_time = randf_range(min_patrol, max_patrol)
 	timer_patrol.start()
 
 func chase_target():
@@ -74,7 +76,8 @@ func on_search_box_body_entered(body: Node3D):
 		return
 
 	var rand = randi_range(0, 2)
-	if parent.target is Goat and rand == 0: 
+	
+	if parent.target and (parent.target is Goat and rand == 0): 
 		return 
 	
 	if body.is_in_group('PlayerCharacter'):
@@ -88,7 +91,7 @@ func on_search_goat_body_entered(body: Node3D):
 	if not body:
 		return
 	var rand = randi_range(0, 1)
-	if parent.target is PlayerCharacter and rand == 0: 
+	if parent.target and (parent.target is PlayerCharacter and rand == 0): 
 		return 
 		
 	if body.is_in_group('Goat'):

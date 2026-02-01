@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4db5el0ch0nc"
+path="res://.godot/imported/goat pain.mp3-e5f38a53e9a5080f539551b0729d7a13.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/Goat/goat pain.mp3"
+dest_files=["res://.godot/imported/goat pain.mp3-e5f38a53e9a5080f539551b0729d7a13.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

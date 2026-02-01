@@ -129,12 +129,19 @@ func _process(delta : float) -> void:
 	zoom()
 	
 	#mouse_mode()
-	
+
+signal signal_mask_on(is_currently_on)
+
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed or event.is_action_pressed('put_on_mask'):
+		if (event.button_index == MOUSE_BUTTON_RIGHT and event.pressed) or event.is_action_pressed('put_on_mask'):
 			mask_on()
-		elif event.button_index == MOUSE_BUTTON_RIGHT and event.canceled or event.is_action_released('put_on_mask'):
+		elif (event.button_index == MOUSE_BUTTON_RIGHT and event.canceled) or event.is_action_released('put_on_mask'):
+			mask_off()
+	else:
+		if event.is_action_pressed('put_on_mask'):
+			mask_on()
+		elif event.is_action_released('put_on_mask'):
 			mask_off()
 			
 func mask_on():
@@ -146,14 +153,16 @@ func mask_on():
 		func(): 
 			camera.cull_mask = (1 << 0) | (1 << 9)
 	)
+	signal_mask_on.emit(true)
 	
+
 func mask_off():
 	if maskTween:
 		maskTween.kill()
 	maskTween = create_tween()
 	maskTween.tween_property(stone_mask,"transform", mask_off_position.transform, maskAnimationTime).set_ease(Tween.EASE_OUT)
 	camera.cull_mask = 1 << 0
-	
+	signal_mask_on.emit(false)
 
 func tilt(delta : float) -> void:
 	if state != "Fly" and state != "Slide" and state != "Wallrun":

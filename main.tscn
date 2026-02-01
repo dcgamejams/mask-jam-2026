@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b6dfmct6e0d5j"]
 
 [ext_resource type="Script" uid="uid://cdj2iwi0ancxn" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://cow3kiecu6e17" path="res://scenes/environment/farm.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://55aifbe538fr" path="res://scenes/enemies/cultist/cultist.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dvvyasmh7k7s6" path="res://scenes/environment/farm.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="3_h2yge"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 128
@@ -86,6 +86,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.653, 1.888, 6.831)
 
 [node name="Farm" parent="." unique_id=1123410095 instance=ExtResource("2_0xm2m")]
 
+[node name="Goat" parent="." unique_id=752746429 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.683079, 1.5735769, -0.6107106)
+
 [node name="DeathMenu" type="CanvasLayer" parent="." unique_id=1852251889]
 
 [node name="Control" type="Control" parent="DeathMenu" unique_id=855845725]
@@ -138,9 +141,6 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 text = "Restart"
 icon_alignment = 1
-
-[node name="EnemyCultist" parent="." unique_id=427302985 instance=ExtResource("3_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.32964, 1.3896694, 0)
 
 [node name="Introduction" type="CanvasLayer" parent="." unique_id=596229279]
 

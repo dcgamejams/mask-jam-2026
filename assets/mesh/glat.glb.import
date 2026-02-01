@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cpqf6gqli8puq"
-path="res://.godot/imported/House.glb-7c20736c159c6a79090c181e99a1bb45.scn"
+uid="uid://e7sq42parahh"
+path="res://.godot/imported/glat.glb-6d9e5eb397559483820e84b1ca7295fe.scn"
 
 [deps]
 
-source_file="res://assets/Models/House/House.glb"
-dest_files=["res://.godot/imported/House.glb-7c20736c159c6a79090c181e99a1bb45.scn"]
+source_file="res://assets/mesh/glat.glb"
+dest_files=["res://.godot/imported/glat.glb-6d9e5eb397559483820e84b1ca7295fe.scn"]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=100.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
@@ -39,26 +39,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Cube": {
-"generate/physics": true,
-"physics/layer": 255
-},
-"PATH:Cube_001": {
-"generate/physics": true,
-"physics/layer": 255
-},
-"PATH:Cube_002": {
-"generate/physics": true,
-"physics/layer": 255
-},
-"PATH:Cube_003": {
-"generate/physics": true,
-"physics/layer": 255
-},
-"PATH:Cube_004": {
-"physics/layer": 255
-},
-"PATH:Cube_005": {
+"PATH:Landscape_004": {
 "generate/physics": true,
 "physics/layer": 255
 }

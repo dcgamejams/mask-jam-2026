@@ -2,10 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://cblkr6vm8427g" path="res://assets/Models/goat/Goat_curly_teddy_natural_diff_1k.jpg" id="1_7hkpy"]
 [ext_resource type="Script" uid="uid://4u388rpntma4" path="res://scenes/goat/goat.gd" id="1_scptj"]
+[ext_resource type="AudioStream" uid="uid://jck5wobh1wo0" path="res://Audio/SFX/Goat/goat-baa-390303.mp3" id="2_2ysgr"]
 [ext_resource type="Material" uid="uid://0jqi3l8k5qs7" path="res://scenes/goat/eye_mat.tres" id="2_gm73t"]
 [ext_resource type="Texture2D" uid="uid://ctcmggwua5neo" path="res://assets/Models/goat/Goat_curly_teddy_natural_arm_1k.jpg" id="2_k6wi4"]
+[ext_resource type="AudioStream" uid="uid://b2iviqbihj05d" path="res://Audio/SFX/Goat/goat-sound-390298.mp3" id="3_fhce2"]
 [ext_resource type="Texture2D" uid="uid://dvw7dlxtpfvr1" path="res://assets/Models/goat/Goat_curly_teddy_natural_nor_gl_1k.jpg" id="3_gg4qc"]
 [ext_resource type="Texture2D" uid="uid://ce21nxu4gjawc" path="res://assets/Models/goat/Goat_bark_willow_diff_1k.jpg" id="4_scptj"]
+[ext_resource type="AudioStream" uid="uid://c4db5el0ch0nc" path="res://Audio/SFX/Goat/goat pain.mp3" id="4_tkhj3"]
 [ext_resource type="Texture2D" uid="uid://c40mul32l4mjg" path="res://assets/Models/goat/Goat_bark_willow_rough_1k.jpg" id="5_yfvqt"]
 [ext_resource type="Texture2D" uid="uid://opqamc6lr7o" path="res://assets/Models/goat/Goat_bark_willow_nor_gl_1k.jpg" id="6_j3i02"]
 [ext_resource type="Script" uid="uid://d5jl3b0hfehw" path="res://scripts/components/health_system.gd" id="8_gg4qc"]
@@ -513,6 +516,8 @@ shadow_mesh = SubResource("ArrayMesh_rg8ap")
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_scptj")
+IdleSounds = Array[AudioStream]([ExtResource("2_2ysgr"), ExtResource("3_fhce2")])
+PainSound = ExtResource("4_tkhj3")
 
 [node name="Health" type="Node" parent="." unique_id=2138779065]
 script = ExtResource("8_gg4qc")
@@ -520,21 +525,26 @@ max_health = 1000
 health = 1000
 regen_enabled = false
 
-[node name="NavigationSystem" type="Node" parent="." unique_id=902741949 node_paths=PackedStringArray("nav_agent", "search_box")]
+[node name="NavigationSystem" type="Node" parent="." unique_id=902741949 node_paths=PackedStringArray("nav_agent", "search_box", "search_box_ghost")]
 script = ExtResource("9_scptj")
 nav_agent = NodePath("../NavigationAgent3D")
 search_box = NodePath("../Search")
+search_box_ghost = NodePath("../Search2")
+min_patrol = 10.0
+max_patrol = 20.0
 metadata/_custom_type_script = "uid://es67axqa8ao6"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1266396648]
 libraries/ = SubResource("AnimationLibrary_gg4qc")
-autoplay = &"walk"
+autoplay = &"idle"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=792010485]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67440987, 0)
 shape = SubResource("BoxShape3D_7hkpy")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1466534450]
+path_desired_distance = 2.11
+target_desired_distance = 2.85
 
 [node name="Search" type="Area3D" parent="." unique_id=358728936]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3615873, 0)
@@ -544,6 +554,16 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Search" unique_id=1081302019]
+shape = SubResource("SphereShape3D_yfvqt")
+
+[node name="Search2" type="Area3D" parent="." unique_id=702189709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3615873, 0)
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Search2" unique_id=716147520]
 shape = SubResource("SphereShape3D_yfvqt")
 
 [node name="MeshRoot" type="Node3D" parent="." unique_id=68246385]
@@ -596,22 +616,26 @@ transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, 
 mesh = SubResource("ArrayMesh_8hakc")
 
 [node name="LEG-FR" type="Node3D" parent="MeshRoot" unique_id=35198184]
-transform = Transform3D(1, 0, 0, 0, 0.96592546, -0.25881895, 0, 0.25881895, 0.96592546, -0.17935985, 0.3615873, 0.33547997)
+transform = Transform3D(1, 0, 0, 0, 0.99999964, 0, 0, 0, 0.99999964, -0.17935985, 0.3615873, 0.33547997)
 
 [node name="LegFL" type="MeshInstance3D" parent="MeshRoot/LEG-FR" unique_id=1542053976]
 transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)
 mesh = SubResource("ArrayMesh_8hakc")
 
 [node name="LEG-BL" type="Node3D" parent="MeshRoot" unique_id=1595987499]
-transform = Transform3D(1, 0, 0, 0, 0.96592546, 0.25881895, 0, -0.25881895, 0.96592546, 0.123175085, 0.3615873, -0.5256649)
+transform = Transform3D(1, 0, 0, 0, 0.99999964, 0, 0, 0, 0.99999964, 0.123175085, 0.3615873, -0.5256649)
 
 [node name="LegFL" type="MeshInstance3D" parent="MeshRoot/LEG-BL" unique_id=1737596866]
 transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)
 mesh = SubResource("ArrayMesh_8hakc")
 
 [node name="LEG-BR" type="Node3D" parent="MeshRoot" unique_id=855031840]
-transform = Transform3D(1, 0, 0, 0, 0.96592546, -0.25881895, 0, 0.25881895, 0.96592546, -0.27060252, 0.3615873, -0.4347602)
+transform = Transform3D(1, 0, 0, 0, 0.99999964, 0, 0, 0, 0.99999964, -0.27060252, 0.3615873, -0.4347602)
 
 [node name="LegFL" type="MeshInstance3D" parent="MeshRoot/LEG-BR" unique_id=982463341]
 transform = Transform3D(0.10693407, 0, 0, 0, 0.9999999, 0, 0, 0, 0.10693407, 0, -0.30414033, 0)
 mesh = SubResource("ArrayMesh_8hakc")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1880405065]
+
+[connection signal="signal_hurt" from="Health" to="." method="_on_health_signal_hurt"]
