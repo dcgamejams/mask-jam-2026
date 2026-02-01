@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://2so0dr2208kn" path="res://scenes/enemies/ghost_1/enemy_ghost_1.gd" id="1_j1tbm"]
 [ext_resource type="Script" uid="uid://d5jl3b0hfehw" path="res://scripts/components/health_system.gd" id="2_ip34o"]
 [ext_resource type="Script" uid="uid://es67axqa8ao6" path="res://scripts/components/navigation_system.gd" id="3_uvqya"]
-[ext_resource type="PackedScene" uid="uid://by81nft6ho4cn" path="res://assets/mesh/castlevania_lod_-_ghost/scene.gltf" id="4_qp7ua"]
+[ext_resource type="Texture2D" uid="uid://ecu1d0y8q5f7" path="res://assets/mesh/castlevania_lod_-_ghost/textures/Material_19442_baseColor.png" id="5_qp7ua"]
 [ext_resource type="Texture2D" uid="uid://crldy7006y2vo" path="res://assets/mesh/castlevania_lod_-_ghost/textures/Material_19443_baseColor.png" id="6_v02x1"]
 [ext_resource type="Texture2D" uid="uid://krfqn2tj86v0" path="res://assets/mesh/castlevania_lod_-_ghost/textures/Material_19441_baseColor.png" id="7_h5xvx"]
 
@@ -16,7 +16,7 @@ size = Vector3(30, 3, 30)
 radius = 0.6
 
 [sub_resource type="Animation" id="Animation_uvqya"]
-length = 0.001
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -402,12 +402,14 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_khaxi"]
+resource_local_to_scene = true
 resource_name = "Material_19442"
 transparency = 1
-cull_mode = 2
+cull_mode = 1
 shading_mode = 0
+albedo_texture = ExtResource("5_qp7ua")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_o32j3"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_uvqya"]
 _surfaces = [{
 "aabb": AABB(-37.79009, -28.843725, 8.00249, 61.64119, 59.76011, 95.45925),
 "format": 34896613377,
@@ -422,7 +424,8 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_e4vfj"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_qp7ua"]
+resource_local_to_scene = true
 resource_name = "Sketchfab_Scene_ghost_Material #19442_0"
 _surfaces = [{
 "aabb": AABB(-37.79009, -28.843725, 8.00249, 61.64119, 59.76011, 95.45925),
@@ -439,16 +442,17 @@ _surfaces = [{
 "vertex_data": PackedByteArray("6V5joTrvl/osk4Ot//8XXVhWq5zpyKTm2J92v2y/ZMsWrO/FROUlSC2BP1t8sDRIAAD3gYV3ssaGTvDA23//xHFrWMgbrrbH/0p0wUTJ2dtYVquc6cgRtnFrWMgbrsPV0WXd4oqxgAbYn3a/bL+p7OleY6E671YiFqzvxUTl5wQsk4Ot//+eDDbLzbLkv/kjOoZA6SapYK7jz1B+lrTMRQiXazbbWFs2UkOhZMpmpekumAAAAAACDwrQGmTUbBU8mjLqftOtHtqXRjS0qLySo///nZ8vjgtMzMngxQSUYeAQgFt4EMRv/ruE7/NUfv//e43g1/oxYifam41/NeOM9FFR//987y0ayImj6IHMI+u7a3pX20dxSi7iEd1+11EklzPDJhoDNo2v7MPBxOyAtD67hszAWpbSq1bvtk10uMuCMASK8M20CeRaf2KXCDnRv5BvYHE1rCO8/6up/g1SWC83ZOLExbP6Ig9uOL0JLLdz7efWO8ryrv////+IjlBGOWgLPxSf6eD4t1QLA4AZVrWahoMMo1ED")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_o32j3")
+shadow_mesh = SubResource("ArrayMesh_uvqya")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxouq"]
+resource_local_to_scene = true
 resource_name = "Material_19443"
 transparency = 1
 cull_mode = 2
 shading_mode = 0
 albedo_texture = ExtResource("6_v02x1")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_dnldw"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_v02x1"]
 _surfaces = [{
 "aabb": AABB(-32.86736, -3.1857178, 2.5489502, 54.368263, 30.718994, 68.726295),
 "format": 34896613377,
@@ -463,7 +467,8 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_nep5b"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_h5xvx"]
+resource_local_to_scene = true
 resource_name = "Sketchfab_Scene_ghost_Material #19443_0"
 _surfaces = [{
 "aabb": AABB(-32.86736, -3.1857178, 2.5489502, 54.368263, 30.718994, 68.726295),
@@ -480,16 +485,17 @@ _surfaces = [{
 "vertex_data": PackedByteArray("YN1RZIj8HRRB6nkchp4c0f//AAABpM8FQfmcL2GmMOrEEBER85HPq68h6DdDkEpPEh2pY97xbP/YD8ZAQJdJUCHz+bhxPwX+XbUQjMMKkpt30OXFlz2+OUfEKnX//yPjlSHk/j84C/oAAAr0nz5dLygcy+6jSXEF/ie/1AAAfAYIMs97dPWhDoXRy6LrFjhkmduVuoVO3v4Kum6wCDSczTL5iwzTl4zSb9OYyo5M2eqP6PKaUFMQ3Cf4DiA+pAb3vhEt6T8R7vU1Myfr+C26B+UUIc1pSFtLBiL///xHjUYnFrojTYegKGkTazNwlKUGuJrr7jaeJ3IBaSCoflurZ2Dd0FY4X86jkxZoUY5TjzzTOot/JbjALsA6OllpeH0cTGm3Sax1YQmmelbzP/NbDzAt120QWXn/NAuAhmaWVCtqq8Cxhxwb5Hn0euTitlHF7AWz2DVFC43FHMkRpCaEzzOmMa4QuGS6")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_dnldw")
+shadow_mesh = SubResource("ArrayMesh_v02x1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdnjl"]
+resource_local_to_scene = true
 resource_name = "Material_19441"
 transparency = 1
-cull_mode = 2
+cull_mode = 1
 shading_mode = 0
 albedo_texture = ExtResource("7_h5xvx")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_yubld"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_e4vfj"]
 _surfaces = [{
 "aabb": AABB(-16.56228, 7.4161377, 73.02473, 15.640797, 18.395336, 25.001587),
 "format": 34896613377,
@@ -504,7 +510,8 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_h4yjd"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_nep5b"]
+resource_local_to_scene = true
 resource_name = "Sketchfab_Scene_ghost_Material #19441_0"
 _surfaces = [{
 "aabb": AABB(-16.56228, 7.4161377, 73.02473, 15.640797, 18.395336, 25.001587),
@@ -521,7 +528,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("MZLN+HSp/u9RHoHL57eYKbnWAACEv53LGDf3XzoQTqpoQPDdFnGv/QVxk3brCHz090RYXOPerRV+Uf//qMZxLdvyKqAjyRPrlpD/Hjg9S79KjgO6//9G+XrJMkjR/DTp//89gHeTlN9Vn97YyHPi9JXKqYzSTY/hKDUwMdWsQBoAAKqavIe4OsYcw0iVYysqS0wfcAAAuY8Bw0f3wyyoOQPxvaUZrmQTfpMiWnnw/Ok0RQkgngefZoTS5dYA8Fk51GCyMaLGkbuI4s3U2dee8ejjLuLUQasPRjV+JgQ3TBOCMSkY")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_yubld")
+shadow_mesh = SubResource("ArrayMesh_e4vfj")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_j1tbm"]
 height = 0.2
@@ -571,30 +578,34 @@ script = ExtResource("3_uvqya")
 nav_agent = NodePath("../NavigationAgent3D")
 search_box = NodePath("../SearchBox")
 
-[node name="Sketchfab_Scene" parent="." unique_id=2083895909 instance=ExtResource("4_qp7ua")]
+[node name="Sketchfab_Scene" type="Node3D" parent="." unique_id=2083895909]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041, 0)
 
-[node name="Ghost_fbx" parent="Sketchfab_Scene/Sketchfab_model" parent_id_path=PackedInt32Array(2083895909, 388891561) index="0" unique_id=1270260588]
+[node name="Sketchfab_model" type="Node3D" parent="Sketchfab_Scene" unique_id=1627592023]
+transform = Transform3D(1, 0, 0, 0, 2.220446e-16, 1, 0, -1, 2.220446e-16, 0, 0, 0)
+
+[node name="Ghost_fbx" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model" unique_id=2080849850]
 transform = Transform3D(0.0254, 0, 0, 0, -1.1102692e-09, -0.0254, 0, 0.0254, -1.1102692e-09, 0, 0, 0)
 
-[node name="RootNode" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx" index="0" unique_id=1914518929]
+[node name="RootNode" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx" unique_id=994611035]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -11.21233, -63.983017, 24.51446)
 
-[node name="ghost_Material #19442_0" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" parent_id_path=PackedInt32Array(2083895909, 1633472223) index="0" unique_id=95613476]
-layers = 513
-mesh = SubResource("ArrayMesh_e4vfj")
+[node name="ghost" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode" unique_id=1755810353]
+transform = Transform3D(1, 0, 0, 0, 2.220446e-16, 1, 0, -1, 2.220446e-16, 0, 0, -3.173413e-06)
 
-[node name="ghost_Material #19443_0" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" parent_id_path=PackedInt32Array(2083895909, 1633472223) index="1" unique_id=1642883759]
+[node name="ghost_Material #19442_0" type="MeshInstance3D" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" unique_id=1622544883]
+layers = 513
+mesh = SubResource("ArrayMesh_qp7ua")
+
+[node name="ghost_Material #19443_0" type="MeshInstance3D" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" unique_id=1464145499]
+layers = 513
+mesh = SubResource("ArrayMesh_h5xvx")
+
+[node name="ghost_Material #19441_0" type="MeshInstance3D" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" unique_id=294736173]
 layers = 513
 mesh = SubResource("ArrayMesh_nep5b")
-
-[node name="ghost_Material #19441_0" parent="Sketchfab_Scene/Sketchfab_model/Ghost_fbx/RootNode/ghost" parent_id_path=PackedInt32Array(2083895909, 1633472223) index="2" unique_id=1105906701]
-layers = 513
-mesh = SubResource("ArrayMesh_h4yjd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=103209726]
 transform = Transform3D(1, 0, 0, 0, -0.017609445, 0.99984497, 0, -0.99984497, -0.017609445, 0, 2.2572672, -0.6309147)
 layers = 0
 mesh = SubResource("CylinderMesh_j1tbm")
-
-[editable path="Sketchfab_Scene"]

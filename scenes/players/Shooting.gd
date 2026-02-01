@@ -43,7 +43,8 @@ func fire_manual_raycast():
 	var ray_length: float = 1000.0
 	var ray_end: Vector3 = ray_origin + (ray_direction * ray_length)
 
-	DebugDraw3D.draw_line(ray_origin, ray_end, Color.RED, 100)
+	
+	#DebugDraw3D.draw_line(ray_origin, ray_end, Color.RED, 100)
 
 	# Perform the intersection query
 	var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state

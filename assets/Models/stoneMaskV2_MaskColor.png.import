@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdy7dwsmwws08"
-path.s3tc="res://.godot/imported/stoneMaskV2_MaskColor.png-5c7e3ca4cff791a28e2dc75e0115a70d.s3tc.ctex"
+path.s3tc="res://.godot/imported/stoneMaskV2_MaskColor.png-9515be3c54540ce08e3dc23120acb106.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/stoneMaskV2_MaskColor.png"
-dest_files=["res://.godot/imported/stoneMaskV2_MaskColor.png-5c7e3ca4cff791a28e2dc75e0115a70d.s3tc.ctex"]
+source_file="res://assets/Models/stoneMaskV2_MaskColor.png"
+dest_files=["res://.godot/imported/stoneMaskV2_MaskColor.png-9515be3c54540ce08e3dc23120acb106.s3tc.ctex"]
 
 [params]
 

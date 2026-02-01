@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cblkr6vm8427g"
-path.s3tc="res://.godot/imported/Goat_curly_teddy_natural_diff_1k.jpg-358919f2f67c69c08b0a6b5fea3a6c5c.s3tc.ctex"
+path.s3tc="res://.godot/imported/Goat_curly_teddy_natural_diff_1k.jpg-7a3dd46d7cdb208603d3ab5f43cb605d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/goat/Goat_curly_teddy_natural_diff_1k.jpg"
-dest_files=["res://.godot/imported/Goat_curly_teddy_natural_diff_1k.jpg-358919f2f67c69c08b0a6b5fea3a6c5c.s3tc.ctex"]
+source_file="res://assets/Models/goat/Goat_curly_teddy_natural_diff_1k.jpg"
+dest_files=["res://.godot/imported/Goat_curly_teddy_natural_diff_1k.jpg-7a3dd46d7cdb208603d3ab5f43cb605d.s3tc.ctex"]
 
 [params]
 
