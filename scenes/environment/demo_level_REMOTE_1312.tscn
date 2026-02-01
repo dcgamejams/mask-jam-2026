@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bjumh2hbls3un"]
+[gd_scene format=3 uid="uid://c8hexmhwarxyl"]
 
 [ext_resource type="Environment" uid="uid://c2hlpwfld7bbi" path="res://scenes/environment/night_environment.tres" id="1_2vmhc"]
 [ext_resource type="Script" uid="uid://hep76rg80iwt" path="res://Wave.gd" id="1_4nk08"]
