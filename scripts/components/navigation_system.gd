@@ -37,13 +37,13 @@ func _ready() -> void:
 	add_child(timer_chase_target)
 	
 	timer_give_up.timeout.connect(give_up)
-	timer_give_up.wait_time = randf_range(7.0, 11.0)
+	timer_give_up.wait_time = randf_range(2.0, 9.0)
 	timer_give_up.one_shot = true # Do not repeatedly give up
 	add_child(timer_give_up)
 
 	add_child(timer_patrol)
 	timer_patrol.timeout.connect(pick_patrol_destination)
-	timer_patrol.wait_time = randf_range(15.0, 25.0)
+	timer_patrol.wait_time = randf_range(5.0, 10.0)
 	timer_patrol.start()
 
 func chase_target():
