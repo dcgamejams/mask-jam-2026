@@ -13,15 +13,17 @@ extends Node3D
 @onready var death_menu: CanvasLayer = $DeathMenu
 @onready var restart_button: Button = $DeathMenu/Control/MarginContainer/VBoxContainer/RestartButton
 @onready var time_label: Label = $DeathMenu/Control/MarginContainer/VBoxContainer/Time
+@onready var death_title: Label = $DeathMenu/Control/MarginContainer/VBoxContainer/Title
 
 var time_start = 0.0
-
+var player : PlayerCharacter
 
 func _ready() -> void:
 	startbutton.pressed.connect(start_game)
 	restart_button.pressed.connect(restart)
 	restart_button.disabled = true
 	death_menu.hide()
+
 
 func _process(delta: float) -> void:
 	menu_camera_focus.rotate(Vector3.UP, camera_rotation_speed * delta)
@@ -32,13 +34,22 @@ func restart():
 
 func start_game():
 	time_start = Time.get_unix_time_from_system()
-	var player : PlayerCharacter = PLAYER_CHARACTER_SCENE.instantiate()
+	player = PLAYER_CHARACTER_SCENE.instantiate()
 	player.position = player_start_position.position
 	player.rotation = player_start_position.rotation
 	add_child(player)
 	player.health_system.signal_death.connect(you_died)
+	var goat : Goat = get_tree().get_first_node_in_group('Goat')
+	goat.health_system.signal_death.connect(goat_died)
+	print(goat)
 	main_menu.queue_free()
 	Global.signal_start.emit()
+
+func goat_died():
+	death_title.text = "Your GOAT died!"
+	
+	player.health_system.damage(9999, 1)
+	print(player.health_system.health)
 
 func you_died():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -50,4 +61,3 @@ func you_died():
 	var secondsLabel = "second" if secondValue == 1 else "seconds"
 	time_label.text = "You survived for " + str(minuteValue) + " " + minuteLabel + " and " + str(secondValue) + " " + secondsLabel + "." 
 	death_menu.show()
-	
