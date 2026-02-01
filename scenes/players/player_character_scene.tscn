@@ -300,6 +300,23 @@ shader_parameter/animation_speed = 20.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d61dg"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtmhn"]
+resource_local_to_scene = true
+bg_color = Color(0.04, 0.0028, 0.01644, 0.278431)
+border_color = Color(0.194746, 0.194746, 0.194746, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_by614"]
+resource_local_to_scene = true
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 2.0
+bg_color = Color(0.949949, 0.883835, 0.931763, 1)
+border_color = Color(0.682968, 0.682969, 0.682968, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rk7w"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlx67"]
 bg_color = Color(0.04, 0.0028, 0.01644, 0.278431)
 border_width_left = 1
@@ -308,7 +325,8 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.194746, 0.194746, 0.194746, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_by614"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rk7w"]
+resource_local_to_scene = true
 content_margin_left = 5.0
 content_margin_top = 5.0
 content_margin_right = 5.0
@@ -318,10 +336,7 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.682968, 0.682969, 0.682968, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rk7w"]
+border_color = Color(0, 0, 0, 1)
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=1717030456 groups=["PlayerCharacter"]]
 collision_layer = 2
@@ -1015,7 +1030,7 @@ unique_name_in_owner = true
 material = SubResource("CanvasItemMaterial_d61dg")
 custom_minimum_size = Vector2(300, 25)
 layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_nlx67")
+theme_override_styles/background = SubResource("StyleBoxFlat_xtmhn")
 theme_override_styles/fill = SubResource("StyleBoxFlat_by614")
 step = 1.0
 value = 50.0
@@ -1090,7 +1105,7 @@ material = SubResource("CanvasItemMaterial_d61dg")
 custom_minimum_size = Vector2(300, 25)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_nlx67")
-theme_override_styles/fill = SubResource("StyleBoxFlat_by614")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8rk7w")
 step = 1.0
 value = 50.0
 show_percentage = false

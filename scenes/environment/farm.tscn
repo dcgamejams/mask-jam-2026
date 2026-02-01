@@ -39,7 +39,7 @@ orientation = 0
 [sub_resource type="Resource" id="Resource_0id7f"]
 script = ExtResource("12_mft7r")
 EnemyScene = ExtResource("13_1m5qu")
-EnemyAmount = 3
+EnemyAmount = 6
 EnemySpawnInterval = 2.0
 metadata/_custom_type_script = "uid://ca6hc1lxuykiv"
 
@@ -52,7 +52,7 @@ metadata/_custom_type_script = "uid://hep76rg80iwt"
 [sub_resource type="Resource" id="Resource_ykhrp"]
 script = ExtResource("12_mft7r")
 EnemyScene = ExtResource("13_1m5qu")
-EnemyAmount = 10
+EnemyAmount = 20
 EnemySpawnInterval = 5.0
 metadata/_custom_type_script = "uid://ca6hc1lxuykiv"
 
@@ -65,7 +65,7 @@ metadata/_custom_type_script = "uid://hep76rg80iwt"
 [sub_resource type="Resource" id="Resource_p7ptl"]
 script = ExtResource("12_mft7r")
 EnemyScene = ExtResource("13_1m5qu")
-EnemyAmount = 10
+EnemyAmount = 20
 EnemySpawnInterval = 2.5
 metadata/_custom_type_script = "uid://ca6hc1lxuykiv"
 
@@ -78,7 +78,7 @@ metadata/_custom_type_script = "uid://hep76rg80iwt"
 [sub_resource type="Resource" id="Resource_sdmqi"]
 script = ExtResource("12_mft7r")
 EnemyScene = ExtResource("13_1m5qu")
-EnemyAmount = 20
+EnemyAmount = 40
 EnemySpawnInterval = 7.0
 metadata/_custom_type_script = "uid://ca6hc1lxuykiv"
 
@@ -121,7 +121,7 @@ navigation_mesh = SubResource("NavigationMesh_etyyu")
 [node name="glat" parent="NavigationRegion3D" unique_id=717603836 instance=ExtResource("5_aj54g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.8603191, 0)
 
-[node name="Landscape_004" parent="NavigationRegion3D/glat" index="0" unique_id=2069082174]
+[node name="Landscape_004" parent="NavigationRegion3D/glat" index="0" unique_id=1021416657]
 surface_material_override/0 = ExtResource("2_vpt6u")
 
 [node name="EnvironmentObjects" type="Node3D" parent="NavigationRegion3D" unique_id=108156336]
