@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://opqamc6lr7o"
-path.s3tc="res://.godot/imported/Goat_bark_willow_nor_gl_1k.jpg-a589b50406e2ec8f30625ddbab5e74d5.s3tc.ctex"
+path.s3tc="res://.godot/imported/Goat_bark_willow_nor_gl_1k.jpg-0961a9b20488e480007c5f3c0e8f03aa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Models/goat/Goat_bark_willow_nor_gl_1k.jpg"
-dest_files=["res://.godot/imported/Goat_bark_willow_nor_gl_1k.jpg-a589b50406e2ec8f30625ddbab5e74d5.s3tc.ctex"]
+source_file="res://assets/models/goat/Goat_bark_willow_nor_gl_1k.jpg"
+dest_files=["res://.godot/imported/Goat_bark_willow_nor_gl_1k.jpg-0961a9b20488e480007c5f3c0e8f03aa.s3tc.ctex"]
 
 [params]
 
