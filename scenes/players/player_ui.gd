@@ -8,6 +8,9 @@ extends CanvasLayer
 @onready var goat_health_label: Label = %GoatHealthLabel
 
 @onready var goat: Goat = get_tree().get_first_node_in_group('Goat')
+@onready var camera_holder: CameraObject = %CameraHolder
+
+@onready var mask_timer: Timer = Timer.new()
 
 func _ready():
 	health.signal_max_health_updated.connect(_on_health_max)
@@ -17,6 +20,21 @@ func _ready():
 	goat.health_system.signal_health_updated.connect(_on_goat_health_updated)
 	goat.health_system.signal_max_health_updated.emit(1000)
 	
+	add_child(mask_timer)
+	mask_timer.wait_time = 0.1
+	mask_timer.timeout.connect(on_mask_hurt)
+
+	camera_holder.signal_mask_on.connect(mask_hurt_start)
+
+func mask_hurt_start(is_currently_on):
+	print(is_currently_on)
+	if is_currently_on:
+		mask_timer.start()
+	else:
+		mask_timer.stop()
+
+func on_mask_hurt():
+	health.damage(1, 88)
 	
 func _on_health_max(new_max):
 	health_bar.max_value = new_max
