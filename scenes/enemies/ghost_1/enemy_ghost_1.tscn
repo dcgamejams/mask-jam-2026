@@ -2,10 +2,23 @@
 
 [ext_resource type="Script" uid="uid://2so0dr2208kn" path="res://scenes/enemies/ghost_1/enemy_ghost_1.gd" id="1_j1tbm"]
 [ext_resource type="Script" uid="uid://d5jl3b0hfehw" path="res://scripts/components/health_system.gd" id="2_ip34o"]
+[ext_resource type="AudioStream" uid="uid://m7un8rmop8kb" path="res://Audio/SFX/Ghost/ambient/classic-ghost-sound-95773.mp3" id="2_p51wp"]
+[ext_resource type="AudioStream" uid="uid://ces4y1doe7p4a" path="res://Audio/SFX/Ghost/ambient/ghost-6979.mp3" id="3_4yjmm"]
 [ext_resource type="Script" uid="uid://es67axqa8ao6" path="res://scripts/components/navigation_system.gd" id="3_uvqya"]
+[ext_resource type="PackedScene" uid="uid://by81nft6ho4cn" path="res://assets/mesh/castlevania_lod_-_ghost/scene.gltf" id="4_qp7ua"]
+[ext_resource type="AudioStream" uid="uid://bjja560ur5soh" path="res://Audio/SFX/Ghost/ambient/ghost-horror-sound-382709.mp3" id="4_sx73x"]
+[ext_resource type="AudioStream" uid="uid://de4qhngkhf12k" path="res://Audio/SFX/Ghost/ambient/ghost-voice-halloween-moany-ghost-168411.mp3" id="5_g6jhv"]
 [ext_resource type="Texture2D" uid="uid://ecu1d0y8q5f7" path="res://assets/mesh/castlevania_lod_-_ghost/textures/Material_19442_baseColor.png" id="5_qp7ua"]
+[ext_resource type="AudioStream" uid="uid://c0y82gp47y8ma" path="res://Audio/SFX/Ghost/ambient/ghost-whispers-6030.mp3" id="6_en0gy"]
 [ext_resource type="Texture2D" uid="uid://crldy7006y2vo" path="res://assets/mesh/castlevania_lod_-_ghost/textures/Material_19443_baseColor.png" id="6_v02x1"]
 [ext_resource type="Texture2D" uid="uid://krfqn2tj86v0" path="res://assets/mesh/castlevania_lod_-_ghost/textures/Material_19441_baseColor.png" id="7_h5xvx"]
+[ext_resource type="AudioStream" uid="uid://2vdemhyencdw" path="res://Audio/SFX/Ghost/ambient/sad-ghost-40303.mp3" id="7_v1528"]
+[ext_resource type="AudioStream" uid="uid://dwrq3nwkay5x5" path="res://Audio/SFX/Ghost/ambient/silly-ghost-sound-242342.mp3" id="8_gknik"]
+[ext_resource type="AudioStream" uid="uid://ca1ssu8oqh4py" path="res://Audio/SFX/Ghost/ambient/spooky-cartoon-ghost-wooo-430234.mp3" id="9_pf5c0"]
+[ext_resource type="AudioStream" uid="uid://cd12c010v021l" path="res://Audio/SFX/Ghost/attack/058212_angry-ghost-voice-83343.mp3" id="10_en0gy"]
+[ext_resource type="AudioStream" uid="uid://b3c5kohb806fe" path="res://Audio/SFX/Ghost/attack/062740_creepy-ghost-scream-81907.mp3" id="11_v1528"]
+[ext_resource type="AudioStream" uid="uid://c5mylhx6tran" path="res://Audio/SFX/Ghost/attack/ghost-scare-vintage-6062.mp3" id="12_gknik"]
+[ext_resource type="AudioStream" uid="uid://ckhk165krhem" path="res://Audio/SFX/Ghost/attack/scary-scream-401725.mp3" id="13_pf5c0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_indh1"]
 
@@ -177,6 +190,21 @@ tracks/12/keys = {
 [sub_resource type="Animation" id="Animation_qp7ua"]
 resource_name = "attack"
 length = 1.2666667
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_qp7ua"]
+resource_name = "attack"
+length = 0.001
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -261,6 +289,20 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(1, 1, 1), Vector3(1.32, 1.32, 1.32), Vector3(1.32, 1.32, 1.32), Vector3(1, 1, 1)]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_random_attack_sound"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_j1tbm"]
@@ -543,6 +585,8 @@ search_box = NodePath("SearchBox")
 attack_box = NodePath("AttackBox")
 max_speed = 3.0
 attack_value = 20
+AmbientSoundsArray = Array[AudioStream]([ExtResource("2_p51wp"), ExtResource("3_4yjmm"), ExtResource("4_sx73x"), ExtResource("5_g6jhv"), ExtResource("6_en0gy"), ExtResource("7_v1528"), ExtResource("8_gknik"), ExtResource("9_pf5c0")])
+AttackSoundsArray = Array[AudioStream]([ExtResource("10_en0gy"), ExtResource("11_v1528"), ExtResource("12_gknik"), ExtResource("13_pf5c0")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=475714064]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46449876, -0.08487642, 0)
@@ -610,3 +654,10 @@ mesh = SubResource("ArrayMesh_nep5b")
 transform = Transform3D(1, 0, 0, 0, -0.017609445, 0.99984497, 0, -0.99984497, -0.017609445, 0, 2.2572672, -0.6309147)
 layers = 0
 mesh = SubResource("CylinderMesh_j1tbm")
+
+[editable path="Sketchfab_Scene"]
+[node name="AudioStreamPlayer3DAmbient" type="AudioStreamPlayer3D" parent="." unique_id=2071931980]
+
+[node name="AudioStreamPlayer3DAttack" type="AudioStreamPlayer3D" parent="." unique_id=1183111435]
+
+[connection signal="finished" from="AudioStreamPlayer3DAmbient" to="." method="_on_audio_stream_player_3d_ambient_finished"]
