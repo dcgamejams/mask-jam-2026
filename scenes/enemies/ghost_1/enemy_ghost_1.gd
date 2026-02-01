@@ -98,7 +98,7 @@ func _ready():
 
 	add_child(timer_attack_cooldown)
 	timer_attack_cooldown.timeout.connect(attack)
-	timer_attack_cooldown.wait_time = randf_range(2.0, 4.5)
+	timer_attack_cooldown.wait_time = randf_range(2.0, 5.5)
 	timer_attack_cooldown.one_shot = false
 	timer_attack_cooldown.start()
 

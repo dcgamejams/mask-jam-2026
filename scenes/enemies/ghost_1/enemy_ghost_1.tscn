@@ -27,7 +27,7 @@ height = 2.4
 size = Vector3(30, 3, 30)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8fdcm"]
-radius = 0.8
+radius = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_khaxi"]
 resource_local_to_scene = true
@@ -188,17 +188,6 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SearchBox" unique_id=606131953]
 shape = SubResource("BoxShape3D_nd7sd")
 
-[node name="AttackBox" type="Area3D" parent="." unique_id=1496836165]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05289358, 0.96844983, 0.13930893)
-collision_layer = 0
-collision_mask = 2
-monitoring = false
-monitorable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackBox" unique_id=1196945054]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.015716493, 0.41824603, -1.1547447)
-shape = SubResource("SphereShape3D_8fdcm")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=406928111]
 libraries/ = ExtResource("14_v1528")
 
@@ -210,6 +199,18 @@ regen_enabled = false
 script = ExtResource("3_uvqya")
 nav_agent = NodePath("../NavigationAgent3D")
 search_box = NodePath("../SearchBox")
+
+[node name="AttackBox" type="Area3D" parent="." unique_id=1496836165]
+transform = Transform3D(1, -1.2621775e-29, 0, 3.1554436e-30, 1, 7.1054274e-15, -1.0587912e-22, -7.1054274e-15, 1, -1.4901161e-08, 1.7517948, -2.1708367)
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackBox" unique_id=1196945054]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("SphereShape3D_8fdcm")
+metadata/_edit_lock_ = true
 
 [node name="Sketchfab_Scene" type="Node3D" parent="." unique_id=2083895909]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041, 0)
