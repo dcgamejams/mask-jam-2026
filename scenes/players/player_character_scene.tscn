@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dx02l6p6behb8" path="res://scenes/players/UI/hud_script.gd" id="16_5jm78"]
 [ext_resource type="PackedScene" uid="uid://ci0wuvhky4vnj" path="res://assets/Models/stoneMaskV2.glb" id="16_xq8ws"]
 [ext_resource type="Script" uid="uid://d5jl3b0hfehw" path="res://scripts/components/health_system.gd" id="17_427iv"]
+[ext_resource type="Shader" uid="uid://bhqhydrj6pq47" path="res://scenes/players/overlay.gdshader" id="17_xtmhn"]
 [ext_resource type="Theme" uid="uid://b3kq74llqlv3x" path="res://assets/theme/MinimalUI4/MinimalUI.tres" id="18_m644i"]
 [ext_resource type="PackedScene" uid="uid://lm4alclh6bt3" path="res://assets/theme/controls.tscn" id="19_xq8ws"]
 [ext_resource type="Script" uid="uid://didxq4aqwvnqm" path="res://scenes/players/player_ui.gd" id="19_y85m3"]
@@ -36,6 +37,17 @@ point_count = 2
 _limits = [3.0, 30.0, 0.0, 30.0]
 _data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(30, 30), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_77o6m"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8rk7w"]
+render_priority = 0
+shader = ExtResource("17_xtmhn")
+shader_parameter/pixel_size = 3.0
+shader_parameter/levels = 22.0
+shader_parameter/gamma = Vector2(0.98, 1.185)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5yjma"]
 
@@ -449,6 +461,33 @@ debug_shape_custom_color = Color(0.91764706, 0.79607844, 0.18039216, 1)
 unique_name_in_owner = true
 transform = Transform3D(-4.371138e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.371138e-08, 0.36448643, -0.22091031, -0.36316282)
 
+[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#Flash_Long" parent="CameraHolder/Camera/SuperShotgun" index="0" unique_id=1691980157]
+cast_shadow = 0
+
+[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#Flash_Side" parent="CameraHolder/Camera/SuperShotgun" index="1" unique_id=578747268]
+cast_shadow = 0
+
+[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#Flash_Front" parent="CameraHolder/Camera/SuperShotgun" index="2" unique_id=1602164696]
+cast_shadow = 0
+
+[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#Glow" parent="CameraHolder/Camera/SuperShotgun" index="3" unique_id=946483251]
+cast_shadow = 0
+
+[node name="ShotShell1" parent="CameraHolder/Camera/SuperShotgun/Root/Skeleton3D/Shell1" parent_id_path=PackedInt32Array(505632400, 1151420030) index="0" unique_id=1701912543]
+cast_shadow = 0
+
+[node name="ShotShell2" parent="CameraHolder/Camera/SuperShotgun/Root/Skeleton3D/Shell2" parent_id_path=PackedInt32Array(505632400, 1825800438) index="0" unique_id=89378086]
+cast_shadow = 0
+
+[node name="Barrels" parent="CameraHolder/Camera/SuperShotgun/Root/Skeleton3D/Barrel" parent_id_path=PackedInt32Array(505632400, 844971222) index="0" unique_id=457630255]
+cast_shadow = 0
+
+[node name="Triiger" parent="CameraHolder/Camera/SuperShotgun/Root/Skeleton3D/Trigger" parent_id_path=PackedInt32Array(505632400, 1698172676) index="0" unique_id=2140072031]
+cast_shadow = 0
+
+[node name="Handle" parent="CameraHolder/Camera/SuperShotgun/Root/Skeleton3D/Main" parent_id_path=PackedInt32Array(505632400, 766764850) index="0" unique_id=1400846080]
+cast_shadow = 0
+
 [node name="MaskOnPosition" type="Node3D" parent="CameraHolder/Camera" unique_id=744150991]
 transform = Transform3D(-9.873951e-09, 0, 0.51104885, 0, 0.65714353, 0, -0.22588968, 0, -2.2338655e-08, -0.027353277, -0.15750802, -0.22531056)
 
@@ -458,12 +497,21 @@ transform = Transform3D(0.22475432, 0, -0.05117431, 0, 0.65714353, 0, 0.02261965
 [node name="stoneMask" parent="CameraHolder/Camera" unique_id=191783486 instance=ExtResource("16_xq8ws")]
 transform = Transform3D(0.22475433, 0, -0.051174313, 0, 0.65714353, 0, 0.022619657, 0, 0.5084802, 1.0132291, -1.1237633, -0.19064136)
 
+[node name="Cube" parent="CameraHolder/Camera/stoneMask" index="0" unique_id=2120292247]
+cast_shadow = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CameraHolder/Camera" unique_id=625004749]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_77o6m")
+surface_material_override/0 = SubResource("ShaderMaterial_8rk7w")
+
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1589340362]
 shape = SubResource("CapsuleShape3D_5yjma")
 
 [node name="Model" type="MeshInstance3D" parent="." unique_id=1098043363]
 layers = 2
 material_override = SubResource("StandardMaterial3D_6bkys")
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_p2iaj")
 
 [node name="Raycasts" type="Node3D" parent="." unique_id=1022724484]
@@ -1063,3 +1111,6 @@ text = "10/10"
 [connection signal="change_fov" from="StateMachine" to="CameraHolder" method="change_fov"]
 [connection signal="ready" from="StateMachine" to="." method="_on_state_machine_ready"]
 [connection signal="ShootingAnimationFinished" from="CameraHolder/Camera/SuperShotgun" to="CameraHolder/Camera" method="_on_super_shotgun_shooting_animation_finished"]
+
+[editable path="CameraHolder/Camera/SuperShotgun"]
+[editable path="CameraHolder/Camera/stoneMask"]
