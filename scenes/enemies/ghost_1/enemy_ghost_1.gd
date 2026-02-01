@@ -45,12 +45,12 @@ enum LIST {
 
 # ANIMATION LIST. These are required
 const ANI = [
-	&"new_animation", # Walk
-	&"new_animation", # Idle
-	&"new_animation", # Attack
-	&"new_animation", # Hurt
-	&"new_animation", # Dying
-	&"new_animation" # Decay
+	&"RESET", # Walk
+	&"RESET", # Idle
+	&"attack", # Attack
+	&"hurt", # Hurt
+	&"dying", # Dying
+	&"RESET" # Decay
 ]
 
 # This enum lists all the possible states the character can be in.
@@ -236,7 +236,6 @@ func on_hurt():
 	
 func on_death():
 	# TODO: #CRITICAL " DEATH PROPER
-	queue_free()
 	set_state(States.DYING)
 
 func can_attack() -> bool:
