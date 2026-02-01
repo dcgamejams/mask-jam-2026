@@ -43,5 +43,5 @@ transform = Transform3D(0.88762254, -0.46057165, 0, 0.3647344, 0.7029232, 0.6106
 [node name="Goat" parent="." unique_id=752746429 instance=ExtResource("4_75c45")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2824116, -2.1894977)
 
-[node name="terrain" parent="." unique_id=615545219 instance=ExtResource("5_tjwvk")]
+[node name="terrain" parent="." unique_id=849712880 instance=ExtResource("5_tjwvk")]
 transform = Transform3D(90.27493, 0, 0, 0, 90.27493, 0, 0, 0, 90.27493, 8.64102, -11.614954, 0.58310413)

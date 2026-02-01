@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://fg3asyl3qjk2"]
+
+[ext_resource type="Texture2D" uid="uid://qr2skr1h0ddi" path="res://assets/img/Ground003_1K-JPG_Color.jpg" id="1_6gn0j"]
+[ext_resource type="Texture2D" uid="uid://cxpumfbehkpgh" path="res://assets/img/Ground003_1K-JPG_NormalGL.jpg" id="2_sxw5r"]
+[ext_resource type="Texture2D" uid="uid://c4mvird5y1dc" path="res://assets/img/Ground003_1K-JPG_Roughness.jpg" id="3_dfq2n"]
+
+[resource]
+albedo_color = Color(0.7898419, 0.7258606, 0.6907761, 1)
+albedo_texture = ExtResource("1_6gn0j")
+metallic_specular = 0.03
+roughness_texture = ExtResource("3_dfq2n")
+normal_enabled = true
+normal_texture = ExtResource("2_sxw5r")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
