@@ -6,6 +6,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 const FRICTION = 12
 const ROTATION_SPEED = 2.0
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var health_system: HealthSystem = $Health
 @onready var nav: NavigationSystem = $NavigationSystem
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
@@ -16,15 +17,15 @@ func _ready():
 	nav_agent.avoidance_enabled = true
 
 	health_system.signal_death.connect(goat_die)
-	#nav_agent.path_changed.connect(on_path_changed)
+	nav_agent.navigation_finished.connect(func(): animation_player.play("idle"))
 	nav.pick_patrol_destination()
+	nav_agent.path_changed.connect(func(): animation_player.play('walk'))
 
 func _physics_process(delta: float) -> void:
 	velocity.y -= gravity * delta
 
 	move_and_look(delta)
 	move_and_slide()
-	
 	
 func goat_die():
 	print("YOU KILLED MY GOAT")
@@ -43,7 +44,6 @@ func move_and_look(delta):
 	else:
 		velocity = velocity.move_toward(Vector3.ZERO, FRICTION * delta)
 		velocity.y -= gravity * delta
-	
 
 	if target:
 		new_look_at = target.transform.origin * Vector3(1.0, 0.5, 1.0) * -1.0
