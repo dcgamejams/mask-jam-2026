@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dvvyasmh7k7s6" path="res://scenes/environment/farm.tscn" id="2_0xm2m"]
 [ext_resource type="Shader" uid="uid://bhqhydrj6pq47" path="res://scenes/players/overlay.gdshader" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://vydo5ihqeu0v" path="res://scenes/enemies/ghost_1/enemy_ghost_1.tscn" id="5_lquwl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 128
@@ -207,3 +208,13 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 text = "Start"
 icon_alignment = 1
+
+[node name="EnemyGhost1" parent="." unique_id=427302985 instance=ExtResource("5_lquwl")]
+
+[node name="EnemyGhost2" parent="." unique_id=1060836735 instance=ExtResource("5_lquwl")]
+
+[node name="EnemyGhost3" parent="." unique_id=259638444 instance=ExtResource("5_lquwl")]
+
+[node name="EnemyGhost4" parent="." unique_id=1934544291 instance=ExtResource("5_lquwl")]
+
+[node name="EnemyGhost5" parent="." unique_id=1606709770 instance=ExtResource("5_lquwl")]
