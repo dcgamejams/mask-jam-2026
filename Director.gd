@@ -60,4 +60,5 @@ func _process(delta: float) -> void:
 	
 	
 	if WavesAreDone == true:
-		pass
+		current_wave = 0
+		startSpawning()
