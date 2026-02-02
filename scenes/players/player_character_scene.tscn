@@ -21,8 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://dmpyie3rbouy" path="res://assets/img/crosshair.png" id="20_mpkib"]
 [ext_resource type="Texture2D" uid="uid://1fjbon8u17w" path="res://assets/img/goat_fine.png" id="25_77o6m"]
 [ext_resource type="Texture2D" uid="uid://b6mysgvsi1mq5" path="res://assets/img/goat_hurt.png" id="26_xtmhn"]
+[ext_resource type="Texture2D" uid="uid://hhl651tx8h11" path="res://assets/theme/keyboard-&-mouse_sheet_default.png" id="29_dtcv1"]
 [ext_resource type="PackedScene" uid="uid://nfgkhfb2m38x" path="res://scenes/players/UI/volume_slider.tscn" id="29_txvlm"]
-[ext_resource type="Script" uid="uid://cyr26g12t31ua" path="res://scenes/players/UI/volume_slider.gd" id="30_dtcv1"]
 [ext_resource type="Script" uid="uid://sca7ypsol83f" path="res://scenes/players/StateMachine/state_machine_script.gd" id="54_e0r17"]
 [ext_resource type="Script" uid="uid://stil4xkf3tk0" path="res://scenes/players/StateMachine/idle_state_script.gd" id="55_dayh2"]
 [ext_resource type="Script" uid="uid://blt7dest23fk0" path="res://scenes/players/StateMachine/walk_state_script.gd" id="56_w3td4"]
@@ -392,6 +392,10 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7id3y"]
+atlas = ExtResource("29_dtcv1")
+region = Rect2(0, 128, 64, 64)
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=1717030456 groups=["PlayerCharacter"]]
 collision_layer = 2
@@ -1198,9 +1202,21 @@ theme_override_constants/margin_bottom = 20
 [node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/Control/InGameMenu/PanelContainer/MarginContainer" unique_id=1229646519]
 layout_mode = 2
 
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerUI/Control/InGameMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=1327272688]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerUI/Control/InGameMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1197811141]
+layout_mode = 2
+texture = SubResource("AtlasTexture_7id3y")
+
+[node name="Label" type="Label" parent="PlayerUI/Control/InGameMenu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=441978122]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Menu"
+
 [node name="VolumeSlider" parent="PlayerUI/Control/InGameMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=1243094562 instance=ExtResource("29_txvlm")]
 layout_mode = 2
-script = ExtResource("30_dtcv1")
 
 [node name="RestartButton" type="Button" parent="PlayerUI/Control/InGameMenu/PanelContainer/MarginContainer/VBoxContainer" unique_id=2131020579]
 unique_name_in_owner = true
