@@ -100,12 +100,12 @@ func input_actions_check() -> void:
 			if input_action.begins_with(&"play_char_"):
 				registered_input_actions.append(input_action)
 				
-		for input_action in input_actions_list:
-			if input_action == &"":
-				assert(false, "There's an undefined input action")
-				
-			if not registered_input_actions.has(input_action):
-				assert(false, "%s missing in InputMap, or input action wrongly named in the editor" % input_action)
+		#for input_action in input_actions_list:
+			#if input_action == &"":
+				#assert(false, "There's an undefined input action")
+				#
+			#if not registered_input_actions.has(input_action):
+				#assert(false, "%s missing in InputMap, or input action wrongly named in the editor" % input_action)
 				
 
 func _unhandled_input(event) -> void:

@@ -13,6 +13,9 @@ var MaxAmmo:int = 10
 
 
 func _input(event):
+	if player.immobile: 
+		return
+	
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED: 

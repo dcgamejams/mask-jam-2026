@@ -13,6 +13,16 @@ extends CanvasLayer
 @onready var mask_timer: Timer = Timer.new()
 @onready var health_color_timer: Timer = Timer.new()
 
+
+@onready var in_game_menu: MarginContainer = %InGameMenu
+@onready var control: Control = %Control
+@onready var volume: HSlider = %Volume
+@onready var restart_button: Button = %RestartButton
+
+var bus_master = AudioServer.get_bus_index("Master")
+var volume_master_value: float
+var ui_mask_on: bool = false
+
 func _ready():
 	health.signal_max_health_updated.connect(_on_health_max)
 	health.signal_health_updated.connect(_on_health_updated)
@@ -32,9 +42,30 @@ func _ready():
 
 
 	camera_holder.signal_mask_on.connect(mask_hurt_start)
+	in_game_menu.hide()
+	
+	volume_master_value = db_to_linear(AudioServer.get_bus_volume_db(bus_master))
+	volume.max_value = 1.0 * 2
+	volume.value = volume_master_value
+	volume.value_changed.connect(_on_master_value_changed)
 
+	restart_button.pressed.connect(func(): get_tree().reload_current_scene())
+	
+func _on_master_value_changed(value):
+	AudioServer.set_bus_volume_db(bus_master, linear_to_db(value))
 
-var ui_mask_on: bool = false
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("tab") and in_game_menu.visible == false:
+		in_game_menu.show()
+		control.mouse_filter = Control.MOUSE_FILTER_STOP
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		get_parent().immobile = true
+	elif event.is_action_pressed("tab") and in_game_menu.visible == true:
+		control.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		in_game_menu.hide()
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		get_parent().immobile = false
+
 
 func mask_hurt_start(is_currently_on):
 	ui_mask_on = is_currently_on

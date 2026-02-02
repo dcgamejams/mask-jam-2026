@@ -48,7 +48,6 @@ theme = ExtResource("1_m3kry")
 theme_override_constants/separation = 0
 
 [node name="Tab" type="HBoxContainer" parent="." unique_id=1686525312]
-visible = false
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Tab" unique_id=1696525029]
@@ -58,7 +57,7 @@ texture = SubResource("AtlasTexture_dwui3")
 [node name="Label" type="Label" parent="Tab" unique_id=1056369276]
 layout_mode = 2
 theme_override_font_sizes/font_size = 21
-text = "Focus Window "
+text = "Menu"
 
 [node name="Fire" type="HBoxContainer" parent="." unique_id=1053070620]
 layout_mode = 2

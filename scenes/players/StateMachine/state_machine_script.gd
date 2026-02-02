@@ -32,6 +32,7 @@ func _process(delta : float) -> void:
 func _physics_process(delta: float) -> void:
 	if play_char.immobile:
 		play_char.gravity_apply(delta)
+		play_char.velocity = Vector3.ZERO
 		return
 
 	if curr_state: curr_state.physics_update(delta)
