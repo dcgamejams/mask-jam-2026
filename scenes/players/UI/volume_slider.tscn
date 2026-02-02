@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://nfgkhfb2m38x"]
+
+[ext_resource type="Script" uid="uid://cyr26g12t31ua" path="res://scenes/players/UI/volume_slider.gd" id="1_qoliy"]
+
+[node name="VolumeSlider" type="HBoxContainer" unique_id=1243094562]
+script = ExtResource("1_qoliy")
+
+[node name="Label" type="Label" parent="." unique_id=405218777]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Volume
+"
+
+[node name="Volume" type="HSlider" parent="." unique_id=1133176123]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+step = 0.02

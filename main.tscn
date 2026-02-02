@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dvvyasmh7k7s6" path="res://scenes/environment/farm.tscn" id="2_0xm2m"]
 [ext_resource type="Shader" uid="uid://bhqhydrj6pq47" path="res://scenes/players/overlay.gdshader" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://sihi44mpqa7y" path="res://scenes/goat/Goat.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://nfgkhfb2m38x" path="res://scenes/players/UI/volume_slider.tscn" id="5_lquwl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 128
@@ -82,6 +83,10 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 text = "Start"
 icon_alignment = 1
+
+[node name="VolumeSlider" parent="MainMenu/Control/MarginContainer/VBoxContainer" unique_id=1243094562 instance=ExtResource("5_lquwl")]
+layout_mode = 2
+alignment = 1
 
 [node name="PlayerStartPosition" type="Node3D" parent="." unique_id=1320902900]
 transform = Transform3D(-0.9939322, 0, 0.10999447, 0, 1, 0, -0.10999447, 0, -0.9939322, 0, 1.6213799, -1.2480963)
