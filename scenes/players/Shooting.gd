@@ -11,6 +11,8 @@ var MaxAmmo:int = 10
 @onready var camera : Camera3D = %Camera
 @onready var gun_origin: Marker3D = %"Gun Origin"
 
+func _ready():
+	super_shotgun.ShootingAnimationFinished.connect(func(): canShoot = true)
 
 func _input(event):
 	if player.immobile: 
@@ -33,9 +35,6 @@ func _input(event):
 
 		#print("Right click at: ", event.position)
 
-func ResetShooting() -> void:
-	canShoot = true
-
 func fire_scatter_raycast():
 	var ray_origin: Vector3 = camera.global_position
 	# Ensure we use the forward vector of the camera/holder
@@ -57,14 +56,13 @@ func fire_scatter_raycast():
 
 		fire_manual_raycast(ray_origin, direction, debug_origin)
 
-func fire_manual_raycast(ray_origin: Vector3, direction: Vector3, debug_origin: Vector3):
+func fire_manual_raycast(ray_origin: Vector3, direction: Vector3, _debug_origin: Vector3):
 	# Short random delay for "popcorn" effect
 	await get_tree().create_timer(randf_range(0.05, 0.2)).timeout
 
 	var ray_length: float = 50.0
 	var ray_end: Vector3 = ray_origin + (direction * ray_length)
-	var ray_end_short: Vector3 = ray_origin + (direction * ray_length / 2)
-
+	#var ray_end_short: Vector3 = ray_origin + (direction * ray_length / 2)
 
 	var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
 	var query = PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
@@ -81,9 +79,6 @@ func fire_manual_raycast(ray_origin: Vector3, direction: Vector3, debug_origin: 
 		elif result.collider is Goat:
 			var goat: Goat = result.collider
 			goat.health_system.damage(0, 999)
-
-func _on_super_shotgun_shooting_animation_finished() -> void:
-	ResetShooting()
 
 func fire_poc():
 	var target = getCameraPOV()
@@ -134,7 +129,7 @@ func hitscanShot(pointOfCollisionHitscan : Vector3):
 	var spread = Vector3(randf_range(minSpread, maxSpread), randf_range(minSpread, maxSpread), randf_range(minSpread, maxSpread))
 	
 	#calculate direction of the hitscan bullet 
-	var hitscanBulletDirection = (pointOfCollisionHitscan - attackPoint.get_global_transform().origin).normalized()
+	#var hitscanBulletDirection = (pointOfCollisionHitscan - attackPoint.get_global_transform().origin).normalized()
 	
 	#create new intersection space to contain possibe collisions 
 	var newIntersection = PhysicsRayQueryParameters3D.create(attackPoint.get_global_transform().origin, pointOfCollisionHitscan + spread)

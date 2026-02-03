@@ -21,22 +21,24 @@ var gameHasStarted = false
 
 func _ready():
 	add_to_group('Goat')
+	Global.signal_start.connect(start_goat)
 	#nav_agent.target_desired_distance = randf_range(4.5, 6.5)
 	nav_agent.avoidance_enabled = true
 
-	health_system.signal_death.connect(goat_die)
 	nav_agent.navigation_finished.connect(func(): animation_player.play("idle"))
 	nav_agent.path_changed.connect(func(): animation_player.play('walk'))
-	Global.signal_start.connect(start_goat)
 	animation_player.play("idle")
 	animation_player.speed_scale = 0.7
+
+	health_system.signal_death.connect(goat_die)
+	health_system.signal_hurt.connect(_on_play_hurt_sound)
 	
 	_playRandomIdleSound()
 	
 	
 func _playRandomIdleSound() -> void:
 	
-	await get_tree().create_timer(randf_range(0.5, 10.0)).timeout
+	await get_tree().create_timer(randf_range(5.0, 15.0)).timeout
 	soundplayer.stream = IdleSounds.pick_random()
 	
 	soundplayer.play()
@@ -52,11 +54,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func goat_die():
-	print("YOU KILLED MY GOAT")
-	print("YOU KILLED MY GOAT")
-	print("YOU KILLED MY GOAT")
-	print("YOU KILLED MY GOAT")
-	print("YOU KILLED MY GOAT")
 	queue_free()
 
 var target
@@ -88,6 +85,7 @@ func move_and_look(delta):
 	
 	look_at(new_look_at)
 
-func _on_health_signal_hurt() -> void:
-	soundplayer.stream = PainSound
-	soundplayer.play()
+func _on_play_hurt_sound() -> void:
+	if randi_range(0, 1) == 0:
+		soundplayer.stream = PainSound
+		soundplayer.play()

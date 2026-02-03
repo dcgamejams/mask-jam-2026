@@ -2,95 +2,26 @@
 
 [ext_resource type="PackedScene" uid="uid://cghaci0ntf50e" path="res://assets/Models/SuperShotgun.glb" id="1_06rot"]
 [ext_resource type="Script" uid="uid://csma0fwxuue15" path="res://scenes/Weapons/scripts/WeaponModelAnimation.gd" id="2_4fik0"]
-[ext_resource type="PackedScene" uid="uid://dd7uf7xlh4l1w" path="res://assets/BinbunVFX/muzzle_flash/effects/muzzle_flash/muzzle_flash_01.tscn" id="3_k4p76"]
-[ext_resource type="Script" uid="uid://tb7n6ybv43ch" path="res://assets/BinbunVFX/shared/script/vfx_controller.gd" id="3_n8d88"]
-[ext_resource type="Material" uid="uid://bckofk27jdjm7" path="res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/flash_01_long.tres" id="4_thdy4"]
-[ext_resource type="Material" uid="uid://c7y2313k5rvbm" path="res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/flash_01_side.tres" id="5_3jo0e"]
-[ext_resource type="Material" uid="uid://dws4vfcxkfdr7" path="res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/wide_01_front.tres" id="6_i4val"]
-[ext_resource type="Material" uid="uid://dtcnjkjbdkbbn" path="res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/flash_01_glow.tres" id="7_25adq"]
-[ext_resource type="Script" uid="uid://bdk8hhttligw" path="res://assets/BinbunVFX/shared/script/vfx_light.gd" id="8_1hgcp"]
+[ext_resource type="Material" uid="uid://cl83cd2rgnnkg" path="res://new_standard_material_3d.tres" id="7_p14v6"]
 [ext_resource type="AudioStream" uid="uid://d3i463dffrndv" path="res://Audio/SFX/Shotgun/BreakClosed.WAV" id="10_25adq"]
 [ext_resource type="AudioStream" uid="uid://ccjoquo8cmmpv" path="res://Audio/SFX/Shotgun/supershotgun.WAV" id="11_1hgcp"]
 [ext_resource type="AudioStream" uid="uid://b27l3t1o1drri" path="res://Audio/SFX/Shotgun/ShellsOut.WAV" id="12_p5t54"]
 [ext_resource type="AudioStream" uid="uid://fm3fi78c17bg" path="res://Audio/SFX/Shotgun/ShellsIn.WAV" id="13_8hc6d"]
 
-[sub_resource type="Curve" id="Curve_1esjh"]
-_data = [Vector2(0, 0.191845), 0.0, 1.35258, 0, 0, Vector2(1, 1), 0.169788, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_hs86w"]
-curve = SubResource("Curve_1esjh")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a13yc"]
-angle_min = -892.0
-angle_max = 720.0
-gravity = Vector3(0, 0, 0)
-scale_min = 0.8
-scale_max = 1.2
-alpha_curve = SubResource("CurveTexture_hs86w")
-
-[sub_resource type="QuadMesh" id="QuadMesh_1esjh"]
-size = Vector2(1.5, 1.5)
-subdivide_width = 16
-subdivide_depth = 16
-center_offset = Vector3(0, 0.7, 0)
-
-[sub_resource type="Curve" id="Curve_n3s36"]
-_data = [Vector2(0, 0.409091), 0.0, 0.688372, 0, 0, Vector2(1, 1), 1.01501, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_a2oh0"]
-curve = SubResource("Curve_n3s36")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1esjh"]
-angle_min = -720.0
-angle_max = 720.0
-gravity = Vector3(0, 0, 0)
-scale_min = 0.85
-scale_max = 1.15
-alpha_curve = SubResource("CurveTexture_a2oh0")
-
-[sub_resource type="QuadMesh" id="QuadMesh_n3s36"]
-size = Vector2(0.8, 0.8)
-subdivide_width = 16
-subdivide_depth = 16
-center_offset = Vector3(0, 0.3, 0)
-
-[sub_resource type="Curve" id="Curve_6urkv"]
-_data = [Vector2(0.240924, 0), 0.0, 1.85571, 0, 0, Vector2(1, 1), 0.347757, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_ms6rm"]
-curve = SubResource("Curve_6urkv")
-
-[sub_resource type="Curve" id="Curve_gmcfr"]
-_data = [Vector2(0, 1), 0.0, 2.474e-07, 0, 0, Vector2(0.488449, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_3el87"]
-curve = SubResource("Curve_gmcfr")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n3s36"]
-angle_min = -720.0
-angle_max = 720.0
-gravity = Vector3(0, 0, 0)
-scale_min = 0.8
-scale_max = 1.2
-scale_curve = SubResource("CurveTexture_3el87")
-alpha_curve = SubResource("CurveTexture_ms6rm")
-
-[sub_resource type="QuadMesh" id="QuadMesh_6urkv"]
-size = Vector2(0.5, 0.5)
-subdivide_width = 16
-subdivide_depth = 16
-orientation = 1
-
-[sub_resource type="SphereMesh" id="SphereMesh_6urkv"]
-radius = 0.15
-height = 0.4
-radial_segments = 16
-rings = 8
-is_hemisphere = true
+[sub_resource type="Animation" id="Animation_p14v6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_we5m7"]
 resource_name = "ShootAndReload"
@@ -204,71 +135,32 @@ tracks/10/keys = {
 "times": PackedFloat32Array(1.6666666)
 }
 tracks/10/use_blend = true
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CPUParticles3D:emitting")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nv03g"]
 _data = {
+&"RESET": SubResource("Animation_p14v6"),
 &"ShootAndReload": SubResource("Animation_we5m7")
 }
 
+[sub_resource type="SphereMesh" id="SphereMesh_xx23c"]
+material = ExtResource("7_p14v6")
+radius = 0.1
+height = 0.2
+
 [node name="SuperShotgun" unique_id=505632400 instance=ExtResource("1_06rot")]
 script = ExtResource("2_4fik0")
-
-[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#Flash_Long" type="GPUParticles3D" parent="." index="0" unique_id=1691980157]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.05, 0, 0)
-material_override = ExtResource("4_thdy4")
-emitting = false
-amount = 3
-lifetime = 0.2
-one_shot = true
-explosiveness = 0.8
-process_material = SubResource("ParticleProcessMaterial_a13yc")
-draw_pass_1 = SubResource("QuadMesh_1esjh")
-
-[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#Flash_Side" type="GPUParticles3D" parent="." index="1" unique_id=578747268]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.05, 0, 0)
-material_override = ExtResource("5_3jo0e")
-emitting = false
-amount = 4
-lifetime = 0.2
-one_shot = true
-explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_1esjh")
-draw_pass_1 = SubResource("QuadMesh_n3s36")
-
-[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#Flash_Front" type="GPUParticles3D" parent="." index="2" unique_id=1602164696]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-material_override = ExtResource("6_i4val")
-emitting = false
-amount = 1
-lifetime = 0.2
-one_shot = true
-process_material = SubResource("ParticleProcessMaterial_n3s36")
-draw_pass_1 = SubResource("QuadMesh_6urkv")
-
-[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#Glow" type="MeshInstance3D" parent="." index="3" unique_id=946483251]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.4, 0, 0)
-visible = false
-material_override = ExtResource("7_25adq")
-mesh = SubResource("SphereMesh_6urkv")
-
-[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#Light" type="OmniLight3D" parent="." index="4" unique_id=612673455]
-visible = false
-light_color = Color(1, 0.690196, 0, 1)
-light_energy = 2.0
-omni_range = 2.0
-script = ExtResource("8_1hgcp")
-
-[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#AnimationPlayer2" type="AnimationPlayer" parent="." index="5" unique_id=298385550]
-
-[node name="Root_Skeleton3D_Barrel_Node3D#MuzzleFlash_01" type="Node3D" parent="." index="6" unique_id=1910469941]
-script = ExtResource("3_n8d88")
-preview = false
-autoplay = false
-primary_color = Color(1, 0.690196, 0, 1)
-secondary_color = Color(1, 0.376471, 0, 1)
-light_color = Color(1, 0.690196, 0, 1)
-light_energy = 2.0
-mesh_resolutions = 16
 
 [node name="Skeleton3D" parent="Root" parent_id_path=PackedInt32Array(1302576625) index="0" unique_id=1033320754]
 bones/0/position = Vector3(-0.08563218, -0.054073323, -1.39512535e-08)
@@ -288,10 +180,7 @@ transform = Transform3D(-1.1920928e-07, 0.9999999, -1.6979416e-07, -0.99999964, 
 [node name="Barrel" parent="Root/Skeleton3D" index="2" unique_id=1903070834]
 transform = Transform3D(0.16534406, 0.986236, 3.3393235e-09, -0.9862357, 0.16534406, -1.3054225e-06, -1.2880066e-06, 2.1255056e-07, 1, 0.33773878, 0.022418842, 1.1955574e-07)
 
-[node name="MuzzleFlash_01" parent="Root/Skeleton3D/Barrel/Barrels" parent_id_path=PackedInt32Array(770382866) index="0" unique_id=1480076221 instance=ExtResource("3_k4p76")]
-transform = Transform3D(1, -1.5597388e-13, -3.907985e-14, 3.4550694e-16, 1, 0, 3.907985e-14, 0, 1, 0.79696417, 0.05210348, 0.009483852)
-
-[node name="Marker3D" type="Marker3D" parent="Root/Skeleton3D/Barrel/Barrels" parent_id_path=PackedInt32Array(770382866) index="1" unique_id=1877726684]
+[node name="Marker3D" type="Marker3D" parent="Root/Skeleton3D/Barrel/Barrels" parent_id_path=PackedInt32Array(770382866) index="0" unique_id=1877726684]
 unique_name_in_owner = true
 transform = Transform3D(1, -4.2287036e-14, -1.0658141e-14, 3.4550715e-16, 1, 0, 1.0658141e-14, 0, 1, 0.85644984, 0.06787289, 3.810723e-08)
 
@@ -304,7 +193,24 @@ transform = Transform3D(-0.29765803, 0.9546726, -6.790614e-07, -0.95467246, -0.2
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="Root" parent_id_path=PackedInt32Array(1302576625) index="1" unique_id=1027883239]
 volume_db = -40.0
 
-[node name="AnimationPlayer" parent="." index="8" unique_id=189671372]
+[node name="AnimationPlayer" parent="." index="1" unique_id=189671372]
 libraries/ = SubResource("AnimationLibrary_nv03g")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." index="2" unique_id=1578255821]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8213075, 0.052886188, 0)
+emitting = false
+amount = 20
+lifetime = 0.1
+one_shot = true
+explosiveness = 0.22
+randomness = 0.05
+mesh = SubResource("SphereMesh_xx23c")
+spread = 13.65
+initial_velocity_min = 77.05
+initial_velocity_max = 115.29
+radial_accel_min = -1.76
+radial_accel_max = 5.89
+color = Color(1, 1, 0.3529412, 1)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

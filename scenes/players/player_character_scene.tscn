@@ -534,34 +534,7 @@ debug_shape_custom_color = Color(0.91764706, 0.79607844, 0.18039216, 1)
 
 [node name="SuperShotgun" parent="CameraHolder/Camera" unique_id=505632400 instance=ExtResource("15_m644i")]
 unique_name_in_owner = true
-transform = Transform3D(-4.371138e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.371138e-08, 0.36448643, -0.22091031, -0.36316282)
-
-[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#Flash_Long" parent="CameraHolder/Camera/SuperShotgun" index="0" unique_id=1691980157]
-cast_shadow = 0
-
-[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#Flash_Side" parent="CameraHolder/Camera/SuperShotgun" index="1" unique_id=578747268]
-cast_shadow = 0
-
-[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#Flash_Front" parent="CameraHolder/Camera/SuperShotgun" index="2" unique_id=1602164696]
-cast_shadow = 0
-
-[node name="Root_Skeleton3D_Barrel_Node3D_MuzzleFlash_01#Glow" parent="CameraHolder/Camera/SuperShotgun" index="3" unique_id=946483251]
-cast_shadow = 0
-
-[node name="ShotShell1" parent="CameraHolder/Camera/SuperShotgun/Root/Skeleton3D/Shell1" parent_id_path=PackedInt32Array(505632400, 481921748) index="0" unique_id=565903869]
-cast_shadow = 0
-
-[node name="ShotShell2" parent="CameraHolder/Camera/SuperShotgun/Root/Skeleton3D/Shell2" parent_id_path=PackedInt32Array(505632400, 1023149044) index="0" unique_id=1764320914]
-cast_shadow = 0
-
-[node name="Barrels" parent="CameraHolder/Camera/SuperShotgun/Root/Skeleton3D/Barrel" parent_id_path=PackedInt32Array(505632400, 1903070834) index="0" unique_id=770382866]
-cast_shadow = 0
-
-[node name="Triiger" parent="CameraHolder/Camera/SuperShotgun/Root/Skeleton3D/Trigger" parent_id_path=PackedInt32Array(505632400, 1246418569) index="0" unique_id=1690215520]
-cast_shadow = 0
-
-[node name="Handle" parent="CameraHolder/Camera/SuperShotgun/Root/Skeleton3D/Main" parent_id_path=PackedInt32Array(505632400, 111723647) index="0" unique_id=540898166]
-cast_shadow = 0
+transform = Transform3D(-4.3711392e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711392e-08, 0.15816334, -0.2451936, -0.1734438)
 
 [node name="MaskOnPosition" type="Node3D" parent="CameraHolder/Camera" unique_id=744150991]
 transform = Transform3D(-9.8739505e-09, 0, 0.51104885, 0, 0.65714353, 0, -0.22588968, 0, -2.2338654e-08, -0.02735328, -0.14738894, -0.15772349)
@@ -1243,7 +1216,5 @@ text = "10/10"
 
 [connection signal="change_fov" from="StateMachine" to="CameraHolder" method="change_fov"]
 [connection signal="ready" from="StateMachine" to="." method="_on_state_machine_ready"]
-[connection signal="ShootingAnimationFinished" from="CameraHolder/Camera/SuperShotgun" to="CameraHolder/Camera" method="_on_super_shotgun_shooting_animation_finished"]
 
-[editable path="CameraHolder/Camera/SuperShotgun"]
 [editable path="CameraHolder/Camera/stoneMask"]

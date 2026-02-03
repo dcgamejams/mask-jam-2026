@@ -60,7 +60,7 @@ func startSpawning():
 		
 	WavesAreDone = true
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	
 	if WavesAreDone == true:

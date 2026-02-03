@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Mask Jam 2026"
+config/name="The Goat (GGJ 2026)"
 run/main_scene="uid://b6dfmct6e0d5j"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://cp8ra1ahk80mb"
 
 [audio]
 
@@ -22,6 +22,10 @@ buses/default_bus_layout="uid://dcabandqqr4pb"
 [autoload]
 
 Global="*uid://djrrielprs8dv"
+
+[debug]
+
+gdscript/warnings/unused_signal=0
 
 [debug_draw_3d]
 

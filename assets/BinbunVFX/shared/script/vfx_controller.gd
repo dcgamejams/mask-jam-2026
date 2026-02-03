@@ -125,8 +125,10 @@ func _ready() -> void:
 	
 	if autoplay: play()
 
+
 func _enter_tree() -> void:
 	if autoplay: preview = true
+	
 
 func play():
 	var anim : AnimationPlayer = _get_anim()

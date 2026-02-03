@@ -11,6 +11,6 @@ func _ready() -> void:
 	volume.value = volume_master_value
 	volume.value_changed.connect(_on_master_value_changed)
 
-	
+
 func _on_master_value_changed(value):
 	AudioServer.set_bus_volume_db(bus_master, linear_to_db(value))
