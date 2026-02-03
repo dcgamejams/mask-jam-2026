@@ -13,7 +13,7 @@ func _ready():
 
 	var preload_shotgun: WeaponModel = SUPER_SHOTGUN.instantiate()
 	preload_shotgun.position = Vector3(-5.0, 10.0, -5.0)
-	add_child(preload_shotgun, true)	
+	add_child(preload_shotgun, true)
 	preload_shotgun.ShootSignal()
 
 	var preload_ghost = ENEMY_GHOST_1.instantiate()

@@ -23,9 +23,10 @@ func _ready():
 	health.signal_max_health_updated.connect(_on_health_max)
 	health.signal_health_updated.connect(_on_health_updated)
 	
-	goat.health_system.signal_max_health_updated.connect(_on_goat_health_max)
-	goat.health_system.signal_health_updated.connect(_on_goat_health_updated)
-	goat.health_system.signal_max_health_updated.emit(1000)
+	if goat:
+		goat.health_system.signal_max_health_updated.connect(_on_goat_health_max)
+		goat.health_system.signal_health_updated.connect(_on_goat_health_updated)
+		goat.health_system.signal_max_health_updated.emit(1000)
 	
 	add_child(mask_timer)
 	mask_timer.wait_time = 0.2

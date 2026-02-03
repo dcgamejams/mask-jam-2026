@@ -534,7 +534,7 @@ debug_shape_custom_color = Color(0.91764706, 0.79607844, 0.18039216, 1)
 
 [node name="SuperShotgun" parent="CameraHolder/Camera" unique_id=505632400 instance=ExtResource("15_m644i")]
 unique_name_in_owner = true
-transform = Transform3D(-4.3711392e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711392e-08, 0.15816334, -0.2451936, -0.1734438)
+transform = Transform3D(-4.3711392e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711392e-08, 0.15816332, -0.2451936, -0.13627613)
 
 [node name="MaskOnPosition" type="Node3D" parent="CameraHolder/Camera" unique_id=744150991]
 transform = Transform3D(-9.8739505e-09, 0, 0.51104885, 0, 0.65714353, 0, -0.22588968, 0, -2.2338654e-08, -0.02735328, -0.14738894, -0.15772349)
